@@ -1,0 +1,913 @@
+{
+ "Resources": {
+  "VPCInfinityD7CAF3E6": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.10.0.0/16",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Resource"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet1Subnet02D5F196": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.10.0.0/24",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Public-Applications"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1/Subnet"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet1RouteTableE3648BD8": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1/RouteTable"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet1RouteTableAssociation9ACD1DDA": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet1RouteTableE3648BD8"
+    },
+    "SubnetId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet1Subnet02D5F196"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1/RouteTableAssociation"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet1DefaultRoute0399FB8F": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet1RouteTableE3648BD8"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "VPCInfinityIGW80F694B7"
+    }
+   },
+   "DependsOn": [
+    "VPCInfinityVPCGWC0E97FB9"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1/DefaultRoute"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet1EIPCA92C596": {
+   "Type": "AWS::EC2::EIP",
+   "Properties": {
+    "Domain": "vpc",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1/EIP"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet1NATGateway8DC50824": {
+   "Type": "AWS::EC2::NatGateway",
+   "Properties": {
+    "SubnetId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet1Subnet02D5F196"
+    },
+    "AllocationId": {
+     "Fn::GetAtt": [
+      "VPCInfinityPublicApplicationsSubnet1EIPCA92C596",
+      "AllocationId"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1"
+     }
+    ]
+   },
+   "DependsOn": [
+    "VPCInfinityPublicApplicationsSubnet1DefaultRoute0399FB8F",
+    "VPCInfinityPublicApplicationsSubnet1RouteTableAssociation9ACD1DDA"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet1/NATGateway"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet2Subnet4546797C": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.10.1.0/24",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Public-Applications"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2/Subnet"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet2RouteTable6DF77826": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2/RouteTable"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet2RouteTableAssociation77563044": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet2RouteTable6DF77826"
+    },
+    "SubnetId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet2Subnet4546797C"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2/RouteTableAssociation"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet2DefaultRouteA172D4D3": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet2RouteTable6DF77826"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "VPCInfinityIGW80F694B7"
+    }
+   },
+   "DependsOn": [
+    "VPCInfinityVPCGWC0E97FB9"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2/DefaultRoute"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet2EIPC708857A": {
+   "Type": "AWS::EC2::EIP",
+   "Properties": {
+    "Domain": "vpc",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2/EIP"
+   }
+  },
+  "VPCInfinityPublicApplicationsSubnet2NATGateway66A71107": {
+   "Type": "AWS::EC2::NatGateway",
+   "Properties": {
+    "SubnetId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet2Subnet4546797C"
+    },
+    "AllocationId": {
+     "Fn::GetAtt": [
+      "VPCInfinityPublicApplicationsSubnet2EIPC708857A",
+      "AllocationId"
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2"
+     }
+    ]
+   },
+   "DependsOn": [
+    "VPCInfinityPublicApplicationsSubnet2DefaultRouteA172D4D3",
+    "VPCInfinityPublicApplicationsSubnet2RouteTableAssociation77563044"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Public-ApplicationsSubnet2/NATGateway"
+   }
+  },
+  "VPCInfinityPrivateApplicationsSubnet1Subnet7B4BD013": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.10.2.0/24",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Private-Applications"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Private"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet1/Subnet"
+   }
+  },
+  "VPCInfinityPrivateApplicationsSubnet1RouteTable662DA95E": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet1/RouteTable"
+   }
+  },
+  "VPCInfinityPrivateApplicationsSubnet1RouteTableAssociation0654A91C": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityPrivateApplicationsSubnet1RouteTable662DA95E"
+    },
+    "SubnetId": {
+     "Ref": "VPCInfinityPrivateApplicationsSubnet1Subnet7B4BD013"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet1/RouteTableAssociation"
+   }
+  },
+  "VPCInfinityPrivateApplicationsSubnet1DefaultRouteB8A3E677": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityPrivateApplicationsSubnet1RouteTable662DA95E"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "NatGatewayId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet1NATGateway8DC50824"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet1/DefaultRoute"
+   }
+  },
+  "VPCInfinityPrivateApplicationsSubnet2Subnet93CF3018": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.10.3.0/24",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Private-Applications"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Private"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet2/Subnet"
+   }
+  },
+  "VPCInfinityPrivateApplicationsSubnet2RouteTableC131EA7D": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet2/RouteTable"
+   }
+  },
+  "VPCInfinityPrivateApplicationsSubnet2RouteTableAssociation092B21F5": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityPrivateApplicationsSubnet2RouteTableC131EA7D"
+    },
+    "SubnetId": {
+     "Ref": "VPCInfinityPrivateApplicationsSubnet2Subnet93CF3018"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet2/RouteTableAssociation"
+   }
+  },
+  "VPCInfinityPrivateApplicationsSubnet2DefaultRoute07623169": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityPrivateApplicationsSubnet2RouteTableC131EA7D"
+    },
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "NatGatewayId": {
+     "Ref": "VPCInfinityPublicApplicationsSubnet2NATGateway66A71107"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/Private-ApplicationsSubnet2/DefaultRoute"
+   }
+  },
+  "VPCInfinityDBApplicationsSubnet1SubnetB175A6C5": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.10.4.0/24",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "DB-Applications"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1/Subnet"
+   }
+  },
+  "VPCInfinityDBApplicationsSubnet1RouteTable2AA18314": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1/RouteTable"
+   }
+  },
+  "VPCInfinityDBApplicationsSubnet1RouteTableAssociationD34AB80E": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityDBApplicationsSubnet1RouteTable2AA18314"
+    },
+    "SubnetId": {
+     "Ref": "VPCInfinityDBApplicationsSubnet1SubnetB175A6C5"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1/RouteTableAssociation"
+   }
+  },
+  "VPCInfinityDBApplicationsSubnet2SubnetBE4BB4DC": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "AvailabilityZone": {
+     "Fn::Select": [
+      1,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.10.5.0/24",
+    "MapPublicIpOnLaunch": false,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "DB-Applications"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Isolated"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2/Subnet"
+   }
+  },
+  "VPCInfinityDBApplicationsSubnet2RouteTable580CB999": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2/RouteTable"
+   }
+  },
+  "VPCInfinityDBApplicationsSubnet2RouteTableAssociation5B2CB02F": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "VPCInfinityDBApplicationsSubnet2RouteTable580CB999"
+    },
+    "SubnetId": {
+     "Ref": "VPCInfinityDBApplicationsSubnet2SubnetBE4BB4DC"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2/RouteTableAssociation"
+   }
+  },
+  "VPCInfinityIGW80F694B7": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-vpc-infinity/VPC-Infinity"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/IGW"
+   }
+  },
+  "VPCInfinityVPCGWC0E97FB9": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "VpcId": {
+     "Ref": "VPCInfinityD7CAF3E6"
+    },
+    "InternetGatewayId": {
+     "Ref": "VPCInfinityIGW80F694B7"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/VPC-Infinity/VPCGW"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02OwQ6CMBBEv4V7qSIXr4YYw0UbNF5NqWtYgdbQrcYQ/t0iaj3t7Mtk8hZ8mfJ5JB82Vuc6brDk/Z6kqplHJ1AL3h9vimUXfRQZE65sUO1dqYFGFlJhHMFBlg0EHtjKWqNQEhr9K49hnYvxbCVtJMFDPpno8O5jGM41QefztzCZfL4VedWqBU0DK8Aa16n37s7RzU1efzQz+oyjw8DEkyqjZylPEp5GV4sYd04TtsCL6b4AWBqKXBkBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-vpc-infinity/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "Output": {
+   "Value": {
+    "Ref": "VPCInfinityD7CAF3E6"
+   }
+  },
+  "ExportsOutputRefVPCInfinityD7CAF3E67B2297CD": {
+   "Value": {
+    "Ref": "VPCInfinityD7CAF3E6"
+   },
+   "Export": {
+    "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+   }
+  },
+  "ExportsOutputRefVPCInfinityPublicApplicationsSubnet1Subnet02D5F1968A3339AB": {
+   "Value": {
+    "Ref": "VPCInfinityPublicApplicationsSubnet1Subnet02D5F196"
+   },
+   "Export": {
+    "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsSubnet1Subnet02D5F1968A3339AB"
+   }
+  },
+  "ExportsOutputRefVPCInfinityPublicApplicationsSubnet2Subnet4546797C8E28D83E": {
+   "Value": {
+    "Ref": "VPCInfinityPublicApplicationsSubnet2Subnet4546797C"
+   },
+   "Export": {
+    "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsSubnet2Subnet4546797C8E28D83E"
+   }
+  },
+  "ExportsOutputRefVPCInfinityPrivateApplicationsSubnet1Subnet7B4BD01397A6BDAB": {
+   "Value": {
+    "Ref": "VPCInfinityPrivateApplicationsSubnet1Subnet7B4BD013"
+   },
+   "Export": {
+    "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsSubnet1Subnet7B4BD01397A6BDAB"
+   }
+  },
+  "ExportsOutputRefVPCInfinityPrivateApplicationsSubnet2Subnet93CF301864658C83": {
+   "Value": {
+    "Ref": "VPCInfinityPrivateApplicationsSubnet2Subnet93CF3018"
+   },
+   "Export": {
+    "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsSubnet2Subnet93CF301864658C83"
+   }
+  },
+  "ExportsOutputRefVPCInfinityDBApplicationsSubnet1SubnetB175A6C507B6D4D2": {
+   "Value": {
+    "Ref": "VPCInfinityDBApplicationsSubnet1SubnetB175A6C5"
+   },
+   "Export": {
+    "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityDBApplicationsSubnet1SubnetB175A6C507B6D4D2"
+   }
+  },
+  "ExportsOutputRefVPCInfinityDBApplicationsSubnet2SubnetBE4BB4DCF5CA20EF": {
+   "Value": {
+    "Ref": "VPCInfinityDBApplicationsSubnet2SubnetBE4BB4DC"
+   },
+   "Export": {
+    "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityDBApplicationsSubnet2SubnetBE4BB4DCF5CA20EF"
+   }
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}
