@@ -595,7 +595,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02OwQ6CMBBEv4V7qSIXr4YYw0UbNF5NqWtYgdbQrcYQ/t0iaj3t7Mtk8hZ8mfJ5JB82Vuc6brDk/Z6kqplHJ1AL3h9vimUXfRQZE65sUO1dqYFGFlJhHMFBlg0EHtjKWqNQEhr9K49hnYvxbCVtJMFDPpno8O5jGM41QefztzCZfL4VedWqBU0DK8Aa16n37s7RzU1efzQz+oyjw8DEkyqjZylPEp5GV4sYd04TtsCL6b4AWBqKXBkBAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02PwQ6CMBBEv4V7qUEuXgkxhos2aLyaUtawgq2hWwkh/LtFVDzN7MtkMrvmm5hHgexsqMo6bLDgw5GkqplHF1BrPpwfiqVXfRYpE65oUB1doYEmtrjcOIKTLBpY+MISa41CSWj0LzyZbSYm2UvaSYJO9ky0+PR2Kc40Qev9NzAv+VwJ+anVHTSNLAdrXKvevQdHDzfv+qOp0SVOG0YmeqqMXvnXIx4HN4sYtk4T3oHns74AtC9QoBkBAAA="
    },
    "Metadata": {
     "aws:cdk:path": "cdk-vpc-infinity/CDKMetadata/Default"
@@ -607,14 +607,6 @@
   "Output": {
    "Value": {
     "Ref": "VPCInfinityD7CAF3E6"
-   }
-  },
-  "ExportsOutputRefVPCInfinityD7CAF3E67B2297CD": {
-   "Value": {
-    "Ref": "VPCInfinityD7CAF3E6"
-   },
-   "Export": {
-    "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
    }
   },
   "ExportsOutputRefVPCInfinityPublicApplicationsSubnet1Subnet02D5F1968A3339AB": {
@@ -631,6 +623,14 @@
    },
    "Export": {
     "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsSubnet2Subnet4546797C8E28D83E"
+   }
+  },
+  "ExportsOutputRefVPCInfinityD7CAF3E67B2297CD": {
+   "Value": {
+    "Ref": "VPCInfinityD7CAF3E6"
+   },
+   "Export": {
+    "Name": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
    }
   },
   "ExportsOutputRefVPCInfinityPrivateApplicationsSubnet1Subnet7B4BD01397A6BDAB": {

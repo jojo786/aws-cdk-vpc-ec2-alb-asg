@@ -1,154 +1,6 @@
 {
  "Resources": {
-  "myBastionInstanceSecurityGroupAD76EC90": {
-   "Type": "AWS::EC2::SecurityGroup",
-   "Properties": {
-    "GroupDescription": "cdk-ec2-infinity-applications/myBastion/Resource/InstanceSecurityGroup",
-    "SecurityGroupEgress": [
-     {
-      "CidrIp": "0.0.0.0/0",
-      "Description": "Allow all outbound traffic by default",
-      "IpProtocol": "-1"
-     }
-    ],
-    "SecurityGroupIngress": [
-     {
-      "CidrIp": "0.0.0.0/0",
-      "Description": "Internet access SSH",
-      "FromPort": 22,
-      "IpProtocol": "tcp",
-      "ToPort": 22
-     }
-    ],
-    "Tags": [
-     {
-      "Key": "Name",
-      "Value": "myBastionHostLinux"
-     }
-    ],
-    "VpcId": {
-     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
-    }
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myBastion/Resource/InstanceSecurityGroup/Resource"
-   }
-  },
-  "myBastionInstanceRole80686C0E": {
-   "Type": "AWS::IAM::Role",
-   "Properties": {
-    "AssumeRolePolicyDocument": {
-     "Statement": [
-      {
-       "Action": "sts:AssumeRole",
-       "Effect": "Allow",
-       "Principal": {
-        "Service": "ec2.amazonaws.com"
-       }
-      }
-     ],
-     "Version": "2012-10-17"
-    },
-    "Tags": [
-     {
-      "Key": "Name",
-      "Value": "myBastionHostLinux"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myBastion/Resource/InstanceRole/Resource"
-   }
-  },
-  "myBastionInstanceRoleDefaultPolicy1F13358F": {
-   "Type": "AWS::IAM::Policy",
-   "Properties": {
-    "PolicyDocument": {
-     "Statement": [
-      {
-       "Action": [
-        "ssmmessages:*",
-        "ssm:UpdateInstanceInformation",
-        "ec2messages:*"
-       ],
-       "Effect": "Allow",
-       "Resource": "*"
-      }
-     ],
-     "Version": "2012-10-17"
-    },
-    "PolicyName": "myBastionInstanceRoleDefaultPolicy1F13358F",
-    "Roles": [
-     {
-      "Ref": "myBastionInstanceRole80686C0E"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myBastion/Resource/InstanceRole/DefaultPolicy/Resource"
-   }
-  },
-  "myBastionInstanceProfileCE4FD19D": {
-   "Type": "AWS::IAM::InstanceProfile",
-   "Properties": {
-    "Roles": [
-     {
-      "Ref": "myBastionInstanceRole80686C0E"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myBastion/Resource/InstanceProfile"
-   }
-  },
-  "myBastion25A2B620": {
-   "Type": "AWS::EC2::Instance",
-   "Properties": {
-    "AvailabilityZone": {
-     "Fn::Select": [
-      0,
-      {
-       "Fn::GetAZs": ""
-      }
-     ]
-    },
-    "IamInstanceProfile": {
-     "Ref": "myBastionInstanceProfileCE4FD19D"
-    },
-    "ImageId": {
-     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
-    },
-    "InstanceType": "t3.micro",
-    "SecurityGroupIds": [
-     {
-      "Fn::GetAtt": [
-       "myBastionInstanceSecurityGroupAD76EC90",
-       "GroupId"
-      ]
-     }
-    ],
-    "SubnetId": {
-     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsSubnet1Subnet02D5F1968A3339AB"
-    },
-    "Tags": [
-     {
-      "Key": "Name",
-      "Value": "myBastionHostLinux"
-     }
-    ],
-    "UserData": {
-     "Fn::Base64": "#!/bin/bash"
-    }
-   },
-   "DependsOn": [
-    "myBastionInstanceRoleDefaultPolicy1F13358F",
-    "myBastionInstanceRole80686C0E"
-   ],
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myBastion/Resource/Resource"
-   }
-  },
-  "myALB18A49813": {
+  "ALBApplications44D46886": {
    "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
    "Properties": {
     "LoadBalancerAttributes": [
@@ -157,12 +9,12 @@
       "Value": "false"
      }
     ],
-    "Name": "myALB",
+    "Name": "ALB-Applications",
     "Scheme": "internet-facing",
     "SecurityGroups": [
      {
       "Fn::GetAtt": [
-       "myALBSecurityGroupF245F258",
+       "ALBApplicationsSecurityGroupB06FD7CB",
        "GroupId"
       ]
      }
@@ -178,13 +30,13 @@
     "Type": "application"
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myALB/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/Resource"
    }
   },
-  "myALBSecurityGroupF245F258": {
+  "ALBApplicationsSecurityGroupB06FD7CB": {
    "Type": "AWS::EC2::SecurityGroup",
    "Properties": {
-    "GroupDescription": "Automatically created Security Group for ELB cdkec2infinityapplicationsmyALB8C5BCF22",
+    "GroupDescription": "Automatically created Security Group for ELB cdkec2infinityapplicationsALBApplications3EB9593D",
     "SecurityGroupIngress": [
      {
       "CidrIp": "0.0.0.0/0",
@@ -199,15 +51,15 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myALB/SecurityGroup/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/SecurityGroup/Resource"
    }
   },
-  "myALBSecurityGrouptocdkec2infinityapplicationsmyASGInstanceSecurityGroup5B00F50B80A0EBCB39": {
+  "ALBApplicationsSecurityGrouptocdkec2infinityapplicationsASGApplicationsInstanceSecurityGroup3B8FF635803A4C7FAE": {
    "Type": "AWS::EC2::SecurityGroupEgress",
    "Properties": {
     "GroupId": {
      "Fn::GetAtt": [
-      "myALBSecurityGroupF245F258",
+      "ALBApplicationsSecurityGroupB06FD7CB",
       "GroupId"
      ]
     },
@@ -215,7 +67,7 @@
     "Description": "ALB access 80 port of EC2 in Autoscaling Group",
     "DestinationSecurityGroupId": {
      "Fn::GetAtt": [
-      "myASGInstanceSecurityGroup77B88BA5",
+      "ASGApplicationsInstanceSecurityGroup642FB9F6",
       "GroupId"
      ]
     },
@@ -223,31 +75,31 @@
     "ToPort": 80
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myALB/SecurityGroup/to cdkec2infinityapplicationsmyASGInstanceSecurityGroup5B00F50B:80"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsInstanceSecurityGroup3B8FF635:80"
    }
   },
-  "myALBmy80B990410C": {
+  "ALBApplicationsALB8085785995": {
    "Type": "AWS::ElasticLoadBalancingV2::Listener",
    "Properties": {
     "DefaultActions": [
      {
       "TargetGroupArn": {
-       "Ref": "myALBmy80addTargetGroupGroup1569733D"
+       "Ref": "ALBApplicationsALB80TGApplicationsGroup95437DC8"
       },
       "Type": "forward"
      }
     ],
     "LoadBalancerArn": {
-     "Ref": "myALB18A49813"
+     "Ref": "ALBApplications44D46886"
     },
     "Port": 80,
     "Protocol": "HTTP"
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myALB/my80/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/ALB80/Resource"
    }
   },
-  "myALBmy80addTargetGroupGroup1569733D": {
+  "ALBApplicationsALB80TGApplicationsGroup95437DC8": {
    "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
    "Properties": {
     "Port": 80,
@@ -264,13 +116,13 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myALB/my80/addTargetGroupGroup/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/ALB80/TG-ApplicationsGroup/Resource"
    }
   },
-  "myASGInstanceSecurityGroup77B88BA5": {
+  "ASGApplicationsInstanceSecurityGroup642FB9F6": {
    "Type": "AWS::EC2::SecurityGroup",
    "Properties": {
-    "GroupDescription": "cdk-ec2-infinity-applications/myASG/InstanceSecurityGroup",
+    "GroupDescription": "cdk-ec2-infinity-applications/ASG-Applications/InstanceSecurityGroup",
     "SecurityGroupEgress": [
      {
       "CidrIp": "0.0.0.0/0",
@@ -281,7 +133,7 @@
     "Tags": [
      {
       "Key": "Name",
-      "Value": "cdk-ec2-infinity-applications/myASG"
+      "Value": "cdk-ec2-infinity-applications/ASG-Applications"
      }
     ],
     "VpcId": {
@@ -289,10 +141,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myASG/InstanceSecurityGroup/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/InstanceSecurityGroup/Resource"
    }
   },
-  "myASGInstanceSecurityGroupfromcdkec2infinityapplicationsmyALBSecurityGroupE3315C388090B114F5": {
+  "ASGApplicationsInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsSecurityGroupC67FDE33804D64DA4D": {
    "Type": "AWS::EC2::SecurityGroupIngress",
    "Properties": {
     "IpProtocol": "tcp",
@@ -300,23 +152,23 @@
     "FromPort": 80,
     "GroupId": {
      "Fn::GetAtt": [
-      "myASGInstanceSecurityGroup77B88BA5",
+      "ASGApplicationsInstanceSecurityGroup642FB9F6",
       "GroupId"
      ]
     },
     "SourceSecurityGroupId": {
      "Fn::GetAtt": [
-      "myALBSecurityGroupF245F258",
+      "ALBApplicationsSecurityGroupB06FD7CB",
       "GroupId"
      ]
     },
     "ToPort": 80
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myASG/InstanceSecurityGroup/from cdkec2infinityapplicationsmyALBSecurityGroupE3315C38:80"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsSecurityGroupC67FDE33:80"
    }
   },
-  "myASGInstanceRole5AF7F92F": {
+  "ASGApplicationsInstanceRole06EABDAA": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -334,28 +186,28 @@
     "Tags": [
      {
       "Key": "Name",
-      "Value": "cdk-ec2-infinity-applications/myASG"
+      "Value": "cdk-ec2-infinity-applications/ASG-Applications"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myASG/InstanceRole/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/InstanceRole/Resource"
    }
   },
-  "myASGInstanceProfile053766AB": {
+  "ASGApplicationsInstanceProfile6B304552": {
    "Type": "AWS::IAM::InstanceProfile",
    "Properties": {
     "Roles": [
      {
-      "Ref": "myASGInstanceRole5AF7F92F"
+      "Ref": "ASGApplicationsInstanceRole06EABDAA"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myASG/InstanceProfile"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/InstanceProfile"
    }
   },
-  "myASGLaunchConfigA0CD8C73": {
+  "ASGApplicationsLaunchConfigF30F2F1E": {
    "Type": "AWS::AutoScaling::LaunchConfiguration",
    "Properties": {
     "ImageId": {
@@ -363,13 +215,13 @@
     },
     "InstanceType": "t3.micro",
     "IamInstanceProfile": {
-     "Ref": "myASGInstanceProfile053766AB"
+     "Ref": "ASGApplicationsInstanceProfile6B304552"
     },
     "KeyName": "id_rsa",
     "SecurityGroups": [
      {
       "Fn::GetAtt": [
-       "myASGInstanceSecurityGroup77B88BA5",
+       "ASGApplicationsInstanceSecurityGroup642FB9F6",
        "GroupId"
       ]
      }
@@ -379,31 +231,31 @@
     }
    },
    "DependsOn": [
-    "myASGInstanceRole5AF7F92F"
+    "ASGApplicationsInstanceRole06EABDAA"
    ],
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myASG/LaunchConfig"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/LaunchConfig"
    }
   },
-  "myASG6C9F5AC0": {
+  "ASGApplicationsASG9699D8C3": {
    "Type": "AWS::AutoScaling::AutoScalingGroup",
    "Properties": {
     "MaxSize": "2",
     "MinSize": "2",
     "DesiredCapacity": "2",
     "LaunchConfigurationName": {
-     "Ref": "myASGLaunchConfigA0CD8C73"
+     "Ref": "ASGApplicationsLaunchConfigF30F2F1E"
     },
     "Tags": [
      {
       "Key": "Name",
       "PropagateAtLaunch": true,
-      "Value": "cdk-ec2-infinity-applications/myASG"
+      "Value": "cdk-ec2-infinity-applications/ASG-Applications"
      }
     ],
     "TargetGroupARNs": [
      {
-      "Ref": "myALBmy80addTargetGroupGroup1569733D"
+      "Ref": "ALBApplicationsALB80TGApplicationsGroup95437DC8"
      }
     ],
     "VPCZoneIdentifier": [
@@ -421,13 +273,13 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/myASG/ASG"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/ASG"
    }
   },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/2VQW0+DMBT+LXvvqhsvvrrF6BISCfhuzkphx5WWtKcqIf3vFnCI21PPd+l3Llv+kPD7FXy5tSjPa4VH3hcE4swi9d5LseX9Dhyh0S/GUYraf7ODdgRaSFZI4S1S92yNb9m+0jfEbL0Wn2ornbuhD3rkA0NoeJ8bNf4c38woFN0A/6pLfGZNhUoGJtUwrFAGyiOoKKGuP+MOj20b/8CwRxq13ahJO2T8w0sfOpL613OpF/ob2FrSvOkCBgaejBOgYvfYO4JiArM7Ba/FaW90hbW3Y95AX1tDYLl0xtvpgq+eWk/jCcBCI2mabmmJkSUOcYFlHZ2Mvkv4ZsOT1YdDXFuvCRvJ8+n9Ac9k6hv+AQAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RTU/DMAz9LbunQdsuXGFCaNIkqpY78lK3M0uTKnFAU5X/TpqyqYDEyXkf8YudjbzfyvUKPn2hmnOh6SjHmkGdRaLeRtTgmZS20BxBg1Fkuo+NHB+GQZMCJmsOSXvMGjqxa3/ipY88o/n2XM8L/RVch/zsbBgmywJGgSpl1qiCI77cLP8TT51D7//Qe5P5KCCw9Qp0mijNk0A9g1u3AwSjTjtrWuqCy2+c6N/WKAh6OVZW4yRf6954nnZQOtuSxhhFhd4Gp7JagoMeed7GS+AhcL68sKTghqbQKMoLn6y5Sx+1ltvVuycqXDBMPcpqrl+5fLbvxwEAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/CDKMetadata/Default"
@@ -435,38 +287,7 @@
    "Condition": "CDKMetadataAvailable"
   }
  },
- "Outputs": {
-  "myBastionBastionHostIdF36DDFD3": {
-   "Description": "Instance ID of the bastion host. Use this to connect via SSM Session Manager",
-   "Value": {
-    "Ref": "myBastion25A2B620"
-   }
-  },
-  "Output": {
-   "Value": {
-    "Fn::GetAtt": [
-     "myALB18A49813",
-     "DNSName"
-    ]
-   }
-  },
-  "ExportsOutputFnGetAttmyASGInstanceSecurityGroup77B88BA5GroupId660AC717": {
-   "Value": {
-    "Fn::GetAtt": [
-     "myASGInstanceSecurityGroup77B88BA5",
-     "GroupId"
-    ]
-   },
-   "Export": {
-    "Name": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttmyASGInstanceSecurityGroup77B88BA5GroupId660AC717"
-   }
-  }
- },
  "Parameters": {
-  "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
-   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
-   "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"
-  },
   "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
    "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
    "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-kernel-5.10-hvm-x86_64-gp2"
@@ -475,6 +296,27 @@
    "Type": "AWS::SSM::Parameter::Value<String>",
    "Default": "/cdk-bootstrap/hnb659fds/version",
    "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Outputs": {
+  "Output": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ALBApplications44D46886",
+     "DNSName"
+    ]
+   }
+  },
+  "ExportsOutputFnGetAttASGApplicationsInstanceSecurityGroup642FB9F6GroupIdB77C47E8": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ASGApplicationsInstanceSecurityGroup642FB9F6",
+     "GroupId"
+    ]
+   },
+   "Export": {
+    "Name": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttASGApplicationsInstanceSecurityGroup642FB9F6GroupIdB77C47E8"
+   }
   }
  },
  "Conditions": {
