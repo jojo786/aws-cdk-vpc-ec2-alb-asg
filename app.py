@@ -13,6 +13,6 @@ ec2_applictions_stack = CdkEc2ApplicationsStack(app, "cdk-ec2-infinity-applicati
                         vpc=vpc_stack.vpc)
 rds_applictions_stack = CdkRdsApplicationsStack(app, "cdk-rds-infinity-applications",
                         vpc=vpc_stack.vpc,
-                        asg_security_groups=ec2_applictions_stack.asg.connections.security_groups)
+                        asg_security_groups=ec2_applictions_stack.asg_web.connections.security_groups)
 
 app.synth()

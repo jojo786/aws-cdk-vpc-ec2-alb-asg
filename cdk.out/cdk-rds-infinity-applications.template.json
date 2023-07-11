@@ -36,7 +36,7 @@
     "aws:cdk:path": "cdk-rds-infinity-applications/MySQL_DB_easy/SecurityGroup/Resource"
    }
   },
-  "MySQLDBeasySecurityGroupfromcdkec2infinityapplicationsASGApplicationsInstanceSecurityGroup3B8FF635IndirectPortEE182344": {
+  "MySQLDBeasySecurityGroupfromcdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388IndirectPort2A5017C9": {
    "Type": "AWS::EC2::SecurityGroupIngress",
    "Properties": {
     "IpProtocol": "tcp",
@@ -54,7 +54,7 @@
      ]
     },
     "SourceSecurityGroupId": {
-     "Fn::ImportValue": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttASGApplicationsInstanceSecurityGroup642FB9F6GroupIdB77C47E8"
+     "Fn::ImportValue": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttASGApplicationsWebInstanceSecurityGroup94520ECDGroupId56E0900A"
     },
     "ToPort": {
      "Fn::GetAtt": [
@@ -64,7 +64,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-rds-infinity-applications/MySQL_DB_easy/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsInstanceSecurityGroup3B8FF635:{IndirectPort}"
+    "aws:cdk:path": "cdk-rds-infinity-applications/MySQL_DB_easy/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:{IndirectPort}"
    }
   },
   "MySQLDBeasySecretEAFDC74C": {

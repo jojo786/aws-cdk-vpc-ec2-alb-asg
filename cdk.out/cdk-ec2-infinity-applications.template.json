@@ -1,6 +1,6 @@
 {
  "Resources": {
-  "ALBApplications44D46886": {
+  "ALBApplicationsWebCAB76CA9": {
    "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
    "Properties": {
     "LoadBalancerAttributes": [
@@ -9,34 +9,34 @@
       "Value": "false"
      }
     ],
-    "Name": "ALB-Applications",
+    "Name": "ALB-Applications-Web",
     "Scheme": "internet-facing",
     "SecurityGroups": [
      {
       "Fn::GetAtt": [
-       "ALBApplicationsSecurityGroupB06FD7CB",
+       "ALBApplicationsWebSecurityGroupDEDFEC71",
        "GroupId"
       ]
      }
     ],
     "Subnets": [
      {
-      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsSubnet1Subnet02D5F1968A3339AB"
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsWebALBSubnet1Subnet90EAC081B71B102D"
      },
      {
-      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsSubnet2Subnet4546797C8E28D83E"
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsWebALBSubnet2Subnet55DB0D88B107EC0F"
      }
     ],
     "Type": "application"
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/Resource"
    }
   },
-  "ALBApplicationsSecurityGroupB06FD7CB": {
+  "ALBApplicationsWebSecurityGroupDEDFEC71": {
    "Type": "AWS::EC2::SecurityGroup",
    "Properties": {
-    "GroupDescription": "Automatically created Security Group for ELB cdkec2infinityapplicationsALBApplications3EB9593D",
+    "GroupDescription": "Automatically created Security Group for ELB cdkec2infinityapplicationsALBApplicationsWebF1184FE0",
     "SecurityGroupIngress": [
      {
       "CidrIp": "0.0.0.0/0",
@@ -51,15 +51,15 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/SecurityGroup/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/Resource"
    }
   },
-  "ALBApplicationsSecurityGrouptocdkec2infinityapplicationsASGApplicationsInstanceSecurityGroup3B8FF635803A4C7FAE": {
+  "ALBApplicationsWebSecurityGrouptocdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388806673245B": {
    "Type": "AWS::EC2::SecurityGroupEgress",
    "Properties": {
     "GroupId": {
      "Fn::GetAtt": [
-      "ALBApplicationsSecurityGroupB06FD7CB",
+      "ALBApplicationsWebSecurityGroupDEDFEC71",
       "GroupId"
      ]
     },
@@ -67,7 +67,7 @@
     "Description": "ALB access 80 port of EC2 in Autoscaling Group",
     "DestinationSecurityGroupId": {
      "Fn::GetAtt": [
-      "ASGApplicationsInstanceSecurityGroup642FB9F6",
+      "ASGApplicationsWebInstanceSecurityGroup94520ECD",
       "GroupId"
      ]
     },
@@ -75,31 +75,31 @@
     "ToPort": 80
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsInstanceSecurityGroup3B8FF635:80"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:80"
    }
   },
-  "ALBApplicationsALB8085785995": {
+  "ALBApplicationsWebALBApplictionsWeb8095B81B7D": {
    "Type": "AWS::ElasticLoadBalancingV2::Listener",
    "Properties": {
     "DefaultActions": [
      {
       "TargetGroupArn": {
-       "Ref": "ALBApplicationsALB80TGApplicationsGroup95437DC8"
+       "Ref": "ALBApplicationsWebALBApplictionsWeb80TGApplicationsWebGroupB328A697"
       },
       "Type": "forward"
      }
     ],
     "LoadBalancerArn": {
-     "Ref": "ALBApplications44D46886"
+     "Ref": "ALBApplicationsWebCAB76CA9"
     },
     "Port": 80,
     "Protocol": "HTTP"
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/ALB80/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applictions-Web-80/Resource"
    }
   },
-  "ALBApplicationsALB80TGApplicationsGroup95437DC8": {
+  "ALBApplicationsWebALBApplictionsWeb80TGApplicationsWebGroupB328A697": {
    "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
    "Properties": {
     "Port": 80,
@@ -116,13 +116,13 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications/ALB80/TG-ApplicationsGroup/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applictions-Web-80/TG-Applications-WebGroup/Resource"
    }
   },
-  "ASGApplicationsInstanceSecurityGroup642FB9F6": {
+  "ASGApplicationsWebInstanceSecurityGroup94520ECD": {
    "Type": "AWS::EC2::SecurityGroup",
    "Properties": {
-    "GroupDescription": "cdk-ec2-infinity-applications/ASG-Applications/InstanceSecurityGroup",
+    "GroupDescription": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup",
     "SecurityGroupEgress": [
      {
       "CidrIp": "0.0.0.0/0",
@@ -133,7 +133,7 @@
     "Tags": [
      {
       "Key": "Name",
-      "Value": "cdk-ec2-infinity-applications/ASG-Applications"
+      "Value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
      }
     ],
     "VpcId": {
@@ -141,10 +141,10 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/InstanceSecurityGroup/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/Resource"
    }
   },
-  "ASGApplicationsInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsSecurityGroupC67FDE33804D64DA4D": {
+  "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C80CBD623A1": {
    "Type": "AWS::EC2::SecurityGroupIngress",
    "Properties": {
     "IpProtocol": "tcp",
@@ -152,23 +152,23 @@
     "FromPort": 80,
     "GroupId": {
      "Fn::GetAtt": [
-      "ASGApplicationsInstanceSecurityGroup642FB9F6",
+      "ASGApplicationsWebInstanceSecurityGroup94520ECD",
       "GroupId"
      ]
     },
     "SourceSecurityGroupId": {
      "Fn::GetAtt": [
-      "ALBApplicationsSecurityGroupB06FD7CB",
+      "ALBApplicationsWebSecurityGroupDEDFEC71",
       "GroupId"
      ]
     },
     "ToPort": 80
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsSecurityGroupC67FDE33:80"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:80"
    }
   },
-  "ASGApplicationsInstanceRole06EABDAA": {
+  "ASGApplicationsWebInstanceRoleB59BB814": {
    "Type": "AWS::IAM::Role",
    "Properties": {
     "AssumeRolePolicyDocument": {
@@ -186,28 +186,28 @@
     "Tags": [
      {
       "Key": "Name",
-      "Value": "cdk-ec2-infinity-applications/ASG-Applications"
+      "Value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/InstanceRole/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceRole/Resource"
    }
   },
-  "ASGApplicationsInstanceProfile6B304552": {
+  "ASGApplicationsWebInstanceProfileFC17BFF1": {
    "Type": "AWS::IAM::InstanceProfile",
    "Properties": {
     "Roles": [
      {
-      "Ref": "ASGApplicationsInstanceRole06EABDAA"
+      "Ref": "ASGApplicationsWebInstanceRoleB59BB814"
      }
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/InstanceProfile"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceProfile"
    }
   },
-  "ASGApplicationsLaunchConfigF30F2F1E": {
+  "ASGApplicationsWebLaunchConfig1A4FA0EF": {
    "Type": "AWS::AutoScaling::LaunchConfiguration",
    "Properties": {
     "ImageId": {
@@ -215,13 +215,13 @@
     },
     "InstanceType": "t3.micro",
     "IamInstanceProfile": {
-     "Ref": "ASGApplicationsInstanceProfile6B304552"
+     "Ref": "ASGApplicationsWebInstanceProfileFC17BFF1"
     },
     "KeyName": "id_rsa",
     "SecurityGroups": [
      {
       "Fn::GetAtt": [
-       "ASGApplicationsInstanceSecurityGroup642FB9F6",
+       "ASGApplicationsWebInstanceSecurityGroup94520ECD",
        "GroupId"
       ]
      }
@@ -231,39 +231,39 @@
     }
    },
    "DependsOn": [
-    "ASGApplicationsInstanceRole06EABDAA"
+    "ASGApplicationsWebInstanceRoleB59BB814"
    ],
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/LaunchConfig"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/LaunchConfig"
    }
   },
-  "ASGApplicationsASG9699D8C3": {
+  "ASGApplicationsWebASG60CE2D77": {
    "Type": "AWS::AutoScaling::AutoScalingGroup",
    "Properties": {
     "MaxSize": "2",
     "MinSize": "2",
     "DesiredCapacity": "2",
     "LaunchConfigurationName": {
-     "Ref": "ASGApplicationsLaunchConfigF30F2F1E"
+     "Ref": "ASGApplicationsWebLaunchConfig1A4FA0EF"
     },
     "Tags": [
      {
       "Key": "Name",
       "PropagateAtLaunch": true,
-      "Value": "cdk-ec2-infinity-applications/ASG-Applications"
+      "Value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
      }
     ],
     "TargetGroupARNs": [
      {
-      "Ref": "ALBApplicationsALB80TGApplicationsGroup95437DC8"
+      "Ref": "ALBApplicationsWebALBApplictionsWeb80TGApplicationsWebGroupB328A697"
      }
     ],
     "VPCZoneIdentifier": [
      {
-      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsSubnet1Subnet7B4BD01397A6BDAB"
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsWebASGSubnet1Subnet9C8E21FD20448DC3"
      },
      {
-      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsSubnet2Subnet93CF301864658C83"
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsWebASGSubnet2Subnet5F112051138759DE"
      }
     ]
    },
@@ -273,7 +273,283 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications/ASG"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/ASG"
+   }
+  },
+  "ALBApplicationsAPI22783E44": {
+   "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+   "Properties": {
+    "LoadBalancerAttributes": [
+     {
+      "Key": "deletion_protection.enabled",
+      "Value": "false"
+     }
+    ],
+    "Name": "ALB-Applications-API",
+    "Scheme": "internal",
+    "SecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "ALBApplicationsAPISecurityGroup4C92AEE9",
+       "GroupId"
+      ]
+     }
+    ],
+    "Subnets": [
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsAPIALBSubnet1Subnet02047DA691DD3EC1"
+     },
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsAPIALBSubnet2Subnet831EDCF61CEF3C41"
+     }
+    ],
+    "Type": "application"
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/Resource"
+   }
+  },
+  "ALBApplicationsAPISecurityGroup4C92AEE9": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Automatically created Security Group for ELB cdkec2infinityapplicationsALBApplicationsAPI683175E3",
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow from anyone on port 80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     }
+    ],
+    "VpcId": {
+     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/SecurityGroup/Resource"
+   }
+  },
+  "ALBApplicationsAPISecurityGrouptocdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA80C46E582F": {
+   "Type": "AWS::EC2::SecurityGroupEgress",
+   "Properties": {
+    "GroupId": {
+     "Fn::GetAtt": [
+      "ALBApplicationsAPISecurityGroup4C92AEE9",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "Description": "ALB API access 80 port of EC2 in Autoscaling Group",
+    "DestinationSecurityGroupId": {
+     "Fn::GetAtt": [
+      "ASGApplicationsAPIInstanceSecurityGroup7E1B9C5F",
+      "GroupId"
+     ]
+    },
+    "FromPort": 80,
+    "ToPort": 80
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA:80"
+   }
+  },
+  "ALBApplicationsAPIALBApplictionsAPI8086FB9E5D": {
+   "Type": "AWS::ElasticLoadBalancingV2::Listener",
+   "Properties": {
+    "DefaultActions": [
+     {
+      "TargetGroupArn": {
+       "Ref": "ALBApplicationsAPIALBApplictionsAPI80TGApplicationsAPIGroupBF112F97"
+      },
+      "Type": "forward"
+     }
+    ],
+    "LoadBalancerArn": {
+     "Ref": "ALBApplicationsAPI22783E44"
+    },
+    "Port": 80,
+    "Protocol": "HTTP"
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applictions-API-80/Resource"
+   }
+  },
+  "ALBApplicationsAPIALBApplictionsAPI80TGApplicationsAPIGroupBF112F97": {
+   "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+   "Properties": {
+    "Port": 80,
+    "Protocol": "HTTP",
+    "TargetGroupAttributes": [
+     {
+      "Key": "stickiness.enabled",
+      "Value": "false"
+     }
+    ],
+    "TargetType": "instance",
+    "VpcId": {
+     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applictions-API-80/TG-Applications-APIGroup/Resource"
+   }
+  },
+  "ASGApplicationsAPIInstanceSecurityGroup7E1B9C5F": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-ec2-infinity-applications/ASG-Applications-API"
+     }
+    ],
+    "VpcId": {
+     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup/Resource"
+   }
+  },
+  "ASGApplicationsAPIInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsAPISecurityGroupC960C2C080B53694A9": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "IpProtocol": "tcp",
+    "Description": "ALB API access 80 port of EC2 in Autoscaling Group",
+    "FromPort": 80,
+    "GroupId": {
+     "Fn::GetAtt": [
+      "ASGApplicationsAPIInstanceSecurityGroup7E1B9C5F",
+      "GroupId"
+     ]
+    },
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "ALBApplicationsAPISecurityGroup4C92AEE9",
+      "GroupId"
+     ]
+    },
+    "ToPort": 80
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsAPISecurityGroupC960C2C0:80"
+   }
+  },
+  "ASGApplicationsAPIInstanceRole324280BF": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "cdk-ec2-infinity-applications/ASG-Applications-API"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceRole/Resource"
+   }
+  },
+  "ASGApplicationsAPIInstanceProfile2758142C": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     {
+      "Ref": "ASGApplicationsAPIInstanceRole324280BF"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceProfile"
+   }
+  },
+  "ASGApplicationsAPILaunchConfigC74440A9": {
+   "Type": "AWS::AutoScaling::LaunchConfiguration",
+   "Properties": {
+    "ImageId": {
+     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    "InstanceType": "t3.micro",
+    "IamInstanceProfile": {
+     "Ref": "ASGApplicationsAPIInstanceProfile2758142C"
+    },
+    "KeyName": "id_rsa",
+    "SecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "ASGApplicationsAPIInstanceSecurityGroup7E1B9C5F",
+       "GroupId"
+      ]
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php\nsudo chkconfig httpd on\nsudo service httpd start"
+    }
+   },
+   "DependsOn": [
+    "ASGApplicationsAPIInstanceRole324280BF"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/LaunchConfig"
+   }
+  },
+  "ASGApplicationsAPIASG739F73E1": {
+   "Type": "AWS::AutoScaling::AutoScalingGroup",
+   "Properties": {
+    "MaxSize": "2",
+    "MinSize": "2",
+    "DesiredCapacity": "2",
+    "LaunchConfigurationName": {
+     "Ref": "ASGApplicationsAPILaunchConfigC74440A9"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "PropagateAtLaunch": true,
+      "Value": "cdk-ec2-infinity-applications/ASG-Applications-API"
+     }
+    ],
+    "TargetGroupARNs": [
+     {
+      "Ref": "ALBApplicationsAPIALBApplictionsAPI80TGApplicationsAPIGroupBF112F97"
+     }
+    ],
+    "VPCZoneIdentifier": [
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsAPIASGSubnet1Subnet7C83FB1A3EE7D24B"
+     },
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsAPIASGSubnet2SubnetAACA46325EBC8681"
+     }
+    ]
+   },
+   "UpdatePolicy": {
+    "AutoScalingScheduledAction": {
+     "IgnoreUnmodifiedGroupSizeProperties": true
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/ASG"
    }
   },
   "CDKMetadata": {
@@ -302,20 +578,20 @@
   "Output": {
    "Value": {
     "Fn::GetAtt": [
-     "ALBApplications44D46886",
+     "ALBApplicationsWebCAB76CA9",
      "DNSName"
     ]
    }
   },
-  "ExportsOutputFnGetAttASGApplicationsInstanceSecurityGroup642FB9F6GroupIdB77C47E8": {
+  "ExportsOutputFnGetAttASGApplicationsWebInstanceSecurityGroup94520ECDGroupId56E0900A": {
    "Value": {
     "Fn::GetAtt": [
-     "ASGApplicationsInstanceSecurityGroup642FB9F6",
+     "ASGApplicationsWebInstanceSecurityGroup94520ECD",
      "GroupId"
     ]
    },
    "Export": {
-    "Name": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttASGApplicationsInstanceSecurityGroup642FB9F6GroupIdB77C47E8"
+    "Name": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttASGApplicationsWebInstanceSecurityGroup94520ECDGroupId56E0900A"
    }
   }
  },

@@ -8,28 +8,7 @@ class CdkRdsApplicationsStack(Stack):
     def __init__(self, scope: Construct, id: str, vpc, asg_security_groups, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
-        # Ceate Aurora Cluster with 2 instances with CDK High Level API
-        # Secrets Manager auto generate and keep the password, don't put password in cdk code directly
-        # db_Aurora_cluster = rds.DatabaseCluster(self, "MyAurora",
-        #                                         default_database_name="MyAurora",
-        #                                         engine=rds.DatabaseClusterEngine.arora_mysql(
-        #                                             version=rds.AuroraMysqlEngineVersion.VER_5_7_12
-        #                                         )
-        #                                         instance_props=rds.InstanceProps(
-        #                                             vpc=vpc,
-        #                                             vpc_subnets=ec2.SubnetSelection(subnet_group_name="DB"),
-        #                                             instance_type=ec2.InstanceType(instance_type_identifier="t2.small")
-        #                                         ),
-        #                                         instances=2,
-        #                                         parameter_group=rds.ClusterParameterGroup.from_parameter_group_name(
-        #                                             self, "para-group-aurora",
-        #                                             parameter_group_name="default.aurora-mysql5.7"
-        #                                         ),
-        #                                         )
-        # for asg_sg in asg_security_groups:
-        #     db_Aurora_cluster.connections.allow_default_port_from(asg_sg, "EC2 Autoscaling Group access Aurora")
-
-        # Alternatively, create MySQL RDS with CDK High Level API
+        # create MySQL RDS with CDK High Level API
         db_mysql_easy = rds.DatabaseInstance(self, "MySQL_DB_easy",
                                              engine=rds.DatabaseInstanceEngine.mysql(
                                                  version=rds.MysqlEngineVersion.VER_5_7_41
