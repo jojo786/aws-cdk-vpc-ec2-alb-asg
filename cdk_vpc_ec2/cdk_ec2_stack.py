@@ -2,6 +2,7 @@ from aws_cdk import CfnOutput, Stack
 import aws_cdk.aws_ec2 as ec2
 import aws_cdk.aws_elasticloadbalancingv2 as elb
 import aws_cdk.aws_autoscaling as autoscaling
+import aws_cdk.aws_certificatemanager as acm
 from constructs import Construct
 
 ec2_type = "t3.micro"
@@ -23,6 +24,8 @@ class CdkEc2ApplicationsStack(Stack):
                                           internet_facing=True,
                                           load_balancer_name="ALB-Applications-Web"
                                           )
+        
+        
         # Create Web ALB Listener
         alb_web_listener = alb_web.add_listener("ALB-Applications-Web-80",
                                     port=80,
@@ -32,6 +35,21 @@ class CdkEc2ApplicationsStack(Stack):
         alb_web.connections.allow_from_any_ipv4(
             ec2.Port.tcp(80), "Internet access ALB 80")
         
+
+        """ #Create ACM HTTPS cert
+        cert = acm.Certificate(self, "Certificate",
+            domain_name="hello.example.com",
+            validation=acm.CertificateValidation.from_dns()
+
+        # Create Web ALB Listener
+        alb_web_listener = alb_web.add_listener("ALB-Applications-Web-443",
+                                    port=443,
+                                    open=True,
+                                    certificate_name='Certificate')
+        
+        # Allow Web ALB connections on port 80 from the internet
+        alb_web.connections.allow_from_any_ipv4(
+            ec2.Port.tcp(443), "Internet access ALB 443") """
 
         # Create Web Autoscaling Group with fixed 2*EC2 hosts
         self.asg_web = autoscaling.AutoScalingGroup(self, "ASG-Applications-Web",
