@@ -1542,7 +1542,7 @@
                             "ipProtocol": "tcp",
                             "fromPort": 80,
                             "toPort": 80,
-                            "description": "Internet access ALB 80"
+                            "description": "Allow from anyone on port 80"
                           }
                         ],
                         "vpcId": {
@@ -1590,13 +1590,13 @@
                   "version": "2.83.1"
                 }
               },
-              "ALB-Applictions-Web-80": {
-                "id": "ALB-Applictions-Web-80",
-                "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applictions-Web-80",
+              "ALB-Applications-Web-80": {
+                "id": "ALB-Applications-Web-80",
+                "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applictions-Web-80/Resource",
+                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
                       "aws:cdk:cloudformation:props": {
@@ -1604,7 +1604,7 @@
                           {
                             "type": "forward",
                             "targetGroupArn": {
-                              "Ref": "ALBApplicationsWebALBApplictionsWeb80TGApplicationsWebGroupB328A697"
+                              "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWebGroup40D0C4D7"
                             }
                           }
                         ],
@@ -1622,11 +1622,11 @@
                   },
                   "TG-Applications-WebGroup": {
                     "id": "TG-Applications-WebGroup",
-                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applictions-Web-80/TG-Applications-WebGroup",
+                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-WebGroup",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applictions-Web-80/TG-Applications-WebGroup/Resource",
+                        "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-WebGroup/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
                           "aws:cdk:cloudformation:props": {
@@ -1860,7 +1860,7 @@
                     ],
                     "targetGroupArns": [
                       {
-                        "Ref": "ALBApplicationsWebALBApplictionsWeb80TGApplicationsWebGroupB328A697"
+                        "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWebGroup40D0C4D7"
                       }
                     ],
                     "vpcZoneIdentifier": [
@@ -1967,7 +1967,7 @@
                             "ipProtocol": "tcp",
                             "fromPort": 80,
                             "toPort": 80,
-                            "description": "Allow from anyone on port 80"
+                            "description": "Internet access ALB 80"
                           }
                         ],
                         "vpcId": {
@@ -2015,13 +2015,13 @@
                   "version": "2.83.1"
                 }
               },
-              "ALB-Applictions-API-80": {
-                "id": "ALB-Applictions-API-80",
-                "path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applictions-API-80",
+              "ALB-Applications-API-80": {
+                "id": "ALB-Applications-API-80",
+                "path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80",
                 "children": {
                   "Resource": {
                     "id": "Resource",
-                    "path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applictions-API-80/Resource",
+                    "path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
                       "aws:cdk:cloudformation:props": {
@@ -2029,7 +2029,7 @@
                           {
                             "type": "forward",
                             "targetGroupArn": {
-                              "Ref": "ALBApplicationsAPIALBApplictionsAPI80TGApplicationsAPIGroupBF112F97"
+                              "Ref": "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3"
                             }
                           }
                         ],
@@ -2047,11 +2047,11 @@
                   },
                   "TG-Applications-APIGroup": {
                     "id": "TG-Applications-APIGroup",
-                    "path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applictions-API-80/TG-Applications-APIGroup",
+                    "path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80/TG-Applications-APIGroup",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applictions-API-80/TG-Applications-APIGroup/Resource",
+                        "path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80/TG-Applications-APIGroup/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
                           "aws:cdk:cloudformation:props": {
@@ -2285,7 +2285,7 @@
                     ],
                     "targetGroupArns": [
                       {
-                        "Ref": "ALBApplicationsAPIALBApplictionsAPI80TGApplicationsAPIGroupBF112F97"
+                        "Ref": "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3"
                       }
                     ],
                     "vpcZoneIdentifier": [

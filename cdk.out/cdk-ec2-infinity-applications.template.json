@@ -40,7 +40,7 @@
     "SecurityGroupIngress": [
      {
       "CidrIp": "0.0.0.0/0",
-      "Description": "Internet access ALB 80",
+      "Description": "Allow from anyone on port 80",
       "FromPort": 80,
       "IpProtocol": "tcp",
       "ToPort": 80
@@ -78,13 +78,13 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:80"
    }
   },
-  "ALBApplicationsWebALBApplictionsWeb8095B81B7D": {
+  "ALBApplicationsWebALBApplicationsWeb8053C95EDA": {
    "Type": "AWS::ElasticLoadBalancingV2::Listener",
    "Properties": {
     "DefaultActions": [
      {
       "TargetGroupArn": {
-       "Ref": "ALBApplicationsWebALBApplictionsWeb80TGApplicationsWebGroupB328A697"
+       "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWebGroup40D0C4D7"
       },
       "Type": "forward"
      }
@@ -96,10 +96,10 @@
     "Protocol": "HTTP"
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applictions-Web-80/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/Resource"
    }
   },
-  "ALBApplicationsWebALBApplictionsWeb80TGApplicationsWebGroupB328A697": {
+  "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWebGroup40D0C4D7": {
    "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
    "Properties": {
     "Port": 80,
@@ -116,7 +116,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applictions-Web-80/TG-Applications-WebGroup/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-WebGroup/Resource"
    }
   },
   "ASGApplicationsWebInstanceSecurityGroup94520ECD": {
@@ -255,7 +255,7 @@
     ],
     "TargetGroupARNs": [
      {
-      "Ref": "ALBApplicationsWebALBApplictionsWeb80TGApplicationsWebGroupB328A697"
+      "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWebGroup40D0C4D7"
      }
     ],
     "VPCZoneIdentifier": [
@@ -316,7 +316,7 @@
     "SecurityGroupIngress": [
      {
       "CidrIp": "0.0.0.0/0",
-      "Description": "Allow from anyone on port 80",
+      "Description": "Internet access ALB 80",
       "FromPort": 80,
       "IpProtocol": "tcp",
       "ToPort": 80
@@ -354,13 +354,13 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA:80"
    }
   },
-  "ALBApplicationsAPIALBApplictionsAPI8086FB9E5D": {
+  "ALBApplicationsAPIALBApplicationsAPI808CDCED01": {
    "Type": "AWS::ElasticLoadBalancingV2::Listener",
    "Properties": {
     "DefaultActions": [
      {
       "TargetGroupArn": {
-       "Ref": "ALBApplicationsAPIALBApplictionsAPI80TGApplicationsAPIGroupBF112F97"
+       "Ref": "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3"
       },
       "Type": "forward"
      }
@@ -372,10 +372,10 @@
     "Protocol": "HTTP"
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applictions-API-80/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80/Resource"
    }
   },
-  "ALBApplicationsAPIALBApplictionsAPI80TGApplicationsAPIGroupBF112F97": {
+  "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3": {
    "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
    "Properties": {
     "Port": 80,
@@ -392,7 +392,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applictions-API-80/TG-Applications-APIGroup/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80/TG-Applications-APIGroup/Resource"
    }
   },
   "ASGApplicationsAPIInstanceSecurityGroup7E1B9C5F": {
@@ -531,7 +531,7 @@
     ],
     "TargetGroupARNs": [
      {
-      "Ref": "ALBApplicationsAPIALBApplictionsAPI80TGApplicationsAPIGroupBF112F97"
+      "Ref": "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3"
      }
     ],
     "VPCZoneIdentifier": [

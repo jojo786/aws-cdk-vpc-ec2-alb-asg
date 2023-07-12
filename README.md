@@ -1,19 +1,18 @@
 # Create VPC, EC2 ASG, and RDS instance with AWS CDK Python
 
-This is a project to create a new VPC, EC2 Auto Scaling group, and RDS instance on AWS with the AWS Cloud Development Kit.
+This is a project to create a new VPC, EC2 Auto Scaling group, Load Balancers and RDS instance on AWS with the AWS Cloud Development Kit.
 
-This project also demonstrates:
-* Create VPC in 3 tier layers of subnets: PUBLIC, PRIVATE and ISOLATED, you can specify the number of AZs and the CIDR.
-* Create Bastion instance, NAT Gateway, and S3 endpoint
+This project:
+* Create VPC in 5 tier layers of subnets: PUBLIC, PRIVATE and ISOLATED, you can specify the number of AZs and the CIDR.
+* Create instance and NAT Gateway
 * Create ALB, EC2 Autoscaling group with scaling policy, and custom EBS volume
 * Create RDS instance (MySQL multi-AZ or Aurora)
-* Create security group and allow access from the other security group: Internet -> ALB -> EC2ASG -> RDS
+* Create security group and allow access from the other security group: 
 * Using customized EC2 user data and specifying generated AMI properties with no need to specify the AMI id in every region
 
 ## Architecture
-![Architecture](./img_demo_cdk_vpc.png)
+![Architecture](./aws-cdk-vpc-ec2-alb-rds.png)
 
-This project creates the new VPC part of the architecture. 
 
 ## AWS Cloud Development Kit (AWS CDK)
 The **AWS Cloud Development Kit (AWS CDK)** is an open-source software development
