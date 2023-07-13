@@ -1807,6 +1807,14 @@
                   "version": "2.83.1"
                 }
               },
+              "AmiMap": {
+                "id": "AmiMap",
+                "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/AmiMap",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnMapping",
+                  "version": "2.83.1"
+                }
+              },
               "LaunchConfig": {
                 "id": "LaunchConfig",
                 "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/LaunchConfig",
@@ -1814,7 +1822,13 @@
                   "aws:cdk:cloudformation:type": "AWS::AutoScaling::LaunchConfiguration",
                   "aws:cdk:cloudformation:props": {
                     "imageId": {
-                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                      "Fn::FindInMap": [
+                        "ASGApplicationsWebAmiMap360FDF57",
+                        {
+                          "Ref": "AWS::Region"
+                        },
+                        "ami"
+                      ]
                     },
                     "instanceType": "t3.micro",
                     "iamInstanceProfile": {
@@ -1881,22 +1895,6 @@
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.aws_autoscaling.AutoScalingGroup",
-              "version": "2.83.1"
-            }
-          },
-          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
-            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
-            "path": "cdk-ec2-infinity-applications/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnParameter",
-              "version": "2.83.1"
-            }
-          },
-          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
-            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
-            "path": "cdk-ec2-infinity-applications/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.Resource",
               "version": "2.83.1"
             }
           },
@@ -2306,6 +2304,22 @@
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.aws_autoscaling.AutoScalingGroup",
+              "version": "2.83.1"
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "cdk-ec2-infinity-applications/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.83.1"
+            }
+          },
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "cdk-ec2-infinity-applications/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
               "version": "2.83.1"
             }
           },

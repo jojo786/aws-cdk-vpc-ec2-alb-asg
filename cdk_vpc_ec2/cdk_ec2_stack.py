@@ -56,7 +56,11 @@ class CdkEc2ApplicationsStack(Stack):
                                                 vpc=vpc,
                                                 vpc_subnets=ec2.SubnetSelection(subnet_group_name='Private-Applications-Web-ASG'),
                                                 instance_type=ec2.InstanceType(instance_type_identifier=ec2_type),
-                                                machine_image=ec2.MachineImage.latest_amazon_linux2(),
+                                                #machine_image=ec2.MachineImage.latest_amazon_linux2(),
+                                                machine_image=ec2.MachineImage.generic_linux({
+                                                    "af-south-1": "ami-00ecb2c6959112464",
+                                                    "eu-west-1": "ami-12345678"
+                                                }),
                                                 key_name=key_name,
                                                 user_data=ec2.UserData.custom(user_data),
                                                 desired_capacity=2,
@@ -95,7 +99,10 @@ class CdkEc2ApplicationsStack(Stack):
                                                 vpc=vpc,
                                                 vpc_subnets=ec2.SubnetSelection(subnet_group_name='Private-Applications-API-ASG'),
                                                 instance_type=ec2.InstanceType(instance_type_identifier=ec2_type),
-                                                machine_image=ec2.MachineImage.latest_amazon_linux2(),
+                                                machine_image=ec2.MachineImage.generic_linux({
+                                                    "af-south-1": "ami-00ecb2c6959112464",
+                                                    "eu-west-1": "ami-12345678"
+                                                }),
                                                 key_name=key_name,
                                                 user_data=ec2.UserData.custom(user_data),
                                                 desired_capacity=2,

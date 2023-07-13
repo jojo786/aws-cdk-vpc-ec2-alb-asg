@@ -418,7 +418,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3ba7a8655bd40bdd59c50cddc0cd7d990274e7514aa852f9af49ed6426fc5b1d.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/5cec6e5c73602280c6355e73f77b1e796567cc8d6dafa85b710b3c17eb03a30b.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -470,14 +470,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-UiE0SJ/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-UiE0SJ/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-UiE0SJ/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-RieVti/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-RieVti/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-RieVti/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -506,6 +506,12 @@
             "data": "ASGApplicationsWebInstanceProfileFC17BFF1"
           }
         ],
+        "/cdk-ec2-infinity-applications/ASG-Applications-Web/AmiMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ASGApplicationsWebAmiMap360FDF57"
+          }
+        ],
         "/cdk-ec2-infinity-applications/ASG-Applications-Web/LaunchConfig": [
           {
             "type": "aws:cdk:logicalId",
@@ -516,12 +522,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ASGApplicationsWebASG60CE2D77"
-          }
-        ],
-        "/cdk-ec2-infinity-applications/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
           }
         ],
         "/cdk-ec2-infinity-applications/Output": [
@@ -565,14 +565,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-UiE0SJ/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-UiE0SJ/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-UiE0SJ/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpyloqy6fd/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-RieVti/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-RieVti/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-RieVti/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpb6winn7v/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -611,6 +611,12 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ASGApplicationsAPIASG739F73E1"
+          }
+        ],
+        "/cdk-ec2-infinity-applications/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
           }
         ],
         "/cdk-ec2-infinity-applications/CDKMetadata/Default": [

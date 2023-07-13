@@ -211,7 +211,13 @@
    "Type": "AWS::AutoScaling::LaunchConfiguration",
    "Properties": {
     "ImageId": {
-     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+     "Fn::FindInMap": [
+      "ASGApplicationsWebAmiMap360FDF57",
+      {
+       "Ref": "AWS::Region"
+      },
+      "ami"
+     ]
     },
     "InstanceType": "t3.micro",
     "IamInstanceProfile": {
@@ -555,7 +561,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RTU/DMAz9LbunQdsuXGFCaNIkqpY78lK3M0uTKnFAU5X/TpqyqYDEyXkf8YudjbzfyvUKPn2hmnOh6SjHmkGdRaLeRtTgmZS20BxBg1Fkuo+NHB+GQZMCJmsOSXvMGjqxa3/ipY88o/n2XM8L/RVch/zsbBgmywJGgSpl1qiCI77cLP8TT51D7//Qe5P5KCCw9Qp0mijNk0A9g1u3AwSjTjtrWuqCy2+c6N/WKAh6OVZW4yRf6954nnZQOtuSxhhFhd4Gp7JagoMeed7GS+AhcL68sKTghqbQKMoLn6y5Sx+1ltvVuycqXDBMPcpqrl+5fLbvxwEAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RS0/DMAz+LbtnQdsuXGFCaNIQVcsdeanbeUuTKHFAU9X/TtKyqYDEyf4e8nMt7zdytYDPsFT1eanpIPuKQZ1Fot571BCYlLZQH0CDUWTaj7XsH5zTpIDJmn3SHkcNvdg2P/HcR4HRfHuu+Ux/A98iP3sbXbbM4CBQpZ4VquiJLzfL/8RT6zGEP/TOjPwgILINCnTaKO2TQDWBW7U9RKOOW2saaqMfZ8z0b+sgCDrZl1Zjlq9xZwLnGxTeNqRxGESJwUavRvUFnEsFcvoa2UXOWQEeOuTpRHN3mqGm3H8QxYWP1tyln63kZnEKREsfDVOHspziFyAphD3SAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/CDKMetadata/Default"
@@ -563,15 +569,14 @@
    "Condition": "CDKMetadataAvailable"
   }
  },
- "Parameters": {
-  "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
-   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
-   "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-kernel-5.10-hvm-x86_64-gp2"
-  },
-  "BootstrapVersion": {
-   "Type": "AWS::SSM::Parameter::Value<String>",
-   "Default": "/cdk-bootstrap/hnb659fds/version",
-   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+ "Mappings": {
+  "ASGApplicationsWebAmiMap360FDF57": {
+   "af-south-1": {
+    "ami": "ami-00ecb2c6959112464"
+   },
+   "eu-west-1": {
+    "ami": "ami-12345678"
+   }
   }
  },
  "Outputs": {
@@ -593,6 +598,17 @@
    "Export": {
     "Name": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttASGApplicationsWebInstanceSecurityGroup94520ECDGroupId56E0900A"
    }
+  }
+ },
+ "Parameters": {
+  "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+   "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-kernel-5.10-hvm-x86_64-gp2"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
   }
  },
  "Conditions": {
