@@ -791,14 +791,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -886,14 +886,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -993,7 +993,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ae03b4bebe1b889740ba4afc33859eefa11ec3188420b9c50c3ba807c7e172b5.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/107d099c9759726efe200364d5f56a5dd26c2422a9537e7bbbb2ec8cf77c132d.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1026,40 +1026,46 @@
             ]
           }
         ],
-        "/cdk-rds-infinity-applications/MySQL_DB_easy/SubnetGroup/Default": [
+        "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/Subnets/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySubnetGroupFA3883CE"
+            "data": "RDSAuroraPostgresApplicationsSubnets311AA031"
           }
         ],
-        "/cdk-rds-infinity-applications/MySQL_DB_easy/SecurityGroup/Resource": [
+        "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/SecurityGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySecurityGroup3A93DCA8"
+            "data": "RDSAuroraPostgresApplicationsSecurityGroup10DE9A14"
           }
         ],
-        "/cdk-rds-infinity-applications/MySQL_DB_easy/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:{IndirectPort}": [
+        "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:{IndirectPort}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySecurityGroupfromcdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388IndirectPort2A5017C9"
+            "data": "RDSAuroraPostgresApplicationsSecurityGroupfromcdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388IndirectPort347A5853"
           }
         ],
-        "/cdk-rds-infinity-applications/MySQL_DB_easy/Secret/Resource": [
+        "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/Secret/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySecretEAFDC74C"
+            "data": "RDSAuroraPostgresApplicationsSecret0FEC90CD"
           }
         ],
-        "/cdk-rds-infinity-applications/MySQL_DB_easy/Secret/Attachment/Resource": [
+        "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/Secret/Attachment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySecretAttachmentBBBAB650"
+            "data": "RDSAuroraPostgresApplicationsSecretAttachment558333D8"
           }
         ],
-        "/cdk-rds-infinity-applications/MySQL_DB_easy/Resource": [
+        "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasy3657991E"
+            "data": "RDSAuroraPostgresApplicationsBC5BCB59"
+          }
+        ],
+        "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/writer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RDSAuroraPostgresApplicationswriter27719532"
           }
         ],
         "/cdk-rds-infinity-applications/CDKMetadata/Default": [
@@ -1176,14 +1182,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -1271,14 +1277,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-dBnl1t/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpz7kjfgy4/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -1378,7 +1384,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/495c9c1359fd3ae2dce421b5a8727f7de50a351c6a401726f5a0a313152ec9f5.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c29d962ff93288f33b24df6514537bf3662b80ba0fe455f8424e24b33e19b6cf.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1411,40 +1417,46 @@
             ]
           }
         ],
-        "/cdk-rds-infinity-admin/MySQL_DB_easy/SubnetGroup/Default": [
+        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/Subnets/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySubnetGroupFA3883CE"
+            "data": "RDSAuroraPostgresAdminSubnets0A265DCE"
           }
         ],
-        "/cdk-rds-infinity-admin/MySQL_DB_easy/SecurityGroup/Resource": [
+        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/SecurityGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySecurityGroup3A93DCA8"
+            "data": "RDSAuroraPostgresAdminSecurityGroupCBD9E351"
           }
         ],
-        "/cdk-rds-infinity-admin/MySQL_DB_easy/SecurityGroup/from cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:{IndirectPort}": [
+        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/SecurityGroup/from cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:{IndirectPort}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySecurityGroupfromcdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BEIndirectPort4F17DA9A"
+            "data": "RDSAuroraPostgresAdminSecurityGroupfromcdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BEIndirectPort1C46C67A"
           }
         ],
-        "/cdk-rds-infinity-admin/MySQL_DB_easy/Secret/Resource": [
+        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/Secret/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySecretEAFDC74C"
+            "data": "RDSAuroraPostgresAdminSecretBBA26724"
           }
         ],
-        "/cdk-rds-infinity-admin/MySQL_DB_easy/Secret/Attachment/Resource": [
+        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/Secret/Attachment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasySecretAttachmentBBBAB650"
+            "data": "RDSAuroraPostgresAdminSecretAttachmentF2F0B53D"
           }
         ],
-        "/cdk-rds-infinity-admin/MySQL_DB_easy/Resource": [
+        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MySQLDBeasy3657991E"
+            "data": "RDSAuroraPostgresAdminBF9CE6A7"
+          }
+        ],
+        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/writer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RDSAuroraPostgresAdminwriter2498D79E"
           }
         ],
         "/cdk-rds-infinity-admin/CDKMetadata/Default": [

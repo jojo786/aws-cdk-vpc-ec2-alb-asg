@@ -1,9 +1,9 @@
 {
  "Resources": {
-  "MySQLDBeasySubnetGroupFA3883CE": {
+  "RDSAuroraPostgresApplicationsSubnets311AA031": {
    "Type": "AWS::RDS::DBSubnetGroup",
    "Properties": {
-    "DBSubnetGroupDescription": "Subnet group for MySQL_DB_easy database",
+    "DBSubnetGroupDescription": "Subnets for RDS-AuroraPostgres-Applications database",
     "SubnetIds": [
      {
       "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateDBApplicationsSubnet1Subnet2E8230169FBC22FD"
@@ -24,13 +24,13 @@
     ]
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-rds-infinity-applications/MySQL_DB_easy/SubnetGroup/Default"
+    "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/Subnets/Default"
    }
   },
-  "MySQLDBeasySecurityGroup3A93DCA8": {
+  "RDSAuroraPostgresApplicationsSecurityGroup10DE9A14": {
    "Type": "AWS::EC2::SecurityGroup",
    "Properties": {
-    "GroupDescription": "Security group for MySQL_DB_easy database",
+    "GroupDescription": "RDS security group",
     "SecurityGroupEgress": [
      {
       "CidrIp": "0.0.0.0/0",
@@ -53,23 +53,23 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-rds-infinity-applications/MySQL_DB_easy/SecurityGroup/Resource"
+    "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/SecurityGroup/Resource"
    }
   },
-  "MySQLDBeasySecurityGroupfromcdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388IndirectPort2A5017C9": {
+  "RDSAuroraPostgresApplicationsSecurityGroupfromcdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388IndirectPort347A5853": {
    "Type": "AWS::EC2::SecurityGroupIngress",
    "Properties": {
     "IpProtocol": "tcp",
-    "Description": "EC2 Autoscaling Group access MySQL",
+    "Description": "EC2 Autoscaling Group access Aurora",
     "FromPort": {
      "Fn::GetAtt": [
-      "MySQLDBeasy3657991E",
+      "RDSAuroraPostgresApplicationsBC5BCB59",
       "Endpoint.Port"
      ]
     },
     "GroupId": {
      "Fn::GetAtt": [
-      "MySQLDBeasySecurityGroup3A93DCA8",
+      "RDSAuroraPostgresApplicationsSecurityGroup10DE9A14",
       "GroupId"
      ]
     },
@@ -78,16 +78,16 @@
     },
     "ToPort": {
      "Fn::GetAtt": [
-      "MySQLDBeasy3657991E",
+      "RDSAuroraPostgresApplicationsBC5BCB59",
       "Endpoint.Port"
      ]
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-rds-infinity-applications/MySQL_DB_easy/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:{IndirectPort}"
+    "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:{IndirectPort}"
    }
   },
-  "MySQLDBeasySecretEAFDC74C": {
+  "RDSAuroraPostgresApplicationsSecret0FEC90CD": {
    "Type": "AWS::SecretsManager::Secret",
    "Properties": {
     "Description": {
@@ -105,7 +105,7 @@
      "ExcludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\",
      "GenerateStringKey": "password",
      "PasswordLength": 30,
-     "SecretStringTemplate": "{\"username\":\"admin\"}"
+     "SecretStringTemplate": "{\"username\":\"postgres\"}"
     },
     "Tags": [
      {
@@ -121,52 +121,42 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "cdk-rds-infinity-applications/MySQL_DB_easy/Secret/Resource"
+    "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/Secret/Resource"
    }
   },
-  "MySQLDBeasySecretAttachmentBBBAB650": {
+  "RDSAuroraPostgresApplicationsSecretAttachment558333D8": {
    "Type": "AWS::SecretsManager::SecretTargetAttachment",
    "Properties": {
     "SecretId": {
-     "Ref": "MySQLDBeasySecretEAFDC74C"
+     "Ref": "RDSAuroraPostgresApplicationsSecret0FEC90CD"
     },
     "TargetId": {
-     "Ref": "MySQLDBeasy3657991E"
+     "Ref": "RDSAuroraPostgresApplicationsBC5BCB59"
     },
-    "TargetType": "AWS::RDS::DBInstance"
+    "TargetType": "AWS::RDS::DBCluster"
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-rds-infinity-applications/MySQL_DB_easy/Secret/Attachment/Resource"
+    "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/Secret/Attachment/Resource"
    }
   },
-  "MySQLDBeasy3657991E": {
-   "Type": "AWS::RDS::DBInstance",
+  "RDSAuroraPostgresApplicationsBC5BCB59": {
+   "Type": "AWS::RDS::DBCluster",
    "Properties": {
-    "AllocatedStorage": "100",
-    "BackupRetentionPeriod": 7,
     "CopyTagsToSnapshot": true,
-    "DBInstanceClass": "db.t3.small",
-    "DBParameterGroupName": "default.mysql5.7",
+    "DatabaseName": "AuroraPostgresApplications",
+    "DBClusterParameterGroupName": "default.aurora-postgresql13",
     "DBSubnetGroupName": {
-     "Ref": "MySQLDBeasySubnetGroupFA3883CE"
+     "Ref": "RDSAuroraPostgresApplicationsSubnets311AA031"
     },
-    "DeleteAutomatedBackups": false,
-    "DeletionProtection": false,
-    "EnableCloudwatchLogsExports": [
-     "audit",
-     "error",
-     "general",
-     "slowquery"
-    ],
-    "Engine": "mysql",
-    "EngineVersion": "5.7.41",
+    "Engine": "aurora-postgresql",
+    "EngineVersion": "13.4",
     "MasterUsername": {
      "Fn::Join": [
       "",
       [
        "{{resolve:secretsmanager:",
        {
-        "Ref": "MySQLDBeasySecretEAFDC74C"
+        "Ref": "RDSAuroraPostgresApplicationsSecret0FEC90CD"
        },
        ":SecretString:username::}}"
       ]
@@ -178,15 +168,13 @@
       [
        "{{resolve:secretsmanager:",
        {
-        "Ref": "MySQLDBeasySecretEAFDC74C"
+        "Ref": "RDSAuroraPostgresApplicationsSecret0FEC90CD"
        },
        ":SecretString:password::}}"
       ]
      ]
     },
-    "MultiAZ": true,
-    "PubliclyAccessible": false,
-    "StorageType": "gp3",
+    "Port": 5432,
     "Tags": [
      {
       "Key": "Env",
@@ -197,10 +185,10 @@
       "Value": "Applications"
      }
     ],
-    "VPCSecurityGroups": [
+    "VpcSecurityGroupIds": [
      {
       "Fn::GetAtt": [
-       "MySQLDBeasySecurityGroup3A93DCA8",
+       "RDSAuroraPostgresApplicationsSecurityGroup10DE9A14",
        "GroupId"
       ]
      }
@@ -209,13 +197,40 @@
    "UpdateReplacePolicy": "Snapshot",
    "DeletionPolicy": "Snapshot",
    "Metadata": {
-    "aws:cdk:path": "cdk-rds-infinity-applications/MySQL_DB_easy/Resource"
+    "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/Resource"
+   }
+  },
+  "RDSAuroraPostgresApplicationswriter27719532": {
+   "Type": "AWS::RDS::DBInstance",
+   "Properties": {
+    "DBClusterIdentifier": {
+     "Ref": "RDSAuroraPostgresApplicationsBC5BCB59"
+    },
+    "DBInstanceClass": "db.t3.medium",
+    "Engine": "aurora-postgresql",
+    "PromotionTier": 0,
+    "PubliclyAccessible": false,
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/writer/Resource"
    }
   },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/32QQW/CMAyFfwv3NAi47ApUmrhN7e7ITU2bsTqT7Wiqqvx3AhXVtAMnW+97fpa9tW87u1nBrxSuvRbfvrFTreCupkIJkR2azM4Tt2KnEhQaEDyRKFBGdWwI9Z1D/DHHC5WHv8LTXaNj1Jk/J5NBt82b0EX2Oi4Jr4UTdYwiycgjUgYg6JDtNBvvW+byCdyh7jUf0g9IahbDf5LSnS235v4YqPXqAyXzMWofaJ0ftLG71Zd4X3Ak9QPaaq43ALUrKT8BAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31QQQrCQAx8i/ftinrxqhXEm1jvkm5jXW2zkmQRKft3q0URD54mmUxmSKZ2PrOTEdwkc9Ula3xpu0LBXUxPHTquxHYrUChBMG+iKLIpYkmoaw7xavIjrZbfxFtcoGPUYf5efDUbEgVymAy6aR+GLrLX+8fuP7GhmlEkGXn5SwsENbLtBuEzcoA9cI260P6WU4uk5iP4naRkdighssOn6LvOA1VefaBktnc9BRr3z5rY2egs3mccSX2LdjfgA2eLW5xLAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "cdk-rds-infinity-applications/CDKMetadata/Default"
