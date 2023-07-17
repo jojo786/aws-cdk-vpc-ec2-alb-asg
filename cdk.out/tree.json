@@ -24,6 +24,10 @@
                     "instanceTenancy": "default",
                     "tags": [
                       {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
+                      {
                         "key": "Name",
                         "value": "cdk-vpc-infinity/VPC-Infinity"
                       }
@@ -68,6 +72,10 @@
                             "value": "Public"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Public-Applications-Web-ALBSubnet1"
                           }
@@ -97,6 +105,10 @@
                           "Ref": "VPCInfinityD7CAF3E6"
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Public-Applications-Web-ALBSubnet1"
@@ -157,6 +169,10 @@
                         "domain": "vpc",
                         "tags": [
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Public-Applications-Web-ALBSubnet1"
                           }
@@ -184,6 +200,10 @@
                           ]
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Public-Applications-Web-ALBSubnet1"
@@ -235,6 +255,10 @@
                             "value": "Public"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Public-Applications-Web-ALBSubnet2"
                           }
@@ -264,6 +288,10 @@
                           "Ref": "VPCInfinityD7CAF3E6"
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Public-Applications-Web-ALBSubnet2"
@@ -324,6 +352,10 @@
                         "domain": "vpc",
                         "tags": [
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Public-Applications-Web-ALBSubnet2"
                           }
@@ -351,6 +383,10 @@
                           ]
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Public-Applications-Web-ALBSubnet2"
@@ -402,6 +438,10 @@
                             "value": "Private"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-Web-ASGSubnet1"
                           }
@@ -431,6 +471,10 @@
                           "Ref": "VPCInfinityD7CAF3E6"
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-Web-ASGSubnet1"
@@ -521,6 +565,10 @@
                             "value": "Private"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-Web-ASGSubnet2"
                           }
@@ -550,6 +598,10 @@
                           "Ref": "VPCInfinityD7CAF3E6"
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-Web-ASGSubnet2"
@@ -640,6 +692,10 @@
                             "value": "Private"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-API-ALBSubnet1"
                           }
@@ -669,6 +725,10 @@
                           "Ref": "VPCInfinityD7CAF3E6"
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-API-ALBSubnet1"
@@ -759,6 +819,10 @@
                             "value": "Private"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-API-ALBSubnet2"
                           }
@@ -788,6 +852,10 @@
                           "Ref": "VPCInfinityD7CAF3E6"
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-API-ALBSubnet2"
@@ -878,6 +946,10 @@
                             "value": "Private"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-API-ASGSubnet1"
                           }
@@ -907,6 +979,10 @@
                           "Ref": "VPCInfinityD7CAF3E6"
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-API-ASGSubnet1"
@@ -997,6 +1073,10 @@
                             "value": "Private"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-API-ASGSubnet2"
                           }
@@ -1026,6 +1106,10 @@
                           "Ref": "VPCInfinityD7CAF3E6"
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-vpc-infinity/VPC-Infinity/Private-Applications-API-ASGSubnet2"
@@ -1083,13 +1167,13 @@
                   "version": "2.83.1"
                 }
               },
-              "DB-ApplicationsSubnet1": {
-                "id": "DB-ApplicationsSubnet1",
-                "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1",
+              "Private-DB-ApplicationsSubnet1": {
+                "id": "Private-DB-ApplicationsSubnet1",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet1",
                 "children": {
                   "Subnet": {
                     "id": "Subnet",
-                    "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1/Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet1/Subnet",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
                       "aws:cdk:cloudformation:props": {
@@ -1109,15 +1193,19 @@
                         "tags": [
                           {
                             "key": "aws-cdk:subnet-name",
-                            "value": "DB-Applications"
+                            "value": "Private-DB-Applications"
                           },
                           {
                             "key": "aws-cdk:subnet-type",
                             "value": "Isolated"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
-                            "value": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1"
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet1"
                           }
                         ]
                       }
@@ -1129,7 +1217,7 @@
                   },
                   "Acl": {
                     "id": "Acl",
-                    "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1/Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet1/Acl",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.83.1"
@@ -1137,7 +1225,7 @@
                   },
                   "RouteTable": {
                     "id": "RouteTable",
-                    "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1/RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet1/RouteTable",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
                       "aws:cdk:cloudformation:props": {
@@ -1146,8 +1234,12 @@
                         },
                         "tags": [
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
-                            "value": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1"
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet1"
                           }
                         ]
                       }
@@ -1159,15 +1251,15 @@
                   },
                   "RouteTableAssociation": {
                     "id": "RouteTableAssociation",
-                    "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet1/RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet1/RouteTableAssociation",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
                       "aws:cdk:cloudformation:props": {
                         "routeTableId": {
-                          "Ref": "VPCInfinityDBApplicationsSubnet1RouteTable2AA18314"
+                          "Ref": "VPCInfinityPrivateDBApplicationsSubnet1RouteTable2BC01A2A"
                         },
                         "subnetId": {
-                          "Ref": "VPCInfinityDBApplicationsSubnet1SubnetB175A6C5"
+                          "Ref": "VPCInfinityPrivateDBApplicationsSubnet1Subnet2E823016"
                         }
                       }
                     },
@@ -1182,13 +1274,13 @@
                   "version": "2.83.1"
                 }
               },
-              "DB-ApplicationsSubnet2": {
-                "id": "DB-ApplicationsSubnet2",
-                "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2",
+              "Private-DB-ApplicationsSubnet2": {
+                "id": "Private-DB-ApplicationsSubnet2",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet2",
                 "children": {
                   "Subnet": {
                     "id": "Subnet",
-                    "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2/Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet2/Subnet",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
                       "aws:cdk:cloudformation:props": {
@@ -1208,15 +1300,19 @@
                         "tags": [
                           {
                             "key": "aws-cdk:subnet-name",
-                            "value": "DB-Applications"
+                            "value": "Private-DB-Applications"
                           },
                           {
                             "key": "aws-cdk:subnet-type",
                             "value": "Isolated"
                           },
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
-                            "value": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2"
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet2"
                           }
                         ]
                       }
@@ -1228,7 +1324,7 @@
                   },
                   "Acl": {
                     "id": "Acl",
-                    "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2/Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet2/Acl",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.83.1"
@@ -1236,7 +1332,7 @@
                   },
                   "RouteTable": {
                     "id": "RouteTable",
-                    "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2/RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet2/RouteTable",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
                       "aws:cdk:cloudformation:props": {
@@ -1245,8 +1341,12 @@
                         },
                         "tags": [
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
                             "key": "Name",
-                            "value": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2"
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet2"
                           }
                         ]
                       }
@@ -1258,15 +1358,1245 @@
                   },
                   "RouteTableAssociation": {
                     "id": "RouteTableAssociation",
-                    "path": "cdk-vpc-infinity/VPC-Infinity/DB-ApplicationsSubnet2/RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-ApplicationsSubnet2/RouteTableAssociation",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
                       "aws:cdk:cloudformation:props": {
                         "routeTableId": {
-                          "Ref": "VPCInfinityDBApplicationsSubnet2RouteTable580CB999"
+                          "Ref": "VPCInfinityPrivateDBApplicationsSubnet2RouteTable723631E0"
                         },
                         "subnetId": {
-                          "Ref": "VPCInfinityDBApplicationsSubnet2SubnetBE4BB4DC"
+                          "Ref": "VPCInfinityPrivateDBApplicationsSubnet2Subnet128760E8"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Public-Admin-Web-ALBSubnet1": {
+                "id": "Public-Admin-Web-ALBSubnet1",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.10.0/24",
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public-Admin-Web-ALB"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPublicAdminWebALBSubnet1RouteTable9A117748"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPublicAdminWebALBSubnet1SubnetC8BC5FC7"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPublicAdminWebALBSubnet1RouteTable9A117748"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "VPCInfinityIGW80F694B7"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PublicSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Public-Admin-Web-ALBSubnet2": {
+                "id": "Public-Admin-Web-ALBSubnet2",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.11.0/24",
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public-Admin-Web-ALB"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPublicAdminWebALBSubnet2RouteTableF047F306"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPublicAdminWebALBSubnet2SubnetB791D1CF"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPublicAdminWebALBSubnet2RouteTableF047F306"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "VPCInfinityIGW80F694B7"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PublicSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Private-Admin-Web-ASGSubnet1": {
+                "id": "Private-Admin-Web-ASGSubnet1",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.12.0/24",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private-Admin-Web-ASG"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminWebASGSubnet1RouteTable45A4F85D"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPrivateAdminWebASGSubnet1Subnet8800A59B"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminWebASGSubnet1RouteTable45A4F85D"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VPCInfinityPublicApplicationsWebALBSubnet1NATGateway217B63F6"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Private-Admin-Web-ASGSubnet2": {
+                "id": "Private-Admin-Web-ASGSubnet2",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.13.0/24",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private-Admin-Web-ASG"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminWebASGSubnet2RouteTable1FF98014"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPrivateAdminWebASGSubnet2Subnet4EB03617"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminWebASGSubnet2RouteTable1FF98014"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VPCInfinityPublicApplicationsWebALBSubnet2NATGateway66ABE6BF"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Private-Admin-API-ALBSubnet1": {
+                "id": "Private-Admin-API-ALBSubnet1",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.14.0/24",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private-Admin-API-ALB"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIALBSubnet1RouteTableE3C86139"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIALBSubnet1SubnetB7CBE047"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIALBSubnet1RouteTableE3C86139"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VPCInfinityPublicApplicationsWebALBSubnet1NATGateway217B63F6"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Private-Admin-API-ALBSubnet2": {
+                "id": "Private-Admin-API-ALBSubnet2",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.15.0/24",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private-Admin-API-ALB"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIALBSubnet2RouteTable1637FFD3"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIALBSubnet2Subnet006BABA9"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIALBSubnet2RouteTable1637FFD3"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VPCInfinityPublicApplicationsWebALBSubnet2NATGateway66ABE6BF"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Private-Admin-API-ASGSubnet1": {
+                "id": "Private-Admin-API-ASGSubnet1",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.16.0/24",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private-Admin-API-ASG"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIASGSubnet1RouteTable268A846B"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIASGSubnet1Subnet5722E01E"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIASGSubnet1RouteTable268A846B"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VPCInfinityPublicApplicationsWebALBSubnet1NATGateway217B63F6"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Private-Admin-API-ASGSubnet2": {
+                "id": "Private-Admin-API-ASGSubnet2",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.17.0/24",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private-Admin-API-ASG"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIASGSubnet2RouteTable5ACB2680"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIASGSubnet2SubnetD51E7E91"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateAdminAPIASGSubnet2RouteTable5ACB2680"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VPCInfinityPublicApplicationsWebALBSubnet2NATGateway66ABE6BF"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Private-DB-AdminSubnet1": {
+                "id": "Private-DB-AdminSubnet1",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.18.0/24",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private-DB-Admin"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Isolated"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateDBAdminSubnet1RouteTableB1F9A6F3"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPrivateDBAdminSubnet1Subnet117EC892"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.PrivateSubnet",
+                  "version": "2.83.1"
+                }
+              },
+              "Private-DB-AdminSubnet2": {
+                "id": "Private-DB-AdminSubnet2",
+                "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "cidrBlock": "10.10.19.0/24",
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private-DB-Admin"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Isolated"
+                          },
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2/Acl",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "VPCInfinityD7CAF3E6"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VPCInfinityPrivateDBAdminSubnet2RouteTableDFC2D46A"
+                        },
+                        "subnetId": {
+                          "Ref": "VPCInfinityPrivateDBAdminSubnet2Subnet87516354"
                         }
                       }
                     },
@@ -1288,6 +2618,10 @@
                   "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
                   "aws:cdk:cloudformation:props": {
                     "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
                       {
                         "key": "Name",
                         "value": "cdk-vpc-infinity/VPC-Infinity"
@@ -1435,17 +2769,97 @@
                   "version": "2.83.1"
                 }
               },
-              "Output{\"Ref\":\"VPCInfinityDBApplicationsSubnet1SubnetB175A6C5\"}": {
-                "id": "Output{\"Ref\":\"VPCInfinityDBApplicationsSubnet1SubnetB175A6C5\"}",
-                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityDBApplicationsSubnet1SubnetB175A6C5\"}",
+              "Output{\"Ref\":\"VPCInfinityPrivateDBApplicationsSubnet1Subnet2E823016\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateDBApplicationsSubnet1Subnet2E823016\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateDBApplicationsSubnet1Subnet2E823016\"}",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
                   "version": "2.83.1"
                 }
               },
-              "Output{\"Ref\":\"VPCInfinityDBApplicationsSubnet2SubnetBE4BB4DC\"}": {
-                "id": "Output{\"Ref\":\"VPCInfinityDBApplicationsSubnet2SubnetBE4BB4DC\"}",
-                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityDBApplicationsSubnet2SubnetBE4BB4DC\"}",
+              "Output{\"Ref\":\"VPCInfinityPrivateDBApplicationsSubnet2Subnet128760E8\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateDBApplicationsSubnet2Subnet128760E8\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateDBApplicationsSubnet2Subnet128760E8\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPublicAdminWebALBSubnet1SubnetC8BC5FC7\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPublicAdminWebALBSubnet1SubnetC8BC5FC7\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPublicAdminWebALBSubnet1SubnetC8BC5FC7\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPublicAdminWebALBSubnet2SubnetB791D1CF\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPublicAdminWebALBSubnet2SubnetB791D1CF\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPublicAdminWebALBSubnet2SubnetB791D1CF\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPrivateAdminWebASGSubnet1Subnet8800A59B\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateAdminWebASGSubnet1Subnet8800A59B\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminWebASGSubnet1Subnet8800A59B\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPrivateAdminWebASGSubnet2Subnet4EB03617\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateAdminWebASGSubnet2Subnet4EB03617\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminWebASGSubnet2Subnet4EB03617\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPrivateAdminAPIALBSubnet1SubnetB7CBE047\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateAdminAPIALBSubnet1SubnetB7CBE047\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminAPIALBSubnet1SubnetB7CBE047\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPrivateAdminAPIALBSubnet2Subnet006BABA9\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateAdminAPIALBSubnet2Subnet006BABA9\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminAPIALBSubnet2Subnet006BABA9\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPrivateAdminAPIASGSubnet1Subnet5722E01E\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateAdminAPIASGSubnet1Subnet5722E01E\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminAPIASGSubnet1Subnet5722E01E\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPrivateAdminAPIASGSubnet2SubnetD51E7E91\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateAdminAPIASGSubnet2SubnetD51E7E91\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminAPIASGSubnet2SubnetD51E7E91\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPrivateDBAdminSubnet1Subnet117EC892\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateDBAdminSubnet1Subnet117EC892\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateDBAdminSubnet1Subnet117EC892\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              },
+              "Output{\"Ref\":\"VPCInfinityPrivateDBAdminSubnet2Subnet87516354\"}": {
+                "id": "Output{\"Ref\":\"VPCInfinityPrivateDBAdminSubnet2Subnet87516354\"}",
+                "path": "cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateDBAdminSubnet2Subnet87516354\"}",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnOutput",
                   "version": "2.83.1"
@@ -1517,6 +2931,16 @@
                         "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsWebALBSubnet2Subnet55DB0D88B107EC0F"
                       }
                     ],
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Applications"
+                      }
+                    ],
                     "type": "application"
                   }
                 },
@@ -1543,6 +2967,16 @@
                             "fromPort": 80,
                             "toPort": 80,
                             "description": "Allow from anyone on port 80"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Applications"
                           }
                         ],
                         "vpcId": {
@@ -1632,6 +3066,16 @@
                           "aws:cdk:cloudformation:props": {
                             "port": 80,
                             "protocol": "HTTP",
+                            "tags": [
+                              {
+                                "key": "Env",
+                                "value": "Prod"
+                              },
+                              {
+                                "key": "Module",
+                                "value": "Applications"
+                              }
+                            ],
                             "targetGroupAttributes": [
                               {
                                 "key": "stickiness.enabled",
@@ -1690,6 +3134,14 @@
                           }
                         ],
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Applications"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
@@ -1771,6 +3223,14 @@
                           "Version": "2012-10-17"
                         },
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Applications"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
@@ -1867,6 +3327,16 @@
                     },
                     "tags": [
                       {
+                        "key": "Env",
+                        "value": "Prod",
+                        "propagateAtLaunch": true
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Applications",
+                        "propagateAtLaunch": true
+                      },
+                      {
                         "key": "Name",
                         "value": "cdk-ec2-infinity-applications/ASG-Applications-Web",
                         "propagateAtLaunch": true
@@ -1940,6 +3410,16 @@
                         "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsAPIALBSubnet2Subnet831EDCF61CEF3C41"
                       }
                     ],
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Applications"
+                      }
+                    ],
                     "type": "application"
                   }
                 },
@@ -1966,6 +3446,16 @@
                             "fromPort": 80,
                             "toPort": 80,
                             "description": "Internet access ALB 80"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Applications"
                           }
                         ],
                         "vpcId": {
@@ -2055,6 +3545,16 @@
                           "aws:cdk:cloudformation:props": {
                             "port": 80,
                             "protocol": "HTTP",
+                            "tags": [
+                              {
+                                "key": "Env",
+                                "value": "Prod"
+                              },
+                              {
+                                "key": "Module",
+                                "value": "Applications"
+                              }
+                            ],
                             "targetGroupAttributes": [
                               {
                                 "key": "stickiness.enabled",
@@ -2113,6 +3613,14 @@
                           }
                         ],
                         "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Applications"
+                          },
                           {
                             "key": "Name",
                             "value": "cdk-ec2-infinity-applications/ASG-Applications-API"
@@ -2195,6 +3703,14 @@
                         },
                         "tags": [
                           {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Applications"
+                          },
+                          {
                             "key": "Name",
                             "value": "cdk-ec2-infinity-applications/ASG-Applications-API"
                           }
@@ -2230,6 +3746,14 @@
                   "version": "2.83.1"
                 }
               },
+              "AmiMap": {
+                "id": "AmiMap",
+                "path": "cdk-ec2-infinity-applications/ASG-Applications-API/AmiMap",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnMapping",
+                  "version": "2.83.1"
+                }
+              },
               "LaunchConfig": {
                 "id": "LaunchConfig",
                 "path": "cdk-ec2-infinity-applications/ASG-Applications-API/LaunchConfig",
@@ -2237,7 +3761,13 @@
                   "aws:cdk:cloudformation:type": "AWS::AutoScaling::LaunchConfiguration",
                   "aws:cdk:cloudformation:props": {
                     "imageId": {
-                      "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+                      "Fn::FindInMap": [
+                        "ASGApplicationsAPIAmiMap353AF052",
+                        {
+                          "Ref": "AWS::Region"
+                        },
+                        "ami"
+                      ]
                     },
                     "instanceType": "t3.micro",
                     "iamInstanceProfile": {
@@ -2276,6 +3806,16 @@
                     },
                     "tags": [
                       {
+                        "key": "Env",
+                        "value": "Prod",
+                        "propagateAtLaunch": true
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Applications",
+                        "propagateAtLaunch": true
+                      },
+                      {
                         "key": "Name",
                         "value": "cdk-ec2-infinity-applications/ASG-Applications-API",
                         "propagateAtLaunch": true
@@ -2304,22 +3844,6 @@
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.aws_autoscaling.AutoScalingGroup",
-              "version": "2.83.1"
-            }
-          },
-          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
-            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
-            "path": "cdk-ec2-infinity-applications/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.CfnParameter",
-              "version": "2.83.1"
-            }
-          },
-          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118": {
-            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
-            "path": "cdk-ec2-infinity-applications/SsmParameterValue:--aws--service--ami-amazon-linux-latest--amzn2-ami-kernel-5.10-hvm-x86_64-gp2:C96584B6-F00A-464E-AD19-53AFF4B05118",
-            "constructInfo": {
-              "fqn": "aws-cdk-lib.Resource",
               "version": "2.83.1"
             }
           },
@@ -2418,10 +3942,20 @@
                         "dbSubnetGroupDescription": "Subnet group for MySQL_DB_easy database",
                         "subnetIds": [
                           {
-                            "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityDBApplicationsSubnet1SubnetB175A6C507B6D4D2"
+                            "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateDBApplicationsSubnet1Subnet2E8230169FBC22FD"
                           },
                           {
-                            "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityDBApplicationsSubnet2SubnetBE4BB4DCF5CA20EF"
+                            "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateDBApplicationsSubnet2Subnet128760E8F69437A1"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Applications"
                           }
                         ]
                       }
@@ -2453,6 +3987,16 @@
                             "cidrIp": "0.0.0.0/0",
                             "description": "Allow all outbound traffic by default",
                             "ipProtocol": "-1"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Applications"
                           }
                         ],
                         "vpcId": {
@@ -2533,7 +4077,17 @@
                           "secretStringTemplate": "{\"username\":\"admin\"}",
                           "generateStringKey": "password",
                           "excludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\"
-                        }
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Applications"
+                          }
+                        ]
                       }
                     },
                     "constructInfo": {
@@ -2628,6 +4182,16 @@
                     "multiAz": true,
                     "publiclyAccessible": false,
                     "storageType": "gp3",
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Applications"
+                      }
+                    ],
                     "vpcSecurityGroups": [
                       {
                         "Fn::GetAtt": [
@@ -2686,6 +4250,1374 @@
           "CheckBootstrapVersion": {
             "id": "CheckBootstrapVersion",
             "path": "cdk-rds-infinity-applications/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.83.1"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.83.1"
+        }
+      },
+      "cdk-ec2-infinity-admin": {
+        "id": "cdk-ec2-infinity-admin",
+        "path": "cdk-ec2-infinity-admin",
+        "children": {
+          "ALB-Admin-Web": {
+            "id": "ALB-Admin-Web",
+            "path": "cdk-ec2-infinity-admin/ALB-Admin-Web",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-ec2-infinity-admin/ALB-Admin-Web/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                  "aws:cdk:cloudformation:props": {
+                    "loadBalancerAttributes": [
+                      {
+                        "key": "deletion_protection.enabled",
+                        "value": "false"
+                      }
+                    ],
+                    "name": "ALB-Admin-Web",
+                    "scheme": "internet-facing",
+                    "securityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "ALBAdminWebSecurityGroupC631A7CF",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnets": [
+                      {
+                        "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicAdminWebALBSubnet1SubnetC8BC5FC77493CB8E"
+                      },
+                      {
+                        "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicAdminWebALBSubnet2SubnetB791D1CFB085F8D0"
+                      }
+                    ],
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Admin"
+                      }
+                    ],
+                    "type": "application"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnLoadBalancer",
+                  "version": "2.83.1"
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "cdk-ec2-infinity-admin/ALB-Admin-Web/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ALB-Admin-Web/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Automatically created Security Group for ELB cdkec2infinityadminALBAdminWeb128C9FBE",
+                        "securityGroupIngress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "ipProtocol": "tcp",
+                            "fromPort": 80,
+                            "toPort": 80,
+                            "description": "Allow from anyone on port 80"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Admin"
+                          }
+                        ],
+                        "vpcId": {
+                          "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "to cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:80": {
+                    "id": "to cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:80",
+                    "path": "cdk-ec2-infinity-admin/ALB-Admin-Web/SecurityGroup/to cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:80",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
+                      "aws:cdk:cloudformation:props": {
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "ALBAdminWebSecurityGroupC631A7CF",
+                            "GroupId"
+                          ]
+                        },
+                        "ipProtocol": "tcp",
+                        "description": "ALB access 80 port of EC2 in Autoscaling Group",
+                        "destinationSecurityGroupId": {
+                          "Fn::GetAtt": [
+                            "ASGAdminWebInstanceSecurityGroup5FCC15EA",
+                            "GroupId"
+                          ]
+                        },
+                        "fromPort": 80,
+                        "toPort": 80
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupEgress",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "ALB-Admin-Web-80": {
+                "id": "ALB-Admin-Web-80",
+                "path": "cdk-ec2-infinity-admin/ALB-Admin-Web/ALB-Admin-Web-80",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ALB-Admin-Web/ALB-Admin-Web-80/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                      "aws:cdk:cloudformation:props": {
+                        "defaultActions": [
+                          {
+                            "type": "forward",
+                            "targetGroupArn": {
+                              "Ref": "ALBAdminWebALBAdminWeb80TGAdminWebGroupB12728AA"
+                            }
+                          }
+                        ],
+                        "loadBalancerArn": {
+                          "Ref": "ALBAdminWebB29072B3"
+                        },
+                        "port": 80,
+                        "protocol": "HTTP"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnListener",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "TG-Admin-WebGroup": {
+                    "id": "TG-Admin-WebGroup",
+                    "path": "cdk-ec2-infinity-admin/ALB-Admin-Web/ALB-Admin-Web-80/TG-Admin-WebGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-ec2-infinity-admin/ALB-Admin-Web/ALB-Admin-Web-80/TG-Admin-WebGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "port": 80,
+                            "protocol": "HTTP",
+                            "tags": [
+                              {
+                                "key": "Env",
+                                "value": "Prod"
+                              },
+                              {
+                                "key": "Module",
+                                "value": "Admin"
+                              }
+                            ],
+                            "targetGroupAttributes": [
+                              {
+                                "key": "stickiness.enabled",
+                                "value": "false"
+                              }
+                            ],
+                            "targetType": "instance",
+                            "vpcId": {
+                              "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnTargetGroup",
+                          "version": "2.83.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationTargetGroup",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationListener",
+                  "version": "2.83.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationLoadBalancer",
+              "version": "2.83.1"
+            }
+          },
+          "ASG-Admin-Web": {
+            "id": "ASG-Admin-Web",
+            "path": "cdk-ec2-infinity-admin/ASG-Admin-Web",
+            "children": {
+              "InstanceSecurityGroup": {
+                "id": "InstanceSecurityGroup",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Admin"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-ec2-infinity-admin/ASG-Admin-Web"
+                          }
+                        ],
+                        "vpcId": {
+                          "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "from cdkec2infinityadminALBAdminWebSecurityGroup01F4A4BC:80": {
+                    "id": "from cdkec2infinityadminALBAdminWebSecurityGroup01F4A4BC:80",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup/from cdkec2infinityadminALBAdminWebSecurityGroup01F4A4BC:80",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                      "aws:cdk:cloudformation:props": {
+                        "ipProtocol": "tcp",
+                        "description": "ALB access 80 port of EC2 in Autoscaling Group",
+                        "fromPort": 80,
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "ASGAdminWebInstanceSecurityGroup5FCC15EA",
+                            "GroupId"
+                          ]
+                        },
+                        "sourceSecurityGroupId": {
+                          "Fn::GetAtt": [
+                            "ALBAdminWebSecurityGroupC631A7CF",
+                            "GroupId"
+                          ]
+                        },
+                        "toPort": 80
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupIngress",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "InstanceRole": {
+                "id": "InstanceRole",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceRole",
+                "children": {
+                  "ImportInstanceRole": {
+                    "id": "ImportInstanceRole",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceRole/ImportInstanceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ec2.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Admin"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-ec2-infinity-admin/ASG-Admin-Web"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.83.1"
+                }
+              },
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "ASGAdminWebInstanceRole4CC76898"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnInstanceProfile",
+                  "version": "2.83.1"
+                }
+              },
+              "AmiMap": {
+                "id": "AmiMap",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/AmiMap",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnMapping",
+                  "version": "2.83.1"
+                }
+              },
+              "LaunchConfig": {
+                "id": "LaunchConfig",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/LaunchConfig",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AutoScaling::LaunchConfiguration",
+                  "aws:cdk:cloudformation:props": {
+                    "imageId": {
+                      "Fn::FindInMap": [
+                        "ASGAdminWebAmiMap7C3AF0D9",
+                        {
+                          "Ref": "AWS::Region"
+                        },
+                        "ami"
+                      ]
+                    },
+                    "instanceType": "t3.micro",
+                    "iamInstanceProfile": {
+                      "Ref": "ASGAdminWebInstanceProfileEFF54680"
+                    },
+                    "keyName": "id_rsa",
+                    "securityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "ASGAdminWebInstanceSecurityGroup5FCC15EA",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php\nsudo chkconfig httpd on\nsudo service httpd start"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.CfnLaunchConfiguration",
+                  "version": "2.83.1"
+                }
+              },
+              "ASG": {
+                "id": "ASG",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/ASG",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AutoScaling::AutoScalingGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "maxSize": "2",
+                    "minSize": "2",
+                    "desiredCapacity": "2",
+                    "launchConfigurationName": {
+                      "Ref": "ASGAdminWebLaunchConfigD088BFAE"
+                    },
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod",
+                        "propagateAtLaunch": true
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Admin",
+                        "propagateAtLaunch": true
+                      },
+                      {
+                        "key": "Name",
+                        "value": "cdk-ec2-infinity-admin/ASG-Admin-Web",
+                        "propagateAtLaunch": true
+                      }
+                    ],
+                    "targetGroupArns": [
+                      {
+                        "Ref": "ALBAdminWebALBAdminWeb80TGAdminWebGroupB12728AA"
+                      }
+                    ],
+                    "vpcZoneIdentifier": [
+                      {
+                        "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminWebASGSubnet1Subnet8800A59B2DFA5657"
+                      },
+                      {
+                        "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminWebASGSubnet2Subnet4EB0361731EF7DC1"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.CfnAutoScalingGroup",
+                  "version": "2.83.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_autoscaling.AutoScalingGroup",
+              "version": "2.83.1"
+            }
+          },
+          "Output": {
+            "id": "Output",
+            "path": "cdk-ec2-infinity-admin/Output",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.83.1"
+            }
+          },
+          "ALB-Admin-API": {
+            "id": "ALB-Admin-API",
+            "path": "cdk-ec2-infinity-admin/ALB-Admin-API",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-ec2-infinity-admin/ALB-Admin-API/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                  "aws:cdk:cloudformation:props": {
+                    "loadBalancerAttributes": [
+                      {
+                        "key": "deletion_protection.enabled",
+                        "value": "false"
+                      }
+                    ],
+                    "name": "ALB-Admin-API",
+                    "scheme": "internal",
+                    "securityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "ALBAdminAPISecurityGroupDC460F18",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "subnets": [
+                      {
+                        "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminAPIALBSubnet1SubnetB7CBE0475B1FFBF4"
+                      },
+                      {
+                        "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminAPIALBSubnet2Subnet006BABA98FE082DF"
+                      }
+                    ],
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Admin"
+                      }
+                    ],
+                    "type": "application"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnLoadBalancer",
+                  "version": "2.83.1"
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "cdk-ec2-infinity-admin/ALB-Admin-API/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ALB-Admin-API/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Automatically created Security Group for ELB cdkec2infinityadminALBAdminAPIB7C9617C",
+                        "securityGroupIngress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "ipProtocol": "tcp",
+                            "fromPort": 80,
+                            "toPort": 80,
+                            "description": "Internet access ALB 80"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Admin"
+                          }
+                        ],
+                        "vpcId": {
+                          "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "to cdkec2infinityadminASGAdminAPIInstanceSecurityGroup00F1F79D:80": {
+                    "id": "to cdkec2infinityadminASGAdminAPIInstanceSecurityGroup00F1F79D:80",
+                    "path": "cdk-ec2-infinity-admin/ALB-Admin-API/SecurityGroup/to cdkec2infinityadminASGAdminAPIInstanceSecurityGroup00F1F79D:80",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
+                      "aws:cdk:cloudformation:props": {
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "ALBAdminAPISecurityGroupDC460F18",
+                            "GroupId"
+                          ]
+                        },
+                        "ipProtocol": "tcp",
+                        "description": "ALB API access 80 port of EC2 in Autoscaling Group",
+                        "destinationSecurityGroupId": {
+                          "Fn::GetAtt": [
+                            "ASGAdminAPIInstanceSecurityGroup3714849E",
+                            "GroupId"
+                          ]
+                        },
+                        "fromPort": 80,
+                        "toPort": 80
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupEgress",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "ALB-Admin-API-80": {
+                "id": "ALB-Admin-API-80",
+                "path": "cdk-ec2-infinity-admin/ALB-Admin-API/ALB-Admin-API-80",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ALB-Admin-API/ALB-Admin-API-80/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                      "aws:cdk:cloudformation:props": {
+                        "defaultActions": [
+                          {
+                            "type": "forward",
+                            "targetGroupArn": {
+                              "Ref": "ALBAdminAPIALBAdminAPI80TGAdminAPIGroup2760829A"
+                            }
+                          }
+                        ],
+                        "loadBalancerArn": {
+                          "Ref": "ALBAdminAPI4816B1AD"
+                        },
+                        "port": 80,
+                        "protocol": "HTTP"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnListener",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "TG-Admin-APIGroup": {
+                    "id": "TG-Admin-APIGroup",
+                    "path": "cdk-ec2-infinity-admin/ALB-Admin-API/ALB-Admin-API-80/TG-Admin-APIGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-ec2-infinity-admin/ALB-Admin-API/ALB-Admin-API-80/TG-Admin-APIGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "port": 80,
+                            "protocol": "HTTP",
+                            "tags": [
+                              {
+                                "key": "Env",
+                                "value": "Prod"
+                              },
+                              {
+                                "key": "Module",
+                                "value": "Admin"
+                              }
+                            ],
+                            "targetGroupAttributes": [
+                              {
+                                "key": "stickiness.enabled",
+                                "value": "false"
+                              }
+                            ],
+                            "targetType": "instance",
+                            "vpcId": {
+                              "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnTargetGroup",
+                          "version": "2.83.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationTargetGroup",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationListener",
+                  "version": "2.83.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationLoadBalancer",
+              "version": "2.83.1"
+            }
+          },
+          "ASG-Admin-API": {
+            "id": "ASG-Admin-API",
+            "path": "cdk-ec2-infinity-admin/ASG-Admin-API",
+            "children": {
+              "InstanceSecurityGroup": {
+                "id": "InstanceSecurityGroup",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Admin"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-ec2-infinity-admin/ASG-Admin-API"
+                          }
+                        ],
+                        "vpcId": {
+                          "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "from cdkec2infinityadminALBAdminAPISecurityGroupA8B831C2:80": {
+                    "id": "from cdkec2infinityadminALBAdminAPISecurityGroupA8B831C2:80",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup/from cdkec2infinityadminALBAdminAPISecurityGroupA8B831C2:80",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                      "aws:cdk:cloudformation:props": {
+                        "ipProtocol": "tcp",
+                        "description": "ALB API access 80 port of EC2 in Autoscaling Group",
+                        "fromPort": 80,
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "ASGAdminAPIInstanceSecurityGroup3714849E",
+                            "GroupId"
+                          ]
+                        },
+                        "sourceSecurityGroupId": {
+                          "Fn::GetAtt": [
+                            "ALBAdminAPISecurityGroupDC460F18",
+                            "GroupId"
+                          ]
+                        },
+                        "toPort": 80
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupIngress",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "InstanceRole": {
+                "id": "InstanceRole",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceRole",
+                "children": {
+                  "ImportInstanceRole": {
+                    "id": "ImportInstanceRole",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceRole/ImportInstanceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ec2.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Admin"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "cdk-ec2-infinity-admin/ASG-Admin-API"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "2.83.1"
+                }
+              },
+              "InstanceProfile": {
+                "id": "InstanceProfile",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceProfile",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::InstanceProfile",
+                  "aws:cdk:cloudformation:props": {
+                    "roles": [
+                      {
+                        "Ref": "ASGAdminAPIInstanceRole90903F3E"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnInstanceProfile",
+                  "version": "2.83.1"
+                }
+              },
+              "AmiMap": {
+                "id": "AmiMap",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-API/AmiMap",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnMapping",
+                  "version": "2.83.1"
+                }
+              },
+              "LaunchConfig": {
+                "id": "LaunchConfig",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-API/LaunchConfig",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AutoScaling::LaunchConfiguration",
+                  "aws:cdk:cloudformation:props": {
+                    "imageId": {
+                      "Fn::FindInMap": [
+                        "ASGAdminAPIAmiMapDC594FC3",
+                        {
+                          "Ref": "AWS::Region"
+                        },
+                        "ami"
+                      ]
+                    },
+                    "instanceType": "t3.micro",
+                    "iamInstanceProfile": {
+                      "Ref": "ASGAdminAPIInstanceProfileC7E2CA5D"
+                    },
+                    "keyName": "id_rsa",
+                    "securityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "ASGAdminAPIInstanceSecurityGroup3714849E",
+                          "GroupId"
+                        ]
+                      }
+                    ],
+                    "userData": {
+                      "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php\nsudo chkconfig httpd on\nsudo service httpd start"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.CfnLaunchConfiguration",
+                  "version": "2.83.1"
+                }
+              },
+              "ASG": {
+                "id": "ASG",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-API/ASG",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::AutoScaling::AutoScalingGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "maxSize": "2",
+                    "minSize": "2",
+                    "desiredCapacity": "2",
+                    "launchConfigurationName": {
+                      "Ref": "ASGAdminAPILaunchConfigA09124D1"
+                    },
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod",
+                        "propagateAtLaunch": true
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Admin",
+                        "propagateAtLaunch": true
+                      },
+                      {
+                        "key": "Name",
+                        "value": "cdk-ec2-infinity-admin/ASG-Admin-API",
+                        "propagateAtLaunch": true
+                      }
+                    ],
+                    "targetGroupArns": [
+                      {
+                        "Ref": "ALBAdminAPIALBAdminAPI80TGAdminAPIGroup2760829A"
+                      }
+                    ],
+                    "vpcZoneIdentifier": [
+                      {
+                        "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminAPIASGSubnet1Subnet5722E01E61B6A542"
+                      },
+                      {
+                        "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminAPIASGSubnet2SubnetD51E7E91DE4379E6"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.CfnAutoScalingGroup",
+                  "version": "2.83.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_autoscaling.AutoScalingGroup",
+              "version": "2.83.1"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "cdk-ec2-infinity-admin/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "cdk-ec2-infinity-admin/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.83.1"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "cdk-ec2-infinity-admin/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.83.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.52"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "cdk-ec2-infinity-admin/Exports",
+            "children": {
+              "Output{\"Fn::GetAtt\":[\"ASGAdminWebInstanceSecurityGroup5FCC15EA\",\"GroupId\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"ASGAdminWebInstanceSecurityGroup5FCC15EA\",\"GroupId\"]}",
+                "path": "cdk-ec2-infinity-admin/Exports/Output{\"Fn::GetAtt\":[\"ASGAdminWebInstanceSecurityGroup5FCC15EA\",\"GroupId\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.83.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.52"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "cdk-ec2-infinity-admin/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.83.1"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "cdk-ec2-infinity-admin/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.83.1"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.83.1"
+        }
+      },
+      "cdk-rds-infinity-admin": {
+        "id": "cdk-rds-infinity-admin",
+        "path": "cdk-rds-infinity-admin",
+        "children": {
+          "para-group-mysql": {
+            "id": "para-group-mysql",
+            "path": "cdk-rds-infinity-admin/para-group-mysql",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.83.1"
+            }
+          },
+          "MySQL_DB_easy": {
+            "id": "MySQL_DB_easy",
+            "path": "cdk-rds-infinity-admin/MySQL_DB_easy",
+            "children": {
+              "SubnetGroup": {
+                "id": "SubnetGroup",
+                "path": "cdk-rds-infinity-admin/MySQL_DB_easy/SubnetGroup",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "cdk-rds-infinity-admin/MySQL_DB_easy/SubnetGroup/Default",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::RDS::DBSubnetGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "dbSubnetGroupDescription": "Subnet group for MySQL_DB_easy database",
+                        "subnetIds": [
+                          {
+                            "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateDBAdminSubnet1Subnet117EC892B6E6C0B1"
+                          },
+                          {
+                            "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateDBAdminSubnet2Subnet8751635452E76C29"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Admin"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_rds.CfnDBSubnetGroup",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_rds.SubnetGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "SecurityGroup": {
+                "id": "SecurityGroup",
+                "path": "cdk-rds-infinity-admin/MySQL_DB_easy/SecurityGroup",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-rds-infinity-admin/MySQL_DB_easy/SecurityGroup/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                      "aws:cdk:cloudformation:props": {
+                        "groupDescription": "Security group for MySQL_DB_easy database",
+                        "securityGroupEgress": [
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "description": "Allow all outbound traffic by default",
+                            "ipProtocol": "-1"
+                          }
+                        ],
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Admin"
+                          }
+                        ],
+                        "vpcId": {
+                          "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "from cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:{IndirectPort}": {
+                    "id": "from cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:{IndirectPort}",
+                    "path": "cdk-rds-infinity-admin/MySQL_DB_easy/SecurityGroup/from cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:{IndirectPort}",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                      "aws:cdk:cloudformation:props": {
+                        "ipProtocol": "tcp",
+                        "description": "EC2 Autoscaling Group access MySQL",
+                        "fromPort": {
+                          "Fn::GetAtt": [
+                            "MySQLDBeasy3657991E",
+                            "Endpoint.Port"
+                          ]
+                        },
+                        "groupId": {
+                          "Fn::GetAtt": [
+                            "MySQLDBeasySecurityGroup3A93DCA8",
+                            "GroupId"
+                          ]
+                        },
+                        "sourceSecurityGroupId": {
+                          "Fn::ImportValue": "cdk-ec2-infinity-admin:ExportsOutputFnGetAttASGAdminWebInstanceSecurityGroup5FCC15EAGroupId1F9E83D7"
+                        },
+                        "toPort": {
+                          "Fn::GetAtt": [
+                            "MySQLDBeasy3657991E",
+                            "Endpoint.Port"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupIngress",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "Secret": {
+                "id": "Secret",
+                "path": "cdk-rds-infinity-admin/MySQL_DB_easy/Secret",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-rds-infinity-admin/MySQL_DB_easy/Secret/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SecretsManager::Secret",
+                      "aws:cdk:cloudformation:props": {
+                        "description": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "Generated by the CDK for stack: ",
+                              {
+                                "Ref": "AWS::StackName"
+                              }
+                            ]
+                          ]
+                        },
+                        "generateSecretString": {
+                          "passwordLength": 30,
+                          "secretStringTemplate": "{\"username\":\"admin\"}",
+                          "generateStringKey": "password",
+                          "excludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\"
+                        },
+                        "tags": [
+                          {
+                            "key": "Env",
+                            "value": "Prod"
+                          },
+                          {
+                            "key": "Module",
+                            "value": "Admin"
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_secretsmanager.CfnSecret",
+                      "version": "2.83.1"
+                    }
+                  },
+                  "Attachment": {
+                    "id": "Attachment",
+                    "path": "cdk-rds-infinity-admin/MySQL_DB_easy/Secret/Attachment",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-rds-infinity-admin/MySQL_DB_easy/Secret/Attachment/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::SecretsManager::SecretTargetAttachment",
+                          "aws:cdk:cloudformation:props": {
+                            "secretId": {
+                              "Ref": "MySQLDBeasySecretEAFDC74C"
+                            },
+                            "targetId": {
+                              "Ref": "MySQLDBeasy3657991E"
+                            },
+                            "targetType": "AWS::RDS::DBInstance"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_secretsmanager.CfnSecretTargetAttachment",
+                          "version": "2.83.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_secretsmanager.SecretTargetAttachment",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_rds.DatabaseSecret",
+                  "version": "2.83.1"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-rds-infinity-admin/MySQL_DB_easy/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::RDS::DBInstance",
+                  "aws:cdk:cloudformation:props": {
+                    "allocatedStorage": "100",
+                    "backupRetentionPeriod": 7,
+                    "copyTagsToSnapshot": true,
+                    "dbInstanceClass": "db.t3.small",
+                    "dbParameterGroupName": "default.mysql5.7",
+                    "dbSubnetGroupName": {
+                      "Ref": "MySQLDBeasySubnetGroupFA3883CE"
+                    },
+                    "deleteAutomatedBackups": false,
+                    "deletionProtection": false,
+                    "enableCloudwatchLogsExports": [
+                      "audit",
+                      "error",
+                      "general",
+                      "slowquery"
+                    ],
+                    "engine": "mysql",
+                    "engineVersion": "5.7.41",
+                    "masterUsername": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "MySQLDBeasySecretEAFDC74C"
+                          },
+                          ":SecretString:username::}}"
+                        ]
+                      ]
+                    },
+                    "masterUserPassword": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "{{resolve:secretsmanager:",
+                          {
+                            "Ref": "MySQLDBeasySecretEAFDC74C"
+                          },
+                          ":SecretString:password::}}"
+                        ]
+                      ]
+                    },
+                    "multiAz": true,
+                    "publiclyAccessible": false,
+                    "storageType": "gp3",
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Admin"
+                      }
+                    ],
+                    "vpcSecurityGroups": [
+                      {
+                        "Fn::GetAtt": [
+                          "MySQLDBeasySecurityGroup3A93DCA8",
+                          "GroupId"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_rds.CfnDBInstance",
+                  "version": "2.83.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_rds.DatabaseInstance",
+              "version": "2.83.1"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "cdk-rds-infinity-admin/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "cdk-rds-infinity-admin/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.83.1"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "cdk-rds-infinity-admin/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.83.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.52"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "cdk-rds-infinity-admin/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.83.1"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "cdk-rds-infinity-admin/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
               "version": "2.83.1"

@@ -6,10 +6,20 @@
     "DBSubnetGroupDescription": "Subnet group for MySQL_DB_easy database",
     "SubnetIds": [
      {
-      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityDBApplicationsSubnet1SubnetB175A6C507B6D4D2"
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateDBApplicationsSubnet1Subnet2E8230169FBC22FD"
      },
      {
-      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityDBApplicationsSubnet2SubnetBE4BB4DCF5CA20EF"
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateDBApplicationsSubnet2Subnet128760E8F69437A1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
      }
     ]
    },
@@ -26,6 +36,16 @@
       "CidrIp": "0.0.0.0/0",
       "Description": "Allow all outbound traffic by default",
       "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
      }
     ],
     "VpcId": {
@@ -86,7 +106,17 @@
      "GenerateStringKey": "password",
      "PasswordLength": 30,
      "SecretStringTemplate": "{\"username\":\"admin\"}"
-    }
+    },
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     }
+    ]
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
@@ -157,6 +187,16 @@
     "MultiAZ": true,
     "PubliclyAccessible": false,
     "StorageType": "gp3",
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     }
+    ],
     "VPCSecurityGroups": [
      {
       "Fn::GetAtt": [

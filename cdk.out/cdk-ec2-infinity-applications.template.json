@@ -27,6 +27,16 @@
       "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicApplicationsWebALBSubnet2Subnet55DB0D88B107EC0F"
      }
     ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     }
+    ],
     "Type": "application"
    },
    "Metadata": {
@@ -44,6 +54,16 @@
       "FromPort": 80,
       "IpProtocol": "tcp",
       "ToPort": 80
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
      }
     ],
     "VpcId": {
@@ -104,6 +124,16 @@
    "Properties": {
     "Port": 80,
     "Protocol": "HTTP",
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     }
+    ],
     "TargetGroupAttributes": [
      {
       "Key": "stickiness.enabled",
@@ -131,6 +161,14 @@
      }
     ],
     "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     },
      {
       "Key": "Name",
       "Value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
@@ -184,6 +222,14 @@
      "Version": "2012-10-17"
     },
     "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     },
      {
       "Key": "Name",
       "Value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
@@ -254,6 +300,16 @@
     },
     "Tags": [
      {
+      "Key": "Env",
+      "PropagateAtLaunch": true,
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "PropagateAtLaunch": true,
+      "Value": "Applications"
+     },
+     {
       "Key": "Name",
       "PropagateAtLaunch": true,
       "Value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
@@ -309,6 +365,16 @@
       "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateApplicationsAPIALBSubnet2Subnet831EDCF61CEF3C41"
      }
     ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     }
+    ],
     "Type": "application"
    },
    "Metadata": {
@@ -326,6 +392,16 @@
       "FromPort": 80,
       "IpProtocol": "tcp",
       "ToPort": 80
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
      }
     ],
     "VpcId": {
@@ -386,6 +462,16 @@
    "Properties": {
     "Port": 80,
     "Protocol": "HTTP",
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     }
+    ],
     "TargetGroupAttributes": [
      {
       "Key": "stickiness.enabled",
@@ -413,6 +499,14 @@
      }
     ],
     "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     },
      {
       "Key": "Name",
       "Value": "cdk-ec2-infinity-applications/ASG-Applications-API"
@@ -467,6 +561,14 @@
     },
     "Tags": [
      {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     },
+     {
       "Key": "Name",
       "Value": "cdk-ec2-infinity-applications/ASG-Applications-API"
      }
@@ -493,7 +595,13 @@
    "Type": "AWS::AutoScaling::LaunchConfiguration",
    "Properties": {
     "ImageId": {
-     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter"
+     "Fn::FindInMap": [
+      "ASGApplicationsAPIAmiMap353AF052",
+      {
+       "Ref": "AWS::Region"
+      },
+      "ami"
+     ]
     },
     "InstanceType": "t3.micro",
     "IamInstanceProfile": {
@@ -530,6 +638,16 @@
     },
     "Tags": [
      {
+      "Key": "Env",
+      "PropagateAtLaunch": true,
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "PropagateAtLaunch": true,
+      "Value": "Applications"
+     },
+     {
       "Key": "Name",
       "PropagateAtLaunch": true,
       "Value": "cdk-ec2-infinity-applications/ASG-Applications-API"
@@ -561,7 +679,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RS0/DMAz+LbtnQdsuXGFCaNIQVcsdeanbeUuTKHFAU9X/TtKyqYDEyf4e8nMt7zdytYDPsFT1eanpIPuKQZ1Fot571BCYlLZQH0CDUWTaj7XsH5zTpIDJmn3SHkcNvdg2P/HcR4HRfHuu+Ux/A98iP3sbXbbM4CBQpZ4VquiJLzfL/8RT6zGEP/TOjPwgILINCnTaKO2TQDWBW7U9RKOOW2saaqMfZ8z0b+sgCDrZl1Zjlq9xZwLnGxTeNqRxGESJwUavRvUFnEsFcvoa2UXOWQEeOuTpRHN3mqGm3H8QxYWP1tyln63kZnEKREsfDVOHspziFyAphD3SAQAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RTU/DMAz9LbunQdsuXGFCaNIQU8sdeanbecuSKHFAU5X/TtKxqYDEyX4f8YuThbxfyvkMPkOl2mOlaSeHhkEdRabeB9QQmJS20O5Ag1Fk+o+FHB6c06SAyZpN1h5HDb1YdT/x1EeB0Xx7rv1EfwPfIz97G12xTGASqHJmgyp64vPN8j/x1HsM4Q+9NiOfBES2QYHOG+V9Mmgu4DZtA9Go/cqajvroxzsW+rc1CYKTHGqrscjXujaByxtsve1IY0qixmCjV6P6As7lAaV9jewij0cnhhzbUolMYnvmvTV3+Zvmcjk7BKLKR8N0Qllf6hfTNGmGxQEAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/CDKMetadata/Default"
@@ -571,6 +689,14 @@
  },
  "Mappings": {
   "ASGApplicationsWebAmiMap360FDF57": {
+   "af-south-1": {
+    "ami": "ami-00ecb2c6959112464"
+   },
+   "eu-west-1": {
+    "ami": "ami-12345678"
+   }
+  },
+  "ASGApplicationsAPIAmiMap353AF052": {
    "af-south-1": {
     "ami": "ami-00ecb2c6959112464"
    },
@@ -598,17 +724,6 @@
    "Export": {
     "Name": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttASGApplicationsWebInstanceSecurityGroup94520ECDGroupId56E0900A"
    }
-  }
- },
- "Parameters": {
-  "SsmParameterValueawsserviceamiamazonlinuxlatestamzn2amikernel510hvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter": {
-   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
-   "Default": "/aws/service/ami-amazon-linux-latest/amzn2-ami-kernel-5.10-hvm-x86_64-gp2"
-  },
-  "BootstrapVersion": {
-   "Type": "AWS::SSM::Parameter::Value<String>",
-   "Default": "/cdk-bootstrap/hnb659fds/version",
-   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
   }
  },
  "Conditions": {
@@ -819,6 +934,13 @@
      ]
     }
    ]
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
   }
  },
  "Rules": {

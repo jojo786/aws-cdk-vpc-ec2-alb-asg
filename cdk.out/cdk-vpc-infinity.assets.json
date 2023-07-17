@@ -1,7 +1,7 @@
 {
   "version": "32.0.0",
   "files": {
-    "1c58c23930f46b4d4ab51e5d2f94d21446b1b6befaab4c50246d7236ed295b87": {
+    "a424394fc52182188959c005cbfe2d7c92161250bf64b84f2560072b0c44a7da": {
       "source": {
         "path": "cdk-vpc-infinity.template.json",
         "packaging": "file"
@@ -9,7 +9,7 @@
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "1c58c23930f46b4d4ab51e5d2f94d21446b1b6befaab4c50246d7236ed295b87.json",
+          "objectKey": "a424394fc52182188959c005cbfe2d7c92161250bf64b84f2560072b0c44a7da.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
