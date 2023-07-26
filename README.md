@@ -13,6 +13,9 @@ This project:
 ## Architecture
 ![Architecture](./aws-cdk-vpc-ec2-alb-rds.png)
 
+You can use [cdk-dia](https://github.com/pistazie/cdk-dia) to automatically produce an architecture diagram direclty from CDK:
+![cdk-dia](./diagram.png)
+
 
 ## AWS Cloud Development Kit (AWS CDK)
 The **AWS Cloud Development Kit (AWS CDK)** is an open-source software development

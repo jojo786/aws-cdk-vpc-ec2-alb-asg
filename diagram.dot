@@ -1,0 +1,645 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488",
+    penwidth = 2,
+    arrowhead = "dot",
+    arrowtail = "dot",
+  ];
+  node [
+    shape = "box",
+    style = "rounded",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = "c",
+    imagescale = true,
+    fontname = "Sans-Serif",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph "App" {
+    subgraph "cluster-SubGraph.App" {
+      graph [
+        label = "App",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#f3f3f3",
+      ];
+      subgraph "cluster-SubGraph.cdk-vpc-infinity" {
+        graph [
+          label = "cdk-vpc-infinity",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "cdk-vpc-infinity/VPC-Infinity" [
+          label = " VPC-Infinity",
+          fontsize = 12,
+          image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+      }
+      subgraph "cluster-SubGraph.cdk-ec2-infinity-applications" {
+        graph [
+          label = "cdk-ec2-infinity-applications",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "cdk-ec2-infinity-applications/ALB-Applications-Web" [
+          label = " ALB-Applications-Web",
+          fontsize = 12,
+          image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "cdk-ec2-infinity-applications/ALB-Applications-API" [
+          label = " ALB-Applications-API",
+          fontsize = 12,
+          image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        subgraph "cluster-SubGraph.ASG-Applications-Web" {
+          graph [
+            label = "ASG-Applications-Web",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#d6d6d6",
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup" [
+            label = "\nInstanceSecurityGroup",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/security_group.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceRole" [
+            label = " InstanceRole",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.466,
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceProfile" [
+            label = " IAM InstanceProfile\nInstanceProfile",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-Web/LaunchConfig" [
+            label = " AutoScaling\nLaunchConfiguration\nLaunchConfig",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.898,
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-Web/ASG" [
+            label = " AutoScaling\nAutoScalingGroup ASG",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+        }
+        subgraph "cluster-SubGraph.ASG-Applications-API" {
+          graph [
+            label = "ASG-Applications-API",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#d6d6d6",
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup" [
+            label = "\nInstanceSecurityGroup",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/security_group.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceRole" [
+            label = " InstanceRole",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.466,
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceProfile" [
+            label = " IAM InstanceProfile\nInstanceProfile",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-API/LaunchConfig" [
+            label = " AutoScaling\nLaunchConfiguration\nLaunchConfig",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.898,
+          ];
+          "cdk-ec2-infinity-applications/ASG-Applications-API/ASG" [
+            label = " AutoScaling\nAutoScalingGroup ASG",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+        }
+      }
+      subgraph "cluster-SubGraph.cdk-rds-infinity-applications" {
+        graph [
+          label = "cdk-rds-infinity-applications",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications" [
+          label = " RDS AuroraPostgres\nApplications",
+          fontsize = 12,
+          image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Database/64/Arch_Amazon-RDS_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+      }
+      subgraph "cluster-SubGraph.cdk-ec2-infinity-admin" {
+        graph [
+          label = "cdk-ec2-infinity-admin",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "cdk-ec2-infinity-admin/ALB-Admin-Web" [
+          label = " ALB-Admin-Web",
+          fontsize = 12,
+          image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "cdk-ec2-infinity-admin/ALB-Admin-API" [
+          label = " ALB-Admin-API",
+          fontsize = 12,
+          image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Elastic-Load-Balancing_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        subgraph "cluster-SubGraph.ASG-Admin-Web" {
+          graph [
+            label = "ASG-Admin-Web",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#d6d6d6",
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup" [
+            label = "\nInstanceSecurityGroup",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/security_group.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceRole" [
+            label = " InstanceRole",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.466,
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceProfile" [
+            label = " IAM InstanceProfile\nInstanceProfile",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-Web/LaunchConfig" [
+            label = " AutoScaling\nLaunchConfiguration\nLaunchConfig",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.898,
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-Web/ASG" [
+            label = " AutoScaling\nAutoScalingGroup ASG",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+        }
+        subgraph "cluster-SubGraph.ASG-Admin-API" {
+          graph [
+            label = "ASG-Admin-API",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#d6d6d6",
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup" [
+            label = "\nInstanceSecurityGroup",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/security_group.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceRole" [
+            label = " InstanceRole",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.466,
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceProfile" [
+            label = " IAM InstanceProfile\nInstanceProfile",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Resource/Res_Security-Identity-and-Compliance/Res_48_Dark/Res_AWS-Identity-Access-Management_Permissions_48_Dark_gen.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-API/LaunchConfig" [
+            label = " AutoScaling\nLaunchConfiguration\nLaunchConfig",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.898,
+          ];
+          "cdk-ec2-infinity-admin/ASG-Admin-API/ASG" [
+            label = " AutoScaling\nAutoScalingGroup ASG",
+            fontsize = 12,
+            image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_Amazon-EC2-Auto-Scaling_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+        }
+      }
+      subgraph "cluster-SubGraph.cdk-rds-infinity-admin" {
+        graph [
+          label = "cdk-rds-infinity-admin",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin" [
+          label = " RDS AuroraPostgres\nAdmin",
+          fontsize = 12,
+          image = "/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/node_modules/cdk-dia/icons/aws/Service/Arch_Database/64/Arch_Amazon-RDS_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+      }
+    }
+  }
+  "cdk-ec2-infinity-applications/ALB-Applications-Web" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ALB-Applications-Web" -> "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup" -> "cdk-ec2-infinity-applications/ALB-Applications-Web" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceProfile" -> "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceRole" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-Web/LaunchConfig" -> "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceProfile" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-Web/LaunchConfig" -> "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-Web/ASG" -> "cdk-ec2-infinity-applications/ASG-Applications-Web/LaunchConfig" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-Web/ASG" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-Web/ASG" -> "cdk-ec2-infinity-applications/ALB-Applications-Web" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ALB-Applications-API" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ALB-Applications-API" -> "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup" -> "cdk-ec2-infinity-applications/ALB-Applications-API" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceProfile" -> "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceRole" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-API/LaunchConfig" -> "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceProfile" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-API/LaunchConfig" -> "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-API/ASG" -> "cdk-ec2-infinity-applications/ASG-Applications-API/LaunchConfig" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-API/ASG" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-applications/ASG-Applications-API/ASG" -> "cdk-ec2-infinity-applications/ALB-Applications-API" [
+    dir = "both",
+  ];
+  "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications" -> "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ALB-Admin-Web" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ALB-Admin-Web" -> "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup" -> "cdk-ec2-infinity-admin/ALB-Admin-Web" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceProfile" -> "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceRole" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-Web/LaunchConfig" -> "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceProfile" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-Web/LaunchConfig" -> "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-Web/ASG" -> "cdk-ec2-infinity-admin/ASG-Admin-Web/LaunchConfig" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-Web/ASG" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-Web/ASG" -> "cdk-ec2-infinity-admin/ALB-Admin-Web" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ALB-Admin-API" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ALB-Admin-API" -> "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup" -> "cdk-ec2-infinity-admin/ALB-Admin-API" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceProfile" -> "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceRole" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-API/LaunchConfig" -> "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceProfile" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-API/LaunchConfig" -> "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-API/ASG" -> "cdk-ec2-infinity-admin/ASG-Admin-API/LaunchConfig" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-API/ASG" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-ec2-infinity-admin/ASG-Admin-API/ASG" -> "cdk-ec2-infinity-admin/ALB-Admin-API" [
+    dir = "both",
+  ];
+  "cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin" -> "cdk-vpc-infinity/VPC-Infinity" [
+    dir = "both",
+  ];
+  "cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin" -> "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup" [
+    dir = "both",
+  ];
+}

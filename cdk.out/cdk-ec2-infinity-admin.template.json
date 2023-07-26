@@ -1,0 +1,973 @@
+{
+ "Resources": {
+  "ALBAdminWebB29072B3": {
+   "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+   "Properties": {
+    "LoadBalancerAttributes": [
+     {
+      "Key": "deletion_protection.enabled",
+      "Value": "false"
+     }
+    ],
+    "Name": "ALB-Admin-Web",
+    "Scheme": "internet-facing",
+    "SecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "ALBAdminWebSecurityGroupC631A7CF",
+       "GroupId"
+      ]
+     }
+    ],
+    "Subnets": [
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicAdminWebALBSubnet1SubnetC8BC5FC77493CB8E"
+     },
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPublicAdminWebALBSubnet2SubnetB791D1CFB085F8D0"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     }
+    ],
+    "Type": "application"
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-Web/Resource"
+   }
+  },
+  "ALBAdminWebSecurityGroupC631A7CF": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Automatically created Security Group for ELB cdkec2infinityadminALBAdminWeb128C9FBE",
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow from anyone on port 80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     }
+    ],
+    "VpcId": {
+     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-Web/SecurityGroup/Resource"
+   }
+  },
+  "ALBAdminWebSecurityGrouptocdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE809CCA8879": {
+   "Type": "AWS::EC2::SecurityGroupEgress",
+   "Properties": {
+    "GroupId": {
+     "Fn::GetAtt": [
+      "ALBAdminWebSecurityGroupC631A7CF",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "Description": "ALB access 80 port of EC2 in Autoscaling Group",
+    "DestinationSecurityGroupId": {
+     "Fn::GetAtt": [
+      "ASGAdminWebInstanceSecurityGroup5FCC15EA",
+      "GroupId"
+     ]
+    },
+    "FromPort": 80,
+    "ToPort": 80
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-Web/SecurityGroup/to cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:80"
+   }
+  },
+  "ALBAdminWebALBAdminWeb809E255735": {
+   "Type": "AWS::ElasticLoadBalancingV2::Listener",
+   "Properties": {
+    "DefaultActions": [
+     {
+      "TargetGroupArn": {
+       "Ref": "ALBAdminWebALBAdminWeb80TGAdminWebGroupB12728AA"
+      },
+      "Type": "forward"
+     }
+    ],
+    "LoadBalancerArn": {
+     "Ref": "ALBAdminWebB29072B3"
+    },
+    "Port": 80,
+    "Protocol": "HTTP"
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-Web/ALB-Admin-Web-80/Resource"
+   }
+  },
+  "ALBAdminWebALBAdminWeb80TGAdminWebGroupB12728AA": {
+   "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+   "Properties": {
+    "Port": 80,
+    "Protocol": "HTTP",
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     }
+    ],
+    "TargetGroupAttributes": [
+     {
+      "Key": "stickiness.enabled",
+      "Value": "false"
+     }
+    ],
+    "TargetType": "instance",
+    "VpcId": {
+     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-Web/ALB-Admin-Web-80/TG-Admin-WebGroup/Resource"
+   }
+  },
+  "ASGAdminWebInstanceSecurityGroup5FCC15EA": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-ec2-infinity-admin/ASG-Admin-Web"
+     }
+    ],
+    "VpcId": {
+     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup/Resource"
+   }
+  },
+  "ASGAdminWebInstanceSecurityGroupfromcdkec2infinityadminALBAdminWebSecurityGroup01F4A4BC805025F7F5": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "IpProtocol": "tcp",
+    "Description": "ALB access 80 port of EC2 in Autoscaling Group",
+    "FromPort": 80,
+    "GroupId": {
+     "Fn::GetAtt": [
+      "ASGAdminWebInstanceSecurityGroup5FCC15EA",
+      "GroupId"
+     ]
+    },
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "ALBAdminWebSecurityGroupC631A7CF",
+      "GroupId"
+     ]
+    },
+    "ToPort": 80
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup/from cdkec2infinityadminALBAdminWebSecurityGroup01F4A4BC:80"
+   }
+  },
+  "ASGAdminWebInstanceRole4CC76898": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-ec2-infinity-admin/ASG-Admin-Web"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceRole/Resource"
+   }
+  },
+  "ASGAdminWebInstanceProfileEFF54680": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     {
+      "Ref": "ASGAdminWebInstanceRole4CC76898"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceProfile"
+   }
+  },
+  "ASGAdminWebLaunchConfigD088BFAE": {
+   "Type": "AWS::AutoScaling::LaunchConfiguration",
+   "Properties": {
+    "ImageId": {
+     "Fn::FindInMap": [
+      "ASGAdminWebAmiMap7C3AF0D9",
+      {
+       "Ref": "AWS::Region"
+      },
+      "ami"
+     ]
+    },
+    "InstanceType": "t3.micro",
+    "IamInstanceProfile": {
+     "Ref": "ASGAdminWebInstanceProfileEFF54680"
+    },
+    "KeyName": "id_rsa",
+    "SecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "ASGAdminWebInstanceSecurityGroup5FCC15EA",
+       "GroupId"
+      ]
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php\nsudo chkconfig httpd on\nsudo service httpd start"
+    }
+   },
+   "DependsOn": [
+    "ASGAdminWebInstanceRole4CC76898"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-Web/LaunchConfig"
+   }
+  },
+  "ASGAdminWebASG58B28B15": {
+   "Type": "AWS::AutoScaling::AutoScalingGroup",
+   "Properties": {
+    "MaxSize": "2",
+    "MinSize": "2",
+    "DesiredCapacity": "2",
+    "LaunchConfigurationName": {
+     "Ref": "ASGAdminWebLaunchConfigD088BFAE"
+    },
+    "Tags": [
+     {
+      "Key": "Env",
+      "PropagateAtLaunch": true,
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "PropagateAtLaunch": true,
+      "Value": "Admin"
+     },
+     {
+      "Key": "Name",
+      "PropagateAtLaunch": true,
+      "Value": "cdk-ec2-infinity-admin/ASG-Admin-Web"
+     }
+    ],
+    "TargetGroupARNs": [
+     {
+      "Ref": "ALBAdminWebALBAdminWeb80TGAdminWebGroupB12728AA"
+     }
+    ],
+    "VPCZoneIdentifier": [
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminWebASGSubnet1Subnet8800A59B2DFA5657"
+     },
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminWebASGSubnet2Subnet4EB0361731EF7DC1"
+     }
+    ]
+   },
+   "UpdatePolicy": {
+    "AutoScalingScheduledAction": {
+     "IgnoreUnmodifiedGroupSizeProperties": true
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-Web/ASG"
+   }
+  },
+  "ALBAdminAPI4816B1AD": {
+   "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+   "Properties": {
+    "LoadBalancerAttributes": [
+     {
+      "Key": "deletion_protection.enabled",
+      "Value": "false"
+     }
+    ],
+    "Name": "ALB-Admin-API",
+    "Scheme": "internal",
+    "SecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "ALBAdminAPISecurityGroupDC460F18",
+       "GroupId"
+      ]
+     }
+    ],
+    "Subnets": [
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminAPIALBSubnet1SubnetB7CBE0475B1FFBF4"
+     },
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminAPIALBSubnet2Subnet006BABA98FE082DF"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     }
+    ],
+    "Type": "application"
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-API/Resource"
+   }
+  },
+  "ALBAdminAPISecurityGroupDC460F18": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "Automatically created Security Group for ELB cdkec2infinityadminALBAdminAPIB7C9617C",
+    "SecurityGroupIngress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Internet access ALB 80",
+      "FromPort": 80,
+      "IpProtocol": "tcp",
+      "ToPort": 80
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     }
+    ],
+    "VpcId": {
+     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-API/SecurityGroup/Resource"
+   }
+  },
+  "ALBAdminAPISecurityGrouptocdkec2infinityadminASGAdminAPIInstanceSecurityGroup00F1F79D80ED73B2ED": {
+   "Type": "AWS::EC2::SecurityGroupEgress",
+   "Properties": {
+    "GroupId": {
+     "Fn::GetAtt": [
+      "ALBAdminAPISecurityGroupDC460F18",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "Description": "ALB API access 80 port of EC2 in Autoscaling Group",
+    "DestinationSecurityGroupId": {
+     "Fn::GetAtt": [
+      "ASGAdminAPIInstanceSecurityGroup3714849E",
+      "GroupId"
+     ]
+    },
+    "FromPort": 80,
+    "ToPort": 80
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-API/SecurityGroup/to cdkec2infinityadminASGAdminAPIInstanceSecurityGroup00F1F79D:80"
+   }
+  },
+  "ALBAdminAPIALBAdminAPI806413CBD1": {
+   "Type": "AWS::ElasticLoadBalancingV2::Listener",
+   "Properties": {
+    "DefaultActions": [
+     {
+      "TargetGroupArn": {
+       "Ref": "ALBAdminAPIALBAdminAPI80TGAdminAPIGroup2760829A"
+      },
+      "Type": "forward"
+     }
+    ],
+    "LoadBalancerArn": {
+     "Ref": "ALBAdminAPI4816B1AD"
+    },
+    "Port": 80,
+    "Protocol": "HTTP"
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-API/ALB-Admin-API-80/Resource"
+   }
+  },
+  "ALBAdminAPIALBAdminAPI80TGAdminAPIGroup2760829A": {
+   "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+   "Properties": {
+    "Port": 80,
+    "Protocol": "HTTP",
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     }
+    ],
+    "TargetGroupAttributes": [
+     {
+      "Key": "stickiness.enabled",
+      "Value": "false"
+     }
+    ],
+    "TargetType": "instance",
+    "VpcId": {
+     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ALB-Admin-API/ALB-Admin-API-80/TG-Admin-APIGroup/Resource"
+   }
+  },
+  "ASGAdminAPIInstanceSecurityGroup3714849E": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-ec2-infinity-admin/ASG-Admin-API"
+     }
+    ],
+    "VpcId": {
+     "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup/Resource"
+   }
+  },
+  "ASGAdminAPIInstanceSecurityGroupfromcdkec2infinityadminALBAdminAPISecurityGroupA8B831C280C9EBAC1F": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "IpProtocol": "tcp",
+    "Description": "ALB API access 80 port of EC2 in Autoscaling Group",
+    "FromPort": 80,
+    "GroupId": {
+     "Fn::GetAtt": [
+      "ASGAdminAPIInstanceSecurityGroup3714849E",
+      "GroupId"
+     ]
+    },
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "ALBAdminAPISecurityGroupDC460F18",
+      "GroupId"
+     ]
+    },
+    "ToPort": 80
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup/from cdkec2infinityadminALBAdminAPISecurityGroupA8B831C2:80"
+   }
+  },
+  "ASGAdminAPIInstanceRole90903F3E": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Admin"
+     },
+     {
+      "Key": "Name",
+      "Value": "cdk-ec2-infinity-admin/ASG-Admin-API"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceRole/Resource"
+   }
+  },
+  "ASGAdminAPIInstanceProfileC7E2CA5D": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     {
+      "Ref": "ASGAdminAPIInstanceRole90903F3E"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-API/InstanceProfile"
+   }
+  },
+  "ASGAdminAPILaunchConfigA09124D1": {
+   "Type": "AWS::AutoScaling::LaunchConfiguration",
+   "Properties": {
+    "ImageId": {
+     "Fn::FindInMap": [
+      "ASGAdminAPIAmiMapDC594FC3",
+      {
+       "Ref": "AWS::Region"
+      },
+      "ami"
+     ]
+    },
+    "InstanceType": "t3.micro",
+    "IamInstanceProfile": {
+     "Ref": "ASGAdminAPIInstanceProfileC7E2CA5D"
+    },
+    "KeyName": "id_rsa",
+    "SecurityGroups": [
+     {
+      "Fn::GetAtt": [
+       "ASGAdminAPIInstanceSecurityGroup3714849E",
+       "GroupId"
+      ]
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php\nsudo chkconfig httpd on\nsudo service httpd start"
+    }
+   },
+   "DependsOn": [
+    "ASGAdminAPIInstanceRole90903F3E"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-API/LaunchConfig"
+   }
+  },
+  "ASGAdminAPIASG4CE7EF54": {
+   "Type": "AWS::AutoScaling::AutoScalingGroup",
+   "Properties": {
+    "MaxSize": "2",
+    "MinSize": "2",
+    "DesiredCapacity": "2",
+    "LaunchConfigurationName": {
+     "Ref": "ASGAdminAPILaunchConfigA09124D1"
+    },
+    "Tags": [
+     {
+      "Key": "Env",
+      "PropagateAtLaunch": true,
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "PropagateAtLaunch": true,
+      "Value": "Admin"
+     },
+     {
+      "Key": "Name",
+      "PropagateAtLaunch": true,
+      "Value": "cdk-ec2-infinity-admin/ASG-Admin-API"
+     }
+    ],
+    "TargetGroupARNs": [
+     {
+      "Ref": "ALBAdminAPIALBAdminAPI80TGAdminAPIGroup2760829A"
+     }
+    ],
+    "VPCZoneIdentifier": [
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminAPIASGSubnet1Subnet5722E01E61B6A542"
+     },
+     {
+      "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityPrivateAdminAPIASGSubnet2SubnetD51E7E91DE4379E6"
+     }
+    ]
+   },
+   "UpdatePolicy": {
+    "AutoScalingScheduledAction": {
+     "IgnoreUnmodifiedGroupSizeProperties": true
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-API/ASG"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RTU/DMAz9LbunQdsuXGFCaNIQU8sdeanbecuSKHFAU5X/TtKxqYDEyX4f8YuThbxfyvkMPkOl2mOlaSeHhkEdRabeB9QQmJS20O5Ag1Fk+o+FHB6c06SAyZpN1h5HDb1YdT/x1EeB0Xx7rv1EfwPfIz97G12xTGASqHJmgyp64vPN8j/x1HsM4Q+9NiOfBES2QYHOG+V9Mmgu4DZtA9Go/cqajvroxzsW+rc1CYKTHGqrscjXujaByxtsve1IY0qixmCjV6P6As7lAaV9jewij0cnhhzbUolMYnvmvTV3+Zvmcjk7BKLKR8N0Qllf6hfTNGmGxQEAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Mappings": {
+  "ASGAdminWebAmiMap7C3AF0D9": {
+   "af-south-1": {
+    "ami": "ami-00ecb2c6959112464"
+   },
+   "eu-west-1": {
+    "ami": "ami-12345678"
+   }
+  },
+  "ASGAdminAPIAmiMapDC594FC3": {
+   "af-south-1": {
+    "ami": "ami-00ecb2c6959112464"
+   },
+   "eu-west-1": {
+    "ami": "ami-12345678"
+   }
+  }
+ },
+ "Outputs": {
+  "Output": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ALBAdminWebB29072B3",
+     "DNSName"
+    ]
+   }
+  },
+  "ExportsOutputFnGetAttASGAdminWebInstanceSecurityGroup5FCC15EAGroupId1F9E83D7": {
+   "Value": {
+    "Fn::GetAtt": [
+     "ASGAdminWebInstanceSecurityGroup5FCC15EA",
+     "GroupId"
+    ]
+   },
+   "Export": {
+    "Name": "cdk-ec2-infinity-admin:ExportsOutputFnGetAttASGAdminWebInstanceSecurityGroup5FCC15EAGroupId1F9E83D7"
+   }
+  }
+ },
+ "Conditions": {
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-2"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

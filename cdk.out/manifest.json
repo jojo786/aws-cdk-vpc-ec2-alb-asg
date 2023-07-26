@@ -791,14 +791,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -886,14 +886,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -1182,14 +1182,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -1277,14 +1277,14 @@
             "type": "aws:cdk:warning",
             "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
             "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-6HCl5h/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpjh9n3bg7/lib/program.js:11505:46)",
+              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
+              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
+              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-JF1kn2/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
+              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpfo3op1jl/lib/program.js:11505:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
