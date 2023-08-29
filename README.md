@@ -13,7 +13,7 @@ This project:
 ## Architecture
 ![Architecture](./aws-cdk-vpc-ec2-alb-rds.png)
 
-You can use [cdk-dia](https://github.com/pistazie/cdk-dia) to automatically produce an architecture diagram direclty from CDK:
+You can use [cdk-dia](https://github.com/pistazie/cdk-dia) to automatically produce an architecture diagram directly from CDK:
 ![cdk-dia](./diagram.png)
 
 
