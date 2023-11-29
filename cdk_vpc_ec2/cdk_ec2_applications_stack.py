@@ -4,19 +4,24 @@ import aws_cdk.aws_elasticloadbalancingv2 as elb
 import aws_cdk.aws_autoscaling as autoscaling
 import aws_cdk.aws_certificatemanager as acm
 from constructs import Construct
+from pathlib import Path
 
-ec2_type = "t3.micro"
-key_name = "id_rsa"  # Setup key_name for EC2 instance login
+module='Applications'
+ec2_type = 't3.micro'
+key_name = 'id_rsa'  # Setup key_name for EC2 instance login
+web_ami='ami-09e042233e6cbe5c5'
+api_ami='ami-09e042233e6cbe5c5'
 
-with open("./user_data/user_data.sh") as f:
-    user_data = f.read()
-
+data_folder = Path("user_data/")
+file_to_open = data_folder / "user_data.sh"
+#print(file_to_open.read_text())
+with open(file_to_open) as f:
+   user_data = f.read()
 
 class CdkEc2ApplicationsStack(Stack):
 
     def __init__(self, scope: Construct, id: str, vpc, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
-        module="Applications"
 
         # Create Web ALB
         alb_web = elb.ApplicationLoadBalancer(self, f"ALB-{module}-Web",
@@ -59,8 +64,7 @@ class CdkEc2ApplicationsStack(Stack):
                                                 instance_type=ec2.InstanceType(instance_type_identifier=ec2_type),
                                                 #machine_image=ec2.MachineImage.latest_amazon_linux2(),
                                                 machine_image=ec2.MachineImage.generic_linux({
-                                                    "af-south-1": "ami-00ecb2c6959112464",
-                                                    "eu-west-1": "ami-12345678"
+                                                     "af-south-1": web_ami
                                                 }),
                                                 key_name=key_name,
                                                 user_data=ec2.UserData.custom(user_data),
@@ -101,8 +105,7 @@ class CdkEc2ApplicationsStack(Stack):
                                                 vpc_subnets=ec2.SubnetSelection(subnet_group_name=f'Private-{module}-API-ASG'),
                                                 instance_type=ec2.InstanceType(instance_type_identifier=ec2_type),
                                                 machine_image=ec2.MachineImage.generic_linux({
-                                                    "af-south-1": "ami-00ecb2c6959112464",
-                                                    "eu-west-1": "ami-12345678"
+                                                    "af-south-1": api_ami
                                                 }),
                                                 key_name=key_name,
                                                 user_data=ec2.UserData.custom(user_data),

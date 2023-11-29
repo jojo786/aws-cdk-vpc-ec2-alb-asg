@@ -4144,7 +4144,7 @@
                       "Ref": "RDSAuroraPostgresApplicationsSubnets311AA031"
                     },
                     "engine": "aurora-postgresql",
-                    "engineVersion": "13.4",
+                    "engineVersion": "13.9",
                     "masterUsername": {
                       "Fn::Join": [
                         "",
@@ -5540,7 +5540,7 @@
                       "Ref": "RDSAuroraPostgresAdminSubnets0A265DCE"
                     },
                     "engine": "aurora-postgresql",
-                    "engineVersion": "13.4",
+                    "engineVersion": "13.9",
                     "masterUsername": {
                       "Fn::Join": [
                         "",

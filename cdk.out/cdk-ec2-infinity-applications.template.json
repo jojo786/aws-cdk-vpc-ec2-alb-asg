@@ -679,7 +679,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RTU/DMAz9LbunQRscuMKE0KQhppY78lK385YlUeKApir/naRjUwGJk/0+4hcnC3l/K+cz+AyVag+Vpq0cGgZ1EJl6H1BDYFLaQrsFDUaR6T8WcnhwTpMCJmvWWXscNfRi2f3EUx8FRvPtufQT/Q18j/zsbXTFMoFJoMqZDaroiU9Xy//EU+8xhD/0yox8EhDZBgU6b5T3yaA5g+u0NUSjdktrOuqjH+9Y6N/WJAiOcqitxiJf6soELm+w8bYjjSmJGoONXo3qCziXB5T2NbKLPB6dGHJsSyUyic2Jd9bc5G+ay7vZPhBVPhqmI8r6XL8Akwqw48UBAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RTUsDMRD9Lb1nI60gXrWIFCqWXe8yzc5up02TkEyUsuS/m2xtWRU8zbyPzMskC3l/K+cz+AyVag+Vpq0cGgZ1EJl6H1BDYFLaQrsFDUaR6T8WcnhwTpMCJmvWWXscNfRi2f3EUx8FRvPtufQT/Q18j/zsbXTFMoFJoMqZDaroiU9Xy//EU+8xhD/0yox8EhDZBgU6b5T3yaA5g+u0NUSjdktrOuqjH+9Y6N/WJAiOcqitxiJf6soELm+w8bYjjSmJGoONXo3qCziXB5T2NbKLPB6dGHJsSyUyic2Jd9bc5G+ay7vZPhBVPhqmI8r6XL8AE8PgzcUBAAA="
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/CDKMetadata/Default"
@@ -690,18 +690,12 @@
  "Mappings": {
   "ASGApplicationsWebAmiMap360FDF57": {
    "af-south-1": {
-    "ami": "ami-00ecb2c6959112464"
-   },
-   "eu-west-1": {
-    "ami": "ami-12345678"
+    "ami": "ami-09e042233e6cbe5c5"
    }
   },
   "ASGApplicationsAPIAmiMap353AF052": {
    "af-south-1": {
-    "ami": "ami-00ecb2c6959112464"
-   },
-   "eu-west-1": {
-    "ami": "ami-12345678"
+    "ami": "ami-09e042233e6cbe5c5"
    }
   }
  },

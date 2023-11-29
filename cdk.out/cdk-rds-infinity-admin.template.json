@@ -149,7 +149,7 @@
      "Ref": "RDSAuroraPostgresAdminSubnets0A265DCE"
     },
     "Engine": "aurora-postgresql",
-    "EngineVersion": "13.4",
+    "EngineVersion": "13.9",
     "MasterUsername": {
      "Fn::Join": [
       "",
@@ -230,7 +230,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31QywrCQAz8Fu/bFR8Hr1pBvIn1Luk21lWblSSLSNl/t1oU8eBpkslkhmRsZxM7GsBNMleds4svbVsouLPpqH3Lldh2CQolCOaXKIpsilgS6opDvJr8QMvFN/EWF+gYtZ+/F1/NmkSBHCaDbtyFoYvs9f6x+0+sqWYUSUZe/tIAQY1s2174jOxhB1yjzrW75dggqfkIficpmS1KiOzwKfqu80CVVx8omc1dj4GG3bNGdjo4ifcZR1LfoN32+AAntYL5SwEAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31QQQrCQAx8i/ftigriVSuIN7HeJd3GumqzkmQRKft3q0URD54mmUxmSMZ2NrGjAdwkc9U5u/jStoWCO5uO2rdciW2XoFCCYH6JosimiCWhrjjEq8kPtFx8E29xgY5R+/l78dWsSRTIYTLoxl0Yushe7x+7/8SaakaRZOTlLw0Q1Mi27YXPyB52wDXqXLtbjg2Smo/gd5KS2aKEyA6fou86D1R59YGS2dz1GGjYPWtkp4OTeJ9xJPUN2m2PD6d80tdLAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "cdk-rds-infinity-admin/CDKMetadata/Default"

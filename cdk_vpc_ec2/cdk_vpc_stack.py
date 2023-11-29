@@ -1,6 +1,7 @@
 from aws_cdk import CfnOutput, Stack
 import aws_cdk.aws_ec2 as ec2
 from constructs import Construct
+from pathlib import Path
 
 class CdkVpcStack(Stack):
 
