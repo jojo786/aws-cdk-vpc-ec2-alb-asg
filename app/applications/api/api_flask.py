@@ -3,6 +3,7 @@ import os
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
+from dataclasses import dataclass
 #from flask_migrate import Migrate
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -11,6 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:eqiQSWyCQjqIHPrTb
 db = SQLAlchemy(app)
 #migrate = Migrate(app, db)
 
+@dataclass
 class Applications(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime(timezone=True))
@@ -24,4 +26,4 @@ class Applications(db.Model):
 @app.route('/applications')
 def index():
     applications = Applications.query.all()
-    return applications  #render_template('index.html', applications=applications)
+    return jsonify(applications)  #render_template('index.html', applications=applications)
