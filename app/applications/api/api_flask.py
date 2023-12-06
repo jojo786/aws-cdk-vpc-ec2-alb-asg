@@ -1,6 +1,6 @@
 #create new flask application with db connection to postgres
 import os
-from flask import Flask
+from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 #from flask_migrate import Migrate
@@ -24,4 +24,4 @@ class Applications(db.Model):
 @app.route('/applications')
 def index():
     applications = Applications.query.all()
-    return #render_template('index.html', applications=applications)
+    return jsonify(applications)  #render_template('index.html', applications=applications)
