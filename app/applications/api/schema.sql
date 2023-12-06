@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS applications;
 
-CREATE TABLE applications ( id SERIAL PRIMARY KEY, 
-created TIMESTAMP NOT NULL DEFAULT NOW(), 
-student_id INTEGER NOT NULL, 
-app_name TEXT NOT NULL);
+CREATE TABLE applications ( 
+student_name TEXT NOT NULL, 
+student_email TEXT NOT NULL
+);

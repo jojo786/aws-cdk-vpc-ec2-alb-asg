@@ -14,10 +14,10 @@ db = SQLAlchemy(app)
 
 @dataclass
 class Applications(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    created = db.Column(db.TIMESTAMP(timezone=False))
-    student_id = db.Column(db.Integer)
-    app_name = db.Column(db.Text)
+    #id = db.Column(db.Integer, primary_key=True)
+    #created = db.Column(db.TIMESTAMP(timezone=False))
+    student_name = db.Column(db.Text, primary_key=True)
+    student_email = db.Column(db.Text)
 
     def __repr__(self):
         return f'<Applications {self.student_id}>'
@@ -27,5 +27,5 @@ class Applications(db.Model):
 def index():
     applications = Applications.query.all()
     for app in applications:
-        print(app.id, app.created, app.student_id, app.app_name)
+        print(app.student_name, app.student_email)
     return jsonify(applications)  #render_template('index.html', applications=applications)
