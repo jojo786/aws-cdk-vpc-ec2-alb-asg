@@ -20,7 +20,7 @@ class Applications(db.Model):
     student_email = db.Column(db.Text)
 
     def __repr__(self):
-        return f'<Applications {self.student_id}>'
+        return f'<Applications {self.student_name}>'
 
 
 @app.route('/applications')
