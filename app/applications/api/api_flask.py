@@ -14,10 +14,10 @@ db = SQLAlchemy(app)
 
 @dataclass
 class Applications(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    created = db.Column(db.DateTime(timezone=False))
-    student_id = db.Column(db.Integer)
-    app_name = db.Column(db.String)
+    id = db.Column
+    created = db.Column
+    student_id = db.Column
+    app_name = db.Column
 
     def __repr__(self):
         return f'<Applications {self.student_id}>'
