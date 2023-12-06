@@ -15,9 +15,9 @@ db = SQLAlchemy(app)
 @dataclass
 class Applications(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    created = db.Column(db.DateTime(timezone=True))
-    student_id = db.Column(db.String(100), nullable=False)
-    app_name = db.Column(db.String(100), nullable=False)
+    created = db.Column(db.DateTime(timezone=False))
+    student_id = db.Column(db.Integer)
+    app_name = db.Column(db.String)
 
     def __repr__(self):
         return f'<Applications {self.student_id}>'
@@ -26,4 +26,6 @@ class Applications(db.Model):
 @app.route('/applications')
 def index():
     applications = Applications.query.all()
+    for app in applications:
+        print(app.id, app.created, app.student_id, app.app_name) in applications:
     return jsonify(applications)  #render_template('index.html', applications=applications)
