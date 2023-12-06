@@ -24,4 +24,4 @@ class Applications(db.Model):
 @app.route('/applications')
 def index():
     applications = Applications.query.all()
-    #return render_template('index.html', applications=applications)
+    return #render_template('index.html', applications=applications)
