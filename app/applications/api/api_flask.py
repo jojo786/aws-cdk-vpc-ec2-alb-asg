@@ -7,7 +7,7 @@ from sqlalchemy.sql import func
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:eqiQSWyCQjqIHPrTbmjS@database-1.cluster-csh5ndq6v79g.af-south-1.rds.amazonaws.com:5432/todoapp'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:eqiQSWyCQjqIHPrTbmjS@database-1.cluster-csh5ndq6v79g.af-south-1.rds.amazonaws.com:5432'
 db = SQLAlchemy(app)
 #migrate = Migrate(app, db)
 
