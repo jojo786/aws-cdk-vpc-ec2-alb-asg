@@ -27,5 +27,5 @@ class Applications(db.Model):
 def index():
     applications = Applications.query.all()
     for app in applications:
-        print(app.id, app.created, app.student_id, app.app_name) in applications:
+        print(app.id, app.created, app.student_id, app.app_name)
     return jsonify(applications)  #render_template('index.html', applications=applications)
