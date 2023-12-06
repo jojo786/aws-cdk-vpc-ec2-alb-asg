@@ -12,7 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:eqiQSWyCQjqIHPrTb
 db = SQLAlchemy(app)
 #migrate = Migrate(app, db)
 
-@dataclass
+#@dataclass
 class Applications(db.Model):
     #id = db.Column(db.Integer, primary_key=True)
     #created = db.Column(db.TIMESTAMP(timezone=False))
