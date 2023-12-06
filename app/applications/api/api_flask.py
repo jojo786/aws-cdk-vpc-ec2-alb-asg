@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 
 @dataclass
 class Applications(db.Model):
-    id = db.Column
+    id = db.Column(db.Integer, primary_key=True)
     created = db.Column
     student_id = db.Column
     app_name = db.Column
