@@ -292,9 +292,8 @@
   "ASGApplicationsWebASG60CE2D77": {
    "Type": "AWS::AutoScaling::AutoScalingGroup",
    "Properties": {
-    "MaxSize": "2",
-    "MinSize": "2",
-    "DesiredCapacity": "2",
+    "MaxSize": "3",
+    "MinSize": "1",
     "LaunchConfigurationName": {
      "Ref": "ASGApplicationsWebLaunchConfig1A4FA0EF"
     },
@@ -336,6 +335,27 @@
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/ASG"
+   }
+  },
+  "ASGApplicationsWebScalingPolicyCPUScalingApplicationsWebEC722C86": {
+   "Type": "AWS::AutoScaling::ScalingPolicy",
+   "Properties": {
+    "AutoScalingGroupName": {
+     "Ref": "ASGApplicationsWebASG60CE2D77"
+    },
+    "Cooldown": "60",
+    "EstimatedInstanceWarmup": 60,
+    "PolicyType": "TargetTrackingScaling",
+    "TargetTrackingConfiguration": {
+     "DisableScaleIn": false,
+     "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "ASGAverageCPUUtilization"
+     },
+     "TargetValue": 60
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/ScalingPolicyCPUScaling-Applications-Web/Resource"
    }
   },
   "ALBApplicationsAPI22783E44": {
@@ -630,9 +650,8 @@
   "ASGApplicationsAPIASG739F73E1": {
    "Type": "AWS::AutoScaling::AutoScalingGroup",
    "Properties": {
-    "MaxSize": "2",
-    "MinSize": "2",
-    "DesiredCapacity": "2",
+    "MaxSize": "3",
+    "MinSize": "1",
     "LaunchConfigurationName": {
      "Ref": "ASGApplicationsAPILaunchConfigC74440A9"
     },
@@ -676,10 +695,31 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/ASG"
    }
   },
+  "ASGApplicationsAPIScalingPolicyCPUScalingApplicationsWeb945898E4": {
+   "Type": "AWS::AutoScaling::ScalingPolicy",
+   "Properties": {
+    "AutoScalingGroupName": {
+     "Ref": "ASGApplicationsAPIASG739F73E1"
+    },
+    "Cooldown": "60",
+    "EstimatedInstanceWarmup": 60,
+    "PolicyType": "TargetTrackingScaling",
+    "TargetTrackingConfiguration": {
+     "DisableScaleIn": false,
+     "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "ASGAverageCPUUtilization"
+     },
+     "TargetValue": 60
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/ScalingPolicyCPUScaling-Applications-Web/Resource"
+   }
+  },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RTUsDMRD9Lb1nI60gXrWIFCqWXe8yzc5up02TkEyUsuS/m2xtWRU8zbyPzMskC3l/K+cz+AyVag+Vpq0cGgZ1EJl6H1BDYFLaQrsFDUaR6T8WcnhwTpMCJmvWWXscNfRi2f3EUx8FRvPtufQT/Q18j/zsbXTFMoFJoMqZDaroiU9Xy//EU+8xhD/0yox8EhDZBgU6b5T3yaA5g+u0NUSjdktrOuqjH+9Y6N/WJAiOcqitxiJf6soELm+w8bYjjSmJGoONXo3qCziXB5T2NbKLPB6dGHJsSyUyic2Jd9bc5G+ay7vZPhBVPhqmI8r6XL8AE8PgzcUBAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RwWrDMAz9lt4dj3Ywdt3KGIWOhaT3oTpOqta1jS1vhOB/n+O0JaOwk6T3nqUnecWfH/lyAT++EM2pULjnQ00gTixBX4NU4AmFMtDsQYEWqLvvFR9erFUogNDobeJeMycdW7d/67kOPUl90VzzGb8D10l6dybYUTIrI5MizaylCA6pv0n+B946J72/gzc645FBIOMFqLRR2icV9VTcum0haHFYG91iF1z2OMJ30snpzqWjJexClSbt1efpcyAyhDMfKqPkyF3jRnsaD1Y606KSMbJKehOcyOwHWJs6jOlnIBsoP50JkscGR3+RlT0djH5If7rkT4ujRyxc0IRnyasp/gKBbRhi8gEAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/CDKMetadata/Default"

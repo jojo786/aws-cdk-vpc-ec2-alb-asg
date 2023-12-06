@@ -3319,9 +3319,8 @@
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::AutoScaling::AutoScalingGroup",
                   "aws:cdk:cloudformation:props": {
-                    "maxSize": "2",
-                    "minSize": "2",
-                    "desiredCapacity": "2",
+                    "maxSize": "3",
+                    "minSize": "1",
                     "launchConfigurationName": {
                       "Ref": "ASGApplicationsWebLaunchConfig1A4FA0EF"
                     },
@@ -3359,6 +3358,42 @@
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_autoscaling.CfnAutoScalingGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "ScalingPolicyCPUScaling-Applications-Web": {
+                "id": "ScalingPolicyCPUScaling-Applications-Web",
+                "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/ScalingPolicyCPUScaling-Applications-Web",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/ScalingPolicyCPUScaling-Applications-Web/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::AutoScaling::ScalingPolicy",
+                      "aws:cdk:cloudformation:props": {
+                        "autoScalingGroupName": {
+                          "Ref": "ASGApplicationsWebASG60CE2D77"
+                        },
+                        "cooldown": "60",
+                        "estimatedInstanceWarmup": 60,
+                        "policyType": "TargetTrackingScaling",
+                        "targetTrackingConfiguration": {
+                          "disableScaleIn": false,
+                          "predefinedMetricSpecification": {
+                            "predefinedMetricType": "ASGAverageCPUUtilization"
+                          },
+                          "targetValue": 60
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_autoscaling.CfnScalingPolicy",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.TargetTrackingScalingPolicy",
                   "version": "2.83.1"
                 }
               }
@@ -3798,9 +3833,8 @@
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::AutoScaling::AutoScalingGroup",
                   "aws:cdk:cloudformation:props": {
-                    "maxSize": "2",
-                    "minSize": "2",
-                    "desiredCapacity": "2",
+                    "maxSize": "3",
+                    "minSize": "1",
                     "launchConfigurationName": {
                       "Ref": "ASGApplicationsAPILaunchConfigC74440A9"
                     },
@@ -3838,6 +3872,42 @@
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_autoscaling.CfnAutoScalingGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "ScalingPolicyCPUScaling-Applications-Web": {
+                "id": "ScalingPolicyCPUScaling-Applications-Web",
+                "path": "cdk-ec2-infinity-applications/ASG-Applications-API/ScalingPolicyCPUScaling-Applications-Web",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-applications/ASG-Applications-API/ScalingPolicyCPUScaling-Applications-Web/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::AutoScaling::ScalingPolicy",
+                      "aws:cdk:cloudformation:props": {
+                        "autoScalingGroupName": {
+                          "Ref": "ASGApplicationsAPIASG739F73E1"
+                        },
+                        "cooldown": "60",
+                        "estimatedInstanceWarmup": 60,
+                        "policyType": "TargetTrackingScaling",
+                        "targetTrackingConfiguration": {
+                          "disableScaleIn": false,
+                          "predefinedMetricSpecification": {
+                            "predefinedMetricType": "ASGAverageCPUUtilization"
+                          },
+                          "targetValue": 60
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_autoscaling.CfnScalingPolicy",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.TargetTrackingScalingPolicy",
                   "version": "2.83.1"
                 }
               }
@@ -4715,9 +4785,8 @@
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::AutoScaling::AutoScalingGroup",
                   "aws:cdk:cloudformation:props": {
-                    "maxSize": "2",
-                    "minSize": "2",
-                    "desiredCapacity": "2",
+                    "maxSize": "3",
+                    "minSize": "1",
                     "launchConfigurationName": {
                       "Ref": "ASGAdminWebLaunchConfigD088BFAE"
                     },
@@ -4755,6 +4824,42 @@
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_autoscaling.CfnAutoScalingGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "ScalingPolicyCPUScaling-Admin-Web": {
+                "id": "ScalingPolicyCPUScaling-Admin-Web",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/ScalingPolicyCPUScaling-Admin-Web",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-Web/ScalingPolicyCPUScaling-Admin-Web/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::AutoScaling::ScalingPolicy",
+                      "aws:cdk:cloudformation:props": {
+                        "autoScalingGroupName": {
+                          "Ref": "ASGAdminWebASG58B28B15"
+                        },
+                        "cooldown": "60",
+                        "estimatedInstanceWarmup": 60,
+                        "policyType": "TargetTrackingScaling",
+                        "targetTrackingConfiguration": {
+                          "disableScaleIn": false,
+                          "predefinedMetricSpecification": {
+                            "predefinedMetricType": "ASGAverageCPUUtilization"
+                          },
+                          "targetValue": 25
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_autoscaling.CfnScalingPolicy",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.TargetTrackingScalingPolicy",
                   "version": "2.83.1"
                 }
               }
@@ -5194,9 +5299,8 @@
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::AutoScaling::AutoScalingGroup",
                   "aws:cdk:cloudformation:props": {
-                    "maxSize": "2",
-                    "minSize": "2",
-                    "desiredCapacity": "2",
+                    "maxSize": "3",
+                    "minSize": "1",
                     "launchConfigurationName": {
                       "Ref": "ASGAdminAPILaunchConfigA09124D1"
                     },
@@ -5234,6 +5338,42 @@
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_autoscaling.CfnAutoScalingGroup",
+                  "version": "2.83.1"
+                }
+              },
+              "ScalingPolicyCPUScaling-Admin-Web": {
+                "id": "ScalingPolicyCPUScaling-Admin-Web",
+                "path": "cdk-ec2-infinity-admin/ASG-Admin-API/ScalingPolicyCPUScaling-Admin-Web",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-admin/ASG-Admin-API/ScalingPolicyCPUScaling-Admin-Web/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::AutoScaling::ScalingPolicy",
+                      "aws:cdk:cloudformation:props": {
+                        "autoScalingGroupName": {
+                          "Ref": "ASGAdminAPIASG4CE7EF54"
+                        },
+                        "cooldown": "60",
+                        "estimatedInstanceWarmup": 60,
+                        "policyType": "TargetTrackingScaling",
+                        "targetTrackingConfiguration": {
+                          "disableScaleIn": false,
+                          "predefinedMetricSpecification": {
+                            "predefinedMetricType": "ASGAverageCPUUtilization"
+                          },
+                          "targetValue": 25
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_autoscaling.CfnScalingPolicy",
+                      "version": "2.83.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_autoscaling.TargetTrackingScalingPolicy",
                   "version": "2.83.1"
                 }
               }

@@ -292,9 +292,8 @@
   "ASGAdminWebASG58B28B15": {
    "Type": "AWS::AutoScaling::AutoScalingGroup",
    "Properties": {
-    "MaxSize": "2",
-    "MinSize": "2",
-    "DesiredCapacity": "2",
+    "MaxSize": "3",
+    "MinSize": "1",
     "LaunchConfigurationName": {
      "Ref": "ASGAdminWebLaunchConfigD088BFAE"
     },
@@ -336,6 +335,27 @@
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-Web/ASG"
+   }
+  },
+  "ASGAdminWebScalingPolicyCPUScalingAdminWebB9C9B3D4": {
+   "Type": "AWS::AutoScaling::ScalingPolicy",
+   "Properties": {
+    "AutoScalingGroupName": {
+     "Ref": "ASGAdminWebASG58B28B15"
+    },
+    "Cooldown": "60",
+    "EstimatedInstanceWarmup": 60,
+    "PolicyType": "TargetTrackingScaling",
+    "TargetTrackingConfiguration": {
+     "DisableScaleIn": false,
+     "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "ASGAverageCPUUtilization"
+     },
+     "TargetValue": 25
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-Web/ScalingPolicyCPUScaling-Admin-Web/Resource"
    }
   },
   "ALBAdminAPI4816B1AD": {
@@ -630,9 +650,8 @@
   "ASGAdminAPIASG4CE7EF54": {
    "Type": "AWS::AutoScaling::AutoScalingGroup",
    "Properties": {
-    "MaxSize": "2",
-    "MinSize": "2",
-    "DesiredCapacity": "2",
+    "MaxSize": "3",
+    "MinSize": "1",
     "LaunchConfigurationName": {
      "Ref": "ASGAdminAPILaunchConfigA09124D1"
     },
@@ -676,10 +695,31 @@
     "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-API/ASG"
    }
   },
+  "ASGAdminAPIScalingPolicyCPUScalingAdminWeb06C9F762": {
+   "Type": "AWS::AutoScaling::ScalingPolicy",
+   "Properties": {
+    "AutoScalingGroupName": {
+     "Ref": "ASGAdminAPIASG4CE7EF54"
+    },
+    "Cooldown": "60",
+    "EstimatedInstanceWarmup": 60,
+    "PolicyType": "TargetTrackingScaling",
+    "TargetTrackingConfiguration": {
+     "DisableScaleIn": false,
+     "PredefinedMetricSpecification": {
+      "PredefinedMetricType": "ASGAverageCPUUtilization"
+     },
+     "TargetValue": 25
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-admin/ASG-Admin-API/ScalingPolicyCPUScaling-Admin-Web/Resource"
+   }
+  },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RTUsDMRD9Lb1nI60gXrWIFCqWXe8yzc5up02TkEyUsuS/m2xtWRU8zbyPzMskC3l/K+cz+AyVag+Vpq0cGgZ1EJl6H1BDYFLaQrsFDUaR6T8WcnhwTpMCJmvWWXscNfRi2f3EUx8FRvPtufQT/Q18j/zsbXTFMoFJoMqZDaroiU9Xy//EU+8xhD/0yox8EhDZBgU6b5T3yaA5g+u0NUSjdktrOuqjH+9Y6N/WJAiOcqitxiJf6soELm+w8bYjjSmJGoONXo3qCziXB5T2NbKLPB6dGHJsSyUyic2Jd9bc5G+ay7vZPhBVPhqmI8r6XL8AE8PgzcUBAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RwWrDMAz9lt4dj3Ywdt3KGIWOhaT3oTpOqta1jS1vhOB/n+O0JaOwk6T3nqUnecWfH/lyAT++EM2pULjnQ00gTixBX4NU4AmFMtDsQYEWqLvvFR9erFUogNDobeJeMycdW7d/67kOPUl90VzzGb8D10l6dybYUTIrI5MizaylCA6pv0n+B946J72/gzc645FBIOMFqLRR2icV9VTcum0haHFYG91iF1z2OMJ30snpzqWjJexClSbt1efpcyAyhDMfKqPkyF3jRnsaD1Y606KSMbJKehOcyOwHWJs6jOlnIBsoP50JkscGR3+RlT0djH5If7rkT4ujRyxc0IRnyasp/gKBbRhi8gEAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-admin/CDKMetadata/Default"

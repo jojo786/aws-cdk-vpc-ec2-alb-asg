@@ -1,3 +1,4 @@
+import aws_cdk as cdk
 from aws_cdk import CfnOutput, Stack
 import aws_cdk.aws_ec2 as ec2
 import aws_cdk.aws_elasticloadbalancingv2 as elb
@@ -57,21 +58,28 @@ class CdkEc2AdminStack(Stack):
         alb_web.connections.allow_from_any_ipv4(
             ec2.Port.tcp(443), "Internet access ALB 443") """
 
-        # Create Web Autoscaling Group with fixed 2*EC2 hosts
+        # Create Web Autoscaling Group 
         self.asg_web = autoscaling.AutoScalingGroup(self, f"ASG-{module}-Web",
                                                 vpc=vpc,
                                                 vpc_subnets=ec2.SubnetSelection(subnet_group_name=f'Private-{module}-Web-ASG'),
                                                 instance_type=ec2.InstanceType(instance_type_identifier=ec2_type),
                                                 #machine_image=ec2.MachineImage.latest_amazon_linux2(),
                                                 machine_image=ec2.MachineImage.generic_linux({
-                                                    "af-south-1": web_ami
+                                                     "af-south-1": web_ami
                                                 }),
                                                 key_name=key_name,
                                                 user_data=ec2.UserData.custom(user_data),
-                                                desired_capacity=2,
-                                                min_capacity=2,
-                                                max_capacity=2,
+                                                #desired_capacity=2,
+                                                min_capacity=1,
+                                                max_capacity=3,
                                                 )
+        self.asg_web.scale_on_cpu_utilization(
+            f"CPUScaling-{module}-Web",
+            target_utilization_percent=25,
+            cooldown=cdk.Duration.seconds(60),
+            disable_scale_in=False,
+            estimated_instance_warmup=cdk.Duration.seconds(60)
+        )
 
         self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
 
@@ -99,7 +107,7 @@ class CdkEc2AdminStack(Stack):
                                     port=80,
                                     open=True)
 
-        # Create Autoscaling Group with fixed 2*EC2 hosts
+         # Create Autoscaling Group 
         self.asg_api = autoscaling.AutoScalingGroup(self, f"ASG-{module}-API",
                                                 vpc=vpc,
                                                 vpc_subnets=ec2.SubnetSelection(subnet_group_name=f'Private-{module}-API-ASG'),
@@ -109,11 +117,18 @@ class CdkEc2AdminStack(Stack):
                                                 }),
                                                 key_name=key_name,
                                                 user_data=ec2.UserData.custom(user_data),
-                                                desired_capacity=2,
-                                                min_capacity=2,
-                                                max_capacity=2,
+                                                #desired_capacity=2,
+                                                min_capacity=1,
+                                                max_capacity=3,
                                                 )
 
+        self.asg_api.scale_on_cpu_utilization(
+            f"CPUScaling-{module}-Web",
+            target_utilization_percent=25,
+            cooldown=cdk.Duration.seconds(60),
+            disable_scale_in=False,
+            estimated_instance_warmup=cdk.Duration.seconds(60)
+        )
         self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(80), "ALB API access 80 port of EC2 in Autoscaling Group")
         
         alb_api_listener.add_targets(f"TG-{module}-API",

@@ -724,7 +724,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/32fe9eb163b0db1aab75dc7314b5a9d9cadc1778318ea11aa5e9b8c35f81e8d2.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d7197c7141388e60c642cbcf822a264e8d46447c46144636dead4f069d2bff0e.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -786,23 +786,6 @@
             "data": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWebGroup40D0C4D7"
           }
         ],
-        "/cdk-ec2-infinity-applications/ASG-Applications-Web": [
-          {
-            "type": "aws:cdk:warning",
-            "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
-            "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11505:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
-          }
-        ],
         "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
@@ -845,6 +828,12 @@
             "data": "ASGApplicationsWebASG60CE2D77"
           }
         ],
+        "/cdk-ec2-infinity-applications/ASG-Applications-Web/ScalingPolicyCPUScaling-Applications-Web/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ASGApplicationsWebScalingPolicyCPUScalingApplicationsWebEC722C86"
+          }
+        ],
         "/cdk-ec2-infinity-applications/Output": [
           {
             "type": "aws:cdk:logicalId",
@@ -879,23 +868,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3"
-          }
-        ],
-        "/cdk-ec2-infinity-applications/ASG-Applications-API": [
-          {
-            "type": "aws:cdk:warning",
-            "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
-            "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11505:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
           }
         ],
         "/cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup/Resource": [
@@ -938,6 +910,12 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ASGApplicationsAPIASG739F73E1"
+          }
+        ],
+        "/cdk-ec2-infinity-applications/ASG-Applications-API/ScalingPolicyCPUScaling-Applications-Web/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ASGApplicationsAPIScalingPolicyCPUScalingApplicationsWeb945898E4"
           }
         ],
         "/cdk-ec2-infinity-applications/CDKMetadata/Default": [
@@ -1115,7 +1093,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f3e9369f2eb7cae8ecff47372f3bf9e78bb74f2d061ed3d998c5d3c0f529b913.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/386d3a1f1fe1cd41cf76d7d0e1f500df11861c5fadc98debdeffa3f5097b752d.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1177,23 +1155,6 @@
             "data": "ALBAdminWebALBAdminWeb80TGAdminWebGroupB12728AA"
           }
         ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-Web": [
-          {
-            "type": "aws:cdk:warning",
-            "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
-            "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11505:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
-          }
-        ],
         "/cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
@@ -1236,6 +1197,12 @@
             "data": "ASGAdminWebASG58B28B15"
           }
         ],
+        "/cdk-ec2-infinity-admin/ASG-Admin-Web/ScalingPolicyCPUScaling-Admin-Web/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ASGAdminWebScalingPolicyCPUScalingAdminWebB9C9B3D4"
+          }
+        ],
         "/cdk-ec2-infinity-admin/Output": [
           {
             "type": "aws:cdk:logicalId",
@@ -1270,23 +1237,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ALBAdminAPIALBAdminAPI80TGAdminAPIGroup2760829A"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-API": [
-          {
-            "type": "aws:cdk:warning",
-            "data": "desiredCapacity has been configured. Be aware this will reset the size of your AutoScalingGroup on every deployment. See https://github.com/aws/aws-cdk/issues/5215",
-            "trace": [
-              "Annotations.addMessage (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1071)",
-              "Annotations.addWarning (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/core/lib/annotations.js:1:504)",
-              "new AutoScalingGroup (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-LLnYZa/node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.js:1:14217)",
-              "Kernel._create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:9964:29)",
-              "Kernel.create (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:9693:29)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11544:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11504:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpkgxbonew/lib/program.js:11505:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
           }
         ],
         "/cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup/Resource": [
@@ -1329,6 +1279,12 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ASGAdminAPIASG4CE7EF54"
+          }
+        ],
+        "/cdk-ec2-infinity-admin/ASG-Admin-API/ScalingPolicyCPUScaling-Admin-Web/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ASGAdminAPIScalingPolicyCPUScalingAdminWeb06C9F762"
           }
         ],
         "/cdk-ec2-infinity-admin/CDKMetadata/Default": [
