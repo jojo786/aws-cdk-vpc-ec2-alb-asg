@@ -15,7 +15,7 @@ db = SQLAlchemy(app)
 @dataclass
 class Applications(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    created = db.Column(db.DateTime)
+    created = db.Column(db.TIMESTAMP(timezone=False))
     student_id = db.Column(db.Integer)
     app_name = db.Column(db.Text)
 
