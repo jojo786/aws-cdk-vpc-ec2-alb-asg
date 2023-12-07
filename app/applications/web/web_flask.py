@@ -9,6 +9,8 @@ def applications():
     #get the data from the applictions API
     response = requests.get('http://127.0.0.1:5000/applications')
     print(response)
+    for r in response:
+        print(r)
     return render_template('index.html', data=response) 
 
     #return response.json()
