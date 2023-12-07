@@ -4,6 +4,7 @@ from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 from dataclasses import dataclass
+import psycopg2
 #from flask_migrate import Migrate
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -24,7 +25,25 @@ class Applications(db.Model):
 
 @app.route('/applications')
 def index():
-    applications = Applications.query.all()
+    #applications = Applications.query.all()
+    conn = psycopg2.connect(
+                            user="postgres", 
+                            password="eqiQSWyCQjqIHPrTbmjS", 
+                            host="database-1.cluster-csh5ndq6v79g.af-south-1.rds.amazonaws.com", 
+                            port="5432") 
+  
+    # create a cursor 
+    cur = conn.cursor() 
+  
+    # Select all products from the table 
+    cur.execute('''SELECT * FROM applictions''') 
+  
+    # Fetch the data 
+    applications = cur.fetchall() 
+  
+    # close the cursor and connection 
+    cur.close() 
+    conn.close() 
     for app in applications:
         print(app.student_name, app.student_email)
     return jsonify(applications)  #render_template('index.html', applications=applications)
