@@ -1,0 +1,30 @@
+<html> 
+  <head> 
+    <title>Applications App</title> 
+  </head> 
+  <body> 
+    <h1>Applications App</h1> 
+    <table> 
+      <thead> 
+        <tr> 
+          <th>Name</th> 
+          <th>Email</th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        {% for row in data %} 
+        <tr> 
+          <td>{{ row[0] }}</td> 
+          <td>{{ row[1] }}</td> 
+        </tr> 
+        {% endfor %} 
+      </tbody> 
+    </table> 
+    <h2>Create a new product</h2> 
+    <form action="/create" method="post"> 
+      <input type="text" name="name" placeholder="Name"> 
+      <input type="text" name="price" placeholder="Price"> 
+      <input type="submit" value="Create"> 
+    </form> 
+  </body> 
+</html> 
