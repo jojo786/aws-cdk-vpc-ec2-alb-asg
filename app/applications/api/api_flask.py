@@ -12,16 +12,15 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:eqiQSWyCQjqIHPrTb
 db = SQLAlchemy(app)
 #migrate = Migrate(app, db)
 
-#@dataclass
+@dataclass
 class Applications(db.Model):
+    student_name = str
+    student_email = str
+
     #id = db.Column(db.Integer, primary_key=True)
     #created = db.Column(db.TIMESTAMP(timezone=False))
     student_name = db.Column(db.Text, primary_key=True)
     student_email = db.Column(db.Text)
-
-    def __repr__(self):
-        return f'<Applications {self.student_name}>'
-
 
 @app.route('/applications')
 def index():
