@@ -36,7 +36,7 @@ def index():
     cur = conn.cursor() 
   
     # Select all products from the table 
-    cur.execute('''SELECT * FROM applictions''') 
+    cur.execute('''SELECT * FROM applications''') 
   
     # Fetch the data 
     applications = cur.fetchall() 
