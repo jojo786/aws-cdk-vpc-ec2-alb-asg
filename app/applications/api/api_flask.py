@@ -45,5 +45,5 @@ def index():
     cur.close() 
     conn.close() 
     for app in applications:
-        print(app.student_name, app.student_email)
+        print(app)
     return jsonify(applications)  #render_template('index.html', applications=applications)
