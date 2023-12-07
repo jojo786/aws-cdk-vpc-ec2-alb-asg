@@ -6,12 +6,13 @@ from aws_cdk import aws_autoscaling as autoscaling
 import aws_cdk.aws_certificatemanager as acm
 from constructs import Construct
 from pathlib import Path
+from aws_cdk.aws_elasticloadbalancingv2 import Protocol
 
 module='Applications'
 ec2_type = 't3.micro'
 key_name = 'id_rsa'  # Setup key_name for EC2 instance login
-web_ami='ami-09e042233e6cbe5c5'
-api_ami='ami-09e042233e6cbe5c5'
+web_ami='ami-09f2d098a82d0c1b1'
+api_ami='ami-09f2d098a82d0c1b1'
 
 data_folder = Path("user_data/")
 file_to_open = data_folder / "user_data.sh"
@@ -33,14 +34,24 @@ class CdkEc2ApplicationsStack(Stack):
                                           )
         
         
-        # Create Web ALB Listener
-        alb_web_listener = alb_web.add_listener(f"ALB-{module}-Web-80",
-                                    port=80,
-                                    open=True)
+        # Create Web ALB Listener - Port 80
+        #alb_web_listener = alb_web.add_listener(f"ALB-{module}-Web-80",
+        #                            port=80,
+        #                            open=True)
+
+        # Create Web ALB Listener - Port 5002
+        alb_web_listener = alb_web.add_listener(f"ALB-{module}-Web-5002",
+                                    port=5002,
+                                    open=True,
+                                    protocol=elb.ApplicationProtocol.HTTP)
         
         # Allow Web ALB connections on port 80 from the internet
+        #alb_web.connections.allow_from_any_ipv4(
+        #    ec2.Port.tcp(80), "Internet access ALB 80")
+        
+        # Allow Web ALB connections on port 5002 from the internet
         alb_web.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(80), "Internet access ALB 80")
+            ec2.Port.tcp(5002), "Internet access ALB 5002")
         
 
         """ #Create ACM HTTPS cert
@@ -82,9 +93,15 @@ class CdkEc2ApplicationsStack(Stack):
         )
 
         self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
+        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(5002), "ALB access 5002 port of EC2 in Autoscaling Group")
 
-        alb_web_listener.add_targets(f"TG-{module}-Web",
-                             port=80,
+        #alb_web_listener.add_targets(f"TG-{module}-Web-80",
+        #                     port=80,
+        #                     targets=[self.asg_web])
+        
+        alb_web_listener.add_targets(f"TG-{module}-Web-5002",
+                             port=5002,
+                             protocol=elb.ApplicationProtocol.HTTP,
                              targets=[self.asg_web])
 
         CfnOutput(self, "Output",

@@ -279,7 +279,7 @@
      }
     ],
     "UserData": {
-     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php\nsudo chkconfig httpd on\nsudo service httpd start"
+     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\npip install Flask psycopg2-binary requests\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\nflask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\nflask --app web_flask run --debug --host=0.0.0.0"
     }
    },
    "DependsOn": [
@@ -637,7 +637,7 @@
      }
     ],
     "UserData": {
-     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php\nsudo chkconfig httpd on\nsudo service httpd start"
+     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\npip install Flask psycopg2-binary requests\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\nflask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\nflask --app web_flask run --debug --host=0.0.0.0"
     }
    },
    "DependsOn": [
