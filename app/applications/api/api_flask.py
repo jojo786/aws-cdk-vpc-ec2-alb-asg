@@ -37,6 +37,7 @@ def get_secret():
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
 user, password, host, port = get_secret()
+print (host)
 
 @app.route('/applications')
 def index():

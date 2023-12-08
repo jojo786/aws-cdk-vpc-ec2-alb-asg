@@ -730,12 +730,12 @@
  "Mappings": {
   "ASGApplicationsWebAmiMap360FDF57": {
    "af-south-1": {
-    "ami": "ami-09f2d098a82d0c1b1"
+    "ami": "ami-0fba74e3e73a2eb02"
    }
   },
   "ASGApplicationsAPIAmiMap353AF052": {
    "af-south-1": {
-    "ami": "ami-09f2d098a82d0c1b1"
+    "ami": "ami-0fba74e3e73a2eb02"
    }
   }
  },
