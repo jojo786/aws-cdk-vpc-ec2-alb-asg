@@ -3111,6 +3111,85 @@
               "version": "2.83.1"
             }
           },
+          "Role": {
+            "id": "Role",
+            "path": "cdk-ec2-infinity-applications/Role",
+            "children": {
+              "ImportRole": {
+                "id": "ImportRole",
+                "path": "cdk-ec2-infinity-applications/Role/ImportRole",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.83.1"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-ec2-infinity-applications/Role/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "ec2.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/SecretsManagerReadWrite"
+                          ]
+                        ]
+                      },
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+                          ]
+                        ]
+                      }
+                    ],
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Applications"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                  "version": "2.83.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_iam.Role",
+              "version": "2.83.1"
+            }
+          },
           "ASG-Applications-Web": {
             "id": "ASG-Applications-Web",
             "path": "cdk-ec2-infinity-applications/ASG-Applications-Web",
@@ -3192,63 +3271,6 @@
                   "version": "2.83.1"
                 }
               },
-              "InstanceRole": {
-                "id": "InstanceRole",
-                "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceRole",
-                "children": {
-                  "ImportInstanceRole": {
-                    "id": "ImportInstanceRole",
-                    "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceRole/ImportInstanceRole",
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.Resource",
-                      "version": "2.83.1"
-                    }
-                  },
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceRole/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                      "aws:cdk:cloudformation:props": {
-                        "assumeRolePolicyDocument": {
-                          "Statement": [
-                            {
-                              "Action": "sts:AssumeRole",
-                              "Effect": "Allow",
-                              "Principal": {
-                                "Service": "ec2.amazonaws.com"
-                              }
-                            }
-                          ],
-                          "Version": "2012-10-17"
-                        },
-                        "tags": [
-                          {
-                            "key": "Env",
-                            "value": "Prod"
-                          },
-                          {
-                            "key": "Module",
-                            "value": "Applications"
-                          },
-                          {
-                            "key": "Name",
-                            "value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                      "version": "2.83.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_iam.Role",
-                  "version": "2.83.1"
-                }
-              },
               "InstanceProfile": {
                 "id": "InstanceProfile",
                 "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceProfile",
@@ -3257,7 +3279,7 @@
                   "aws:cdk:cloudformation:props": {
                     "roles": [
                       {
-                        "Ref": "ASGApplicationsWebInstanceRoleB59BB814"
+                        "Ref": "Role1ABCC5F0"
                       }
                     ]
                   }
@@ -3706,63 +3728,6 @@
                   "version": "2.83.1"
                 }
               },
-              "InstanceRole": {
-                "id": "InstanceRole",
-                "path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceRole",
-                "children": {
-                  "ImportInstanceRole": {
-                    "id": "ImportInstanceRole",
-                    "path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceRole/ImportInstanceRole",
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.Resource",
-                      "version": "2.83.1"
-                    }
-                  },
-                  "Resource": {
-                    "id": "Resource",
-                    "path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceRole/Resource",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
-                      "aws:cdk:cloudformation:props": {
-                        "assumeRolePolicyDocument": {
-                          "Statement": [
-                            {
-                              "Action": "sts:AssumeRole",
-                              "Effect": "Allow",
-                              "Principal": {
-                                "Service": "ec2.amazonaws.com"
-                              }
-                            }
-                          ],
-                          "Version": "2012-10-17"
-                        },
-                        "tags": [
-                          {
-                            "key": "Env",
-                            "value": "Prod"
-                          },
-                          {
-                            "key": "Module",
-                            "value": "Applications"
-                          },
-                          {
-                            "key": "Name",
-                            "value": "cdk-ec2-infinity-applications/ASG-Applications-API"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                      "version": "2.83.1"
-                    }
-                  }
-                },
-                "constructInfo": {
-                  "fqn": "aws-cdk-lib.aws_iam.Role",
-                  "version": "2.83.1"
-                }
-              },
               "InstanceProfile": {
                 "id": "InstanceProfile",
                 "path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceProfile",
@@ -3771,7 +3736,7 @@
                   "aws:cdk:cloudformation:props": {
                     "roles": [
                       {
-                        "Ref": "ASGApplicationsAPIInstanceRole324280BF"
+                        "Ref": "Role1ABCC5F0"
                       }
                     ]
                   }

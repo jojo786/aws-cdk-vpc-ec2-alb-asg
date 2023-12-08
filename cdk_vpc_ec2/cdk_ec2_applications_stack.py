@@ -7,6 +7,8 @@ import aws_cdk.aws_certificatemanager as acm
 from constructs import Construct
 from pathlib import Path
 from aws_cdk.aws_elasticloadbalancingv2 import Protocol
+import aws_cdk.aws_iam as iam
+
 
 module='Applications'
 ec2_type = 't3.micro'
@@ -69,6 +71,14 @@ class CdkEc2ApplicationsStack(Stack):
         alb_web.connections.allow_from_any_ipv4(
             ec2.Port.tcp(443), "Internet access ALB 443") """
 
+        #IAM Instance Role to attached to EC2 instances in ASG
+        role = iam.Role(self, "Role",
+            assumed_by=iam.ServicePrincipal("ec2.amazonaws.com")  
+        )
+
+        role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("SecretsManagerReadWrite"))
+        role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSSMManagedInstanceCore"))
+
         # Create Web Autoscaling Group 
         self.asg_web = autoscaling.AutoScalingGroup(self, f"ASG-{module}-Web",
                                                 vpc=vpc,
@@ -83,6 +93,7 @@ class CdkEc2ApplicationsStack(Stack):
                                                 #desired_capacity=2,
                                                 min_capacity=1,
                                                 max_capacity=3,
+                                                role=role,
                                                 )
         self.asg_web.scale_on_cpu_utilization(
             f"CPUScaling-{module}-Web",
@@ -138,6 +149,7 @@ class CdkEc2ApplicationsStack(Stack):
                                                 #desired_capacity=2,
                                                 min_capacity=1,
                                                 max_capacity=3,
+                                                role=role,
                                                 )
 
         self.asg_api.scale_on_cpu_utilization(
@@ -154,3 +166,7 @@ class CdkEc2ApplicationsStack(Stack):
                              port=5000,
                              protocol=elb.ApplicationProtocol.HTTP,
                              targets=[self.asg_api])
+
+        #cfn_instance_connect_endpoint = ec2.CfnInstanceConnectEndpoint(self, "MyCfnInstanceConnectEndpoint",
+        #    subnet_id = vpc.select_subnets(subnet_group_name='Private-{module}-Web-ASG').subnet_ids[0]
+        #)

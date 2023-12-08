@@ -724,7 +724,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2deb59382cb291a0b77537940ed66cf8ea8a46e58c705838c5c0f2932de1843e.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9685c6b875081a730e276288fdc7f8b091d8bf5b1d32d37b77616d43aa0571b.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -786,6 +786,12 @@
             "data": "ALBApplicationsWebALBApplicationsWeb5002TGApplicationsWeb5002Group039B65A4"
           }
         ],
+        "/cdk-ec2-infinity-applications/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Role1ABCC5F0"
+          }
+        ],
         "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/Resource": [
           {
             "type": "aws:cdk:logicalId",
@@ -796,12 +802,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C50023F47116E"
-          }
-        ],
-        "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGApplicationsWebInstanceRoleB59BB814"
           }
         ],
         "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceProfile": [
@@ -880,12 +880,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ASGApplicationsAPIInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsAPISecurityGroupC960C2C05000336E401F"
-          }
-        ],
-        "/cdk-ec2-infinity-applications/ASG-Applications-API/InstanceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGApplicationsAPIInstanceRole324280BF"
           }
         ],
         "/cdk-ec2-infinity-applications/ASG-Applications-API/InstanceProfile": [

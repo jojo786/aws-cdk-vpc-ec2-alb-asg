@@ -149,6 +149,62 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-5002/TG-Applications-Web-5002Group/Resource"
    }
   },
+  "Role1ABCC5F0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/SecretsManagerReadWrite"
+       ]
+      ]
+     },
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Env",
+      "Value": "Prod"
+     },
+     {
+      "Key": "Module",
+      "Value": "Applications"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "cdk-ec2-infinity-applications/Role/Resource"
+   }
+  },
   "ASGApplicationsWebInstanceSecurityGroup94520ECD": {
    "Type": "AWS::EC2::SecurityGroup",
    "Properties": {
@@ -206,46 +262,12 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:5002"
    }
   },
-  "ASGApplicationsWebInstanceRoleB59BB814": {
-   "Type": "AWS::IAM::Role",
-   "Properties": {
-    "AssumeRolePolicyDocument": {
-     "Statement": [
-      {
-       "Action": "sts:AssumeRole",
-       "Effect": "Allow",
-       "Principal": {
-        "Service": "ec2.amazonaws.com"
-       }
-      }
-     ],
-     "Version": "2012-10-17"
-    },
-    "Tags": [
-     {
-      "Key": "Env",
-      "Value": "Prod"
-     },
-     {
-      "Key": "Module",
-      "Value": "Applications"
-     },
-     {
-      "Key": "Name",
-      "Value": "cdk-ec2-infinity-applications/ASG-Applications-Web"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceRole/Resource"
-   }
-  },
   "ASGApplicationsWebInstanceProfileFC17BFF1": {
    "Type": "AWS::IAM::InstanceProfile",
    "Properties": {
     "Roles": [
      {
-      "Ref": "ASGApplicationsWebInstanceRoleB59BB814"
+      "Ref": "Role1ABCC5F0"
      }
     ]
    },
@@ -283,7 +305,7 @@
     }
    },
    "DependsOn": [
-    "ASGApplicationsWebInstanceRoleB59BB814"
+    "Role1ABCC5F0"
    ],
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/LaunchConfig"
@@ -564,46 +586,12 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsAPISecurityGroupC960C2C0:5000"
    }
   },
-  "ASGApplicationsAPIInstanceRole324280BF": {
-   "Type": "AWS::IAM::Role",
-   "Properties": {
-    "AssumeRolePolicyDocument": {
-     "Statement": [
-      {
-       "Action": "sts:AssumeRole",
-       "Effect": "Allow",
-       "Principal": {
-        "Service": "ec2.amazonaws.com"
-       }
-      }
-     ],
-     "Version": "2012-10-17"
-    },
-    "Tags": [
-     {
-      "Key": "Env",
-      "Value": "Prod"
-     },
-     {
-      "Key": "Module",
-      "Value": "Applications"
-     },
-     {
-      "Key": "Name",
-      "Value": "cdk-ec2-infinity-applications/ASG-Applications-API"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceRole/Resource"
-   }
-  },
   "ASGApplicationsAPIInstanceProfile2758142C": {
    "Type": "AWS::IAM::InstanceProfile",
    "Properties": {
     "Roles": [
      {
-      "Ref": "ASGApplicationsAPIInstanceRole324280BF"
+      "Ref": "Role1ABCC5F0"
      }
     ]
    },
@@ -641,7 +629,7 @@
     }
    },
    "DependsOn": [
-    "ASGApplicationsAPIInstanceRole324280BF"
+    "Role1ABCC5F0"
    ],
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/LaunchConfig"
@@ -719,7 +707,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RwWrDMAz9lt4dj3Ywdt3KGIWOhaT3oTpOqta1jS1vhOB/n+O0JaOwk6T3nqUnecWfH/lyAT++EM2pULjnQ00gTixBX4NU4AmFMtDsQYEWqLvvFR9erFUogNDobeJeMycdW7d/67kOPUl90VzzGb8D10l6dybYUTIrI5MizaylCA6pv0n+B946J72/gzc645FBIOMFqLRR2icV9VTcum0haHFYG91iF1z2OMJ30snpzqWjJexClSbt1efpcyAyhDMfKqPkyF3jRnsaD1Y606KSMbJKehOcyOwHWJs6jOlnIBsoP50JkscGR3+RlT0djH5If7rkT4ujRyxc0IRnyasp/gKBbRhi8gEAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31RQWrDMBB8S+6ySlIovbahlEBKjZ172ciys4kiCWnVYoz+XllOgkugp92dGZgZacWfH/lyAT++EM2pULjnQ00gTixBX4NU4AmFMtDsQYEWqLvvFR9erFUogNDobeJeMycdW7d/77kOPUl90Vz3Gb8D10l6dybYUTI7I5MiedZSBIfU3yT/A2+dk97fwRud8cgQznyojJKj5Do32tOYvHSmRSUjg0DGC1Cpd2qdjno6bp5bCFoc1ka32AWXm4zwnXTqs3PpaRN2oUqT2vc54xyIkVXSm+BEDvUB1iZuXD8D2UA58UyQ3BscnSMrezoY/ZD+dMmfFkePWLigCc+SV9P8Bf8lH6/yAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/CDKMetadata/Default"
