@@ -74,30 +74,6 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/Resource"
    }
   },
-  "ALBApplicationsWebSecurityGrouptocdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388806673245B": {
-   "Type": "AWS::EC2::SecurityGroupEgress",
-   "Properties": {
-    "GroupId": {
-     "Fn::GetAtt": [
-      "ALBApplicationsWebSecurityGroupDEDFEC71",
-      "GroupId"
-     ]
-    },
-    "IpProtocol": "tcp",
-    "Description": "ALB access 80 port of EC2 in Autoscaling Group",
-    "DestinationSecurityGroupId": {
-     "Fn::GetAtt": [
-      "ASGApplicationsWebInstanceSecurityGroup94520ECD",
-      "GroupId"
-     ]
-    },
-    "FromPort": 80,
-    "ToPort": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:80"
-   }
-  },
   "ALBApplicationsWebSecurityGrouptocdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A43885002771D6165": {
    "Type": "AWS::EC2::SecurityGroupEgress",
    "Properties": {
@@ -204,30 +180,6 @@
    },
    "Metadata": {
     "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/Resource"
-   }
-  },
-  "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C80CBD623A1": {
-   "Type": "AWS::EC2::SecurityGroupIngress",
-   "Properties": {
-    "IpProtocol": "tcp",
-    "Description": "ALB access 80 port of EC2 in Autoscaling Group",
-    "FromPort": 80,
-    "GroupId": {
-     "Fn::GetAtt": [
-      "ASGApplicationsWebInstanceSecurityGroup94520ECD",
-      "GroupId"
-     ]
-    },
-    "SourceSecurityGroupId": {
-     "Fn::GetAtt": [
-      "ALBApplicationsWebSecurityGroupDEDFEC71",
-      "GroupId"
-     ]
-    },
-    "ToPort": 80
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:80"
    }
   },
   "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C50023F47116E": {
@@ -456,10 +408,10 @@
     "SecurityGroupIngress": [
      {
       "CidrIp": "0.0.0.0/0",
-      "Description": "Internet access ALB 80",
-      "FromPort": 80,
+      "Description": "Internet access ALB 5000",
+      "FromPort": 5000,
       "IpProtocol": "tcp",
-      "ToPort": 80
+      "ToPort": 5000
      }
     ],
     "Tags": [
@@ -480,7 +432,7 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/SecurityGroup/Resource"
    }
   },
-  "ALBApplicationsAPISecurityGrouptocdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA80C46E582F": {
+  "ALBApplicationsAPISecurityGrouptocdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA5000CA9923C8": {
    "Type": "AWS::EC2::SecurityGroupEgress",
    "Properties": {
     "GroupId": {
@@ -497,20 +449,20 @@
       "GroupId"
      ]
     },
-    "FromPort": 80,
-    "ToPort": 80
+    "FromPort": 5000,
+    "ToPort": 5000
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA:80"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA:5000"
    }
   },
-  "ALBApplicationsAPIALBApplicationsAPI808CDCED01": {
+  "ALBApplicationsAPIALBApplicationsAPI5000680EA92A": {
    "Type": "AWS::ElasticLoadBalancingV2::Listener",
    "Properties": {
     "DefaultActions": [
      {
       "TargetGroupArn": {
-       "Ref": "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3"
+       "Ref": "ALBApplicationsAPIALBApplicationsAPI5000TGApplicationsAPIGroup2D5A3B42"
       },
       "Type": "forward"
      }
@@ -518,17 +470,17 @@
     "LoadBalancerArn": {
      "Ref": "ALBApplicationsAPI22783E44"
     },
-    "Port": 80,
+    "Port": 5000,
     "Protocol": "HTTP"
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-5000/Resource"
    }
   },
-  "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3": {
+  "ALBApplicationsAPIALBApplicationsAPI5000TGApplicationsAPIGroup2D5A3B42": {
    "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
    "Properties": {
-    "Port": 80,
+    "Port": 5000,
     "Protocol": "HTTP",
     "Tags": [
      {
@@ -552,7 +504,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80/TG-Applications-APIGroup/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-5000/TG-Applications-APIGroup/Resource"
    }
   },
   "ASGApplicationsAPIInstanceSecurityGroup7E1B9C5F": {
@@ -588,12 +540,12 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup/Resource"
    }
   },
-  "ASGApplicationsAPIInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsAPISecurityGroupC960C2C080B53694A9": {
+  "ASGApplicationsAPIInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsAPISecurityGroupC960C2C05000336E401F": {
    "Type": "AWS::EC2::SecurityGroupIngress",
    "Properties": {
     "IpProtocol": "tcp",
     "Description": "ALB API access 80 port of EC2 in Autoscaling Group",
-    "FromPort": 80,
+    "FromPort": 5000,
     "GroupId": {
      "Fn::GetAtt": [
       "ASGApplicationsAPIInstanceSecurityGroup7E1B9C5F",
@@ -606,10 +558,10 @@
       "GroupId"
      ]
     },
-    "ToPort": 80
+    "ToPort": 5000
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsAPISecurityGroupC960C2C0:80"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsAPISecurityGroupC960C2C0:5000"
    }
   },
   "ASGApplicationsAPIInstanceRole324280BF": {
@@ -722,7 +674,7 @@
     ],
     "TargetGroupARNs": [
      {
-      "Ref": "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3"
+      "Ref": "ALBApplicationsAPIALBApplicationsAPI5000TGApplicationsAPIGroup2D5A3B42"
      }
     ],
     "VPCZoneIdentifier": [

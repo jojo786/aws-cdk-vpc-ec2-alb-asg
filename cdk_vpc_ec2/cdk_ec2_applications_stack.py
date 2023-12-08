@@ -92,7 +92,7 @@ class CdkEc2ApplicationsStack(Stack):
             estimated_instance_warmup=cdk.Duration.seconds(60)
         )
 
-        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
+        #self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
         self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(5002), "ALB access 5002 port of EC2 in Autoscaling Group")
 
         #alb_web_listener.add_targets(f"TG-{module}-Web-80",
@@ -117,12 +117,13 @@ class CdkEc2ApplicationsStack(Stack):
         
         #Allow port 80
         alb_api.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(80), "Internet access ALB 80")
+            ec2.Port.tcp(5000), "Internet access ALB 5000")
         
         # Create API ALB Listener
-        alb_api_listener = alb_api.add_listener(f"ALB-{module}-API-80",
-                                    port=80,
-                                    open=True)                    
+        alb_api_listener = alb_api.add_listener(f"ALB-{module}-API-5000",
+                                    port=5000,
+                                    open=True,
+                                    protocol=elb.ApplicationProtocol.HTTP)                    
 
         # Create Autoscaling Group
         self.asg_api = autoscaling.AutoScalingGroup(self, f"ASG-{module}-API",
@@ -147,8 +148,9 @@ class CdkEc2ApplicationsStack(Stack):
             estimated_instance_warmup=cdk.Duration.seconds(60)
         )
 
-        self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(80), "ALB API access 80 port of EC2 in Autoscaling Group")
+        self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(5000), "ALB API access 80 port of EC2 in Autoscaling Group")
         
         alb_api_listener.add_targets(f"TG-{module}-API",
-                             port=80,
+                             port=5000,
+                             protocol=elb.ApplicationProtocol.HTTP,
                              targets=[self.asg_api])

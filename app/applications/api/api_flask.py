@@ -1,18 +1,50 @@
 import os
 from flask import Flask, jsonify
 import psycopg2
+import boto3
+from botocore.exceptions import ClientError
+import json
+
+
+def get_secret():
+
+    secret_name = "RDSAuroraPostgresApplicatio-ZdX5r4dOewvx"
+    region_name = "af-south-1"
+
+    # Create a Secrets Manager client
+    session = boto3.session.Session()
+    client = session.client(
+        service_name='secretsmanager',
+        region_name=region_name
+    )
+
+    try:
+        get_secret_value_response = client.get_secret_value(
+            SecretId=secret_name
+        )
+    except ClientError as e:
+        raise e
+
+    
+    secretstring = get_secret_value_response['SecretString']
+    secret = json.loads(secretstring)
+    user = secret['username']
+    host = secret['host']
+    password = secret['password']
+    port = secret['port']
+    return user, password, host, port
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app = Flask(__name__)
-
+user, password, host, port = get_secret()
 
 @app.route('/applications')
 def index():
     conn = psycopg2.connect(
-                            user="postgres", 
-                            password="eqiQSWyCQjqIHPrTbmjS", 
-                            host="database-1.cluster-csh5ndq6v79g.af-south-1.rds.amazonaws.com", 
-                            port="5432") 
+                            user=user, 
+                            password=password, 
+                            host=host,
+                            port=port) 
   
     # create a cursor 
     cur = conn.cursor() 
