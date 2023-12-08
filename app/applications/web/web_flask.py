@@ -8,6 +8,7 @@ app = Flask(__name__)
 def applications():
     #get the data from the applictions API
     response = requests.get('http://internal-ALB-Applications-API-721549299.af-south-1.elb.amazonaws.com:5000/applications')
+    print(response)
     applications = response.json()
     print(applications)
     for app in applications:
