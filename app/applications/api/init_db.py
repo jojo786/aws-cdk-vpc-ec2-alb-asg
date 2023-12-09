@@ -54,9 +54,10 @@ for i in range(10):
     "email": fake.email(),
   }
 
-  statement = """INSERT INTO applications (student_name, student_email) VALUES;""" 
+  statement = """INSERT INTO applications (student_name, student_email) VALUES(%s);""" 
   print(statement)
-  cur.execute(statement, (fake_data['name'], fake_data['email'])) 
+  cur.execute(statement, (fake_data['name'], fake_data['email'],)) 
+  conn.commit()
   #insert_statements.append(statement)
 
 #with open('test_data.sql', 'w') as f:
