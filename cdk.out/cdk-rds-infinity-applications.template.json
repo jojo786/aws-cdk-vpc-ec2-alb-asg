@@ -60,7 +60,7 @@
    "Type": "AWS::EC2::SecurityGroupIngress",
    "Properties": {
     "IpProtocol": "tcp",
-    "Description": "EC2 Autoscaling Group access Aurora",
+    "Description": "EC2 Autoscaling Group access to Aurora",
     "FromPort": {
      "Fn::GetAtt": [
       "RDSAuroraPostgresApplicationsBC5BCB59",

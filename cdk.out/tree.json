@@ -4043,7 +4043,7 @@
                       "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
                       "aws:cdk:cloudformation:props": {
                         "ipProtocol": "tcp",
-                        "description": "EC2 Autoscaling Group access Aurora",
+                        "description": "EC2 Autoscaling Group access to Aurora",
                         "fromPort": {
                           "Fn::GetAtt": [
                             "RDSAuroraPostgresApplicationsBC5BCB59",

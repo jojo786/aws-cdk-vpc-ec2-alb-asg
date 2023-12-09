@@ -1,4 +1,4 @@
-from aws_cdk import Duration, Stack
+from aws_cdk import Stack
 import aws_cdk.aws_ec2 as ec2
 import aws_cdk.aws_rds as rds
 from constructs import Construct
@@ -21,4 +21,4 @@ class CdkRdsApplicationsStack(Stack):
                                                 vpc_subnets=ec2.SubnetSelection(subnet_group_name=f"Private-DB-{module}")
                                                 )
         for asg_sg in asg_security_groups:
-            db_Aurora_cluster.connections.allow_default_port_from(asg_sg, "EC2 Autoscaling Group access Aurora")
+            db_Aurora_cluster.connections.allow_default_port_from(asg_sg , "EC2 Autoscaling Group access to Aurora")
