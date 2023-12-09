@@ -54,7 +54,7 @@ for i in range(10):
     "email": fake.email(),
   }
 
-  statement = """INSERT INTO applications (student_name, student_email) VALUES);""" 
+  statement = """INSERT INTO applications (student_name, student_email) VALUES RETURNING id;""" 
   print(statement)
   cur.execute(statement, (fake['name']), fake['email']) 
   #insert_statements.append(statement)
