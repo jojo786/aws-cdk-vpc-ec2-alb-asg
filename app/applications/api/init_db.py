@@ -45,7 +45,7 @@ conn = psycopg2.connect(
 cur = conn.cursor() 
   
 
-insert_statements = []
+#insert_statements = []
 fake = Faker()
 
 for i in range(10):
@@ -54,9 +54,9 @@ for i in range(10):
     "email": fake.email(),
   }
 
-  statement = f"INSERT INTO applications (student_name, student_email) VALUES ('{fake_data['name']}', '{fake_data['email']}' );" 
+  statement = """INSERT INTO applications (student_name, student_email) VALUES);""" 
   print(statement)
-  cur.execute(statement) 
+  cur.execute(statement, (fake['name']), fake['email']) 
   #insert_statements.append(statement)
 
 #with open('test_data.sql', 'w') as f:
