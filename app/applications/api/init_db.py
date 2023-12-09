@@ -49,15 +49,16 @@ cur = conn.cursor()
 fake = Faker()
 
 for i in range(10):
-  fake_data = {
-    "name": fake.name(),
-    "email": fake.email(),
-  }
-
-  statement = """INSERT INTO applications (student_name, student_email) VALUES(%s);""" 
-  print(statement)
-  cur.execute(statement, (fake_data['name'], fake_data['email'],)) 
-  conn.commit()
+    fake_data = {
+        "name": fake.name(),
+        "email": fake.email(),
+    }
+    name = fake_data['name']
+    email = fake_data['email']
+    statement = """INSERT INTO applications (student_name, student_email) VALUES(%s, %s);""" 
+    print(statement)
+    cur.execute(statement, (name, email)) 
+    conn.commit()
   #insert_statements.append(statement)
 
 #with open('test_data.sql', 'w') as f:
