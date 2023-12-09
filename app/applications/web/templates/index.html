@@ -7,6 +7,7 @@
     <table> 
       <thead> 
         <tr> 
+          <th>ID</th>
           <th>Name</th> 
           <th>Email</th> 
         </tr> 
@@ -16,15 +17,10 @@
         <tr> 
           <td>{{ row[0] }}</td> 
           <td>{{ row[1] }}</td> 
+          <td>{{ row[2] }}</td>
         </tr> 
         {% endfor %} 
       </tbody> 
     </table> 
-    <h2>Create a new product</h2> 
-    <form action="/create" method="post"> 
-      <input type="text" name="name" placeholder="Name"> 
-      <input type="text" name="price" placeholder="Price"> 
-      <input type="submit" value="Create"> 
-    </form> 
   </body> 
 </html> 
