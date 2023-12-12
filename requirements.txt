@@ -1,3 +1,4 @@
-aws-cdk-lib>=2.0.0
-constructs>=10.0.0
-types-setuptools
+aws-cdk.asset-awscli-v1
+aws-cdk.asset-kubectl-v20
+aws-cdk.asset-node-proxy-agent-v5
+aws-cdk-lib

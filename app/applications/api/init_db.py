@@ -43,7 +43,6 @@ conn = psycopg2.connect(
   
 # create a cursor 
 cur = conn.cursor() 
-  
 
 #insert_statements = []
 fake = Faker()
@@ -59,14 +58,6 @@ for i in range(10):
     print(statement)
     cur.execute(statement, (name, email)) 
     conn.commit()
-  #insert_statements.append(statement)
-
-#with open('test_data.sql', 'w') as f:
-#  f.write(";".join(insert_statements))
-
-# Select all products from the table 
-#cur.execute('''SELECT * FROM applications''') 
-  
   
 # close the cursor and connection 
 cur.close() 

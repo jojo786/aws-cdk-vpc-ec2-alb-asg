@@ -1,5 +1,5 @@
 {
-  "version": "32.0.0",
+  "version": "35.0.0",
   "artifacts": {
     "cdk-vpc-infinity.assets": {
       "type": "cdk:asset-manifest",
@@ -14,13 +14,14 @@
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
         "templateFile": "cdk-vpc-infinity.template.json",
+        "terminationProtection": false,
         "tags": {
           "Env": "Prod"
         },
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3620744bb0116e3eb27df6522fe51a41680def75d94b7fbbdacd5391e141e0ba.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0d6d4ea6b3b4d8fdc006b8418c9da0ee66c50d0cbe7ba79daaca4681a850dc3c.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -305,234 +306,6 @@
             "data": "VPCInfinityPrivateDBApplicationsSubnet2RouteTableAssociation03BB6513"
           }
         ],
-        "/cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPublicAdminWebALBSubnet1SubnetC8BC5FC7"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPublicAdminWebALBSubnet1RouteTable9A117748"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPublicAdminWebALBSubnet1RouteTableAssociation6014F38C"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet1/DefaultRoute": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPublicAdminWebALBSubnet1DefaultRoute355FE476"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPublicAdminWebALBSubnet2SubnetB791D1CF"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPublicAdminWebALBSubnet2RouteTableF047F306"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPublicAdminWebALBSubnet2RouteTableAssociation80747BFD"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Public-Admin-Web-ALBSubnet2/DefaultRoute": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPublicAdminWebALBSubnet2DefaultRouteAE3362F0"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminWebASGSubnet1Subnet8800A59B"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminWebASGSubnet1RouteTable45A4F85D"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminWebASGSubnet1RouteTableAssociation2B60F73E"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet1/DefaultRoute": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminWebASGSubnet1DefaultRouteF2E01A0B"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminWebASGSubnet2Subnet4EB03617"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminWebASGSubnet2RouteTable1FF98014"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminWebASGSubnet2RouteTableAssociation8DEBCD5D"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-Web-ASGSubnet2/DefaultRoute": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminWebASGSubnet2DefaultRouteD0DB126D"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIALBSubnet1SubnetB7CBE047"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIALBSubnet1RouteTableE3C86139"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIALBSubnet1RouteTableAssociation112E7C6B"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet1/DefaultRoute": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIALBSubnet1DefaultRoute9C08AC1C"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIALBSubnet2Subnet006BABA9"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIALBSubnet2RouteTable1637FFD3"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIALBSubnet2RouteTableAssociation6B8B92C8"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ALBSubnet2/DefaultRoute": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIALBSubnet2DefaultRouteFD99AB89"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIASGSubnet1Subnet5722E01E"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIASGSubnet1RouteTable268A846B"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIASGSubnet1RouteTableAssociationEBD70CE6"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet1/DefaultRoute": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIASGSubnet1DefaultRoute00404BD1"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIASGSubnet2SubnetD51E7E91"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIASGSubnet2RouteTable5ACB2680"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIASGSubnet2RouteTableAssociation5437B8E1"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-Admin-API-ASGSubnet2/DefaultRoute": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateAdminAPIASGSubnet2DefaultRouteF752A9E5"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateDBAdminSubnet1Subnet117EC892"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateDBAdminSubnet1RouteTableB1F9A6F3"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet1/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateDBAdminSubnet1RouteTableAssociation69498198"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2/Subnet": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateDBAdminSubnet2Subnet87516354"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2/RouteTable": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateDBAdminSubnet2RouteTableDFC2D46A"
-          }
-        ],
-        "/cdk-vpc-infinity/VPC-Infinity/Private-DB-AdminSubnet2/RouteTableAssociation": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCInfinityPrivateDBAdminSubnet2RouteTableAssociationE622C588"
-          }
-        ],
         "/cdk-vpc-infinity/VPC-Infinity/IGW": [
           {
             "type": "aws:cdk:logicalId",
@@ -629,66 +402,6 @@
             "data": "ExportsOutputRefVPCInfinityPrivateDBApplicationsSubnet2Subnet128760E8F69437A1"
           }
         ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPublicAdminWebALBSubnet1SubnetC8BC5FC7\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPublicAdminWebALBSubnet1SubnetC8BC5FC77493CB8E"
-          }
-        ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPublicAdminWebALBSubnet2SubnetB791D1CF\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPublicAdminWebALBSubnet2SubnetB791D1CFB085F8D0"
-          }
-        ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminWebASGSubnet1Subnet8800A59B\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPrivateAdminWebASGSubnet1Subnet8800A59B2DFA5657"
-          }
-        ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminWebASGSubnet2Subnet4EB03617\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPrivateAdminWebASGSubnet2Subnet4EB0361731EF7DC1"
-          }
-        ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminAPIALBSubnet1SubnetB7CBE047\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPrivateAdminAPIALBSubnet1SubnetB7CBE0475B1FFBF4"
-          }
-        ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminAPIALBSubnet2Subnet006BABA9\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPrivateAdminAPIALBSubnet2Subnet006BABA98FE082DF"
-          }
-        ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminAPIASGSubnet1Subnet5722E01E\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPrivateAdminAPIASGSubnet1Subnet5722E01E61B6A542"
-          }
-        ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateAdminAPIASGSubnet2SubnetD51E7E91\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPrivateAdminAPIASGSubnet2SubnetD51E7E91DE4379E6"
-          }
-        ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateDBAdminSubnet1Subnet117EC892\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPrivateDBAdminSubnet1Subnet117EC892B6E6C0B1"
-          }
-        ],
-        "/cdk-vpc-infinity/Exports/Output{\"Ref\":\"VPCInfinityPrivateDBAdminSubnet2Subnet87516354\"}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputRefVPCInfinityPrivateDBAdminSubnet2Subnet8751635452E76C29"
-          }
-        ],
         "/cdk-vpc-infinity/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
@@ -717,6 +430,7 @@
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
         "templateFile": "cdk-ec2-infinity-applications.template.json",
+        "terminationProtection": false,
         "tags": {
           "Env": "Prod",
           "Module": "Applications"
@@ -724,7 +438,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d9685c6b875081a730e276288fdc7f8b091d8bf5b1d32d37b77616d43aa0571b.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/549aaa2b07657f89ff7bc54287731206d62657ef49287a394a39c9aedf9e2c02.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -768,22 +482,28 @@
             "data": "ALBApplicationsWebSecurityGroupDEDFEC71"
           }
         ],
-        "/cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:5002": [
+        "/cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:5001": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ALBApplicationsWebSecurityGrouptocdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A43885002771D6165"
+            "data": "ALBApplicationsWebSecurityGrouptocdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A43885001B9D08DC8"
           }
         ],
-        "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-5002/Resource": [
+        "/cdk-ec2-infinity-applications/ALB-Applications-Web/Redirect80To5001/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ALBApplicationsWebALBApplicationsWeb500251C5B198"
+            "data": "ALBApplicationsWebRedirect80To50015B47F593"
           }
         ],
-        "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-5002/TG-Applications-Web-5002Group/Resource": [
+        "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ALBApplicationsWebALBApplicationsWeb5002TGApplicationsWeb5002Group039B65A4"
+            "data": "ALBApplicationsWebALBApplicationsWeb8053C95EDA"
+          }
+        ],
+        "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-Web-5001Group/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5001Group8F3E07DC"
           }
         ],
         "/cdk-ec2-infinity-applications/Role/Resource": [
@@ -798,10 +518,10 @@
             "data": "ASGApplicationsWebInstanceSecurityGroup94520ECD"
           }
         ],
-        "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:5002": [
+        "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:5001": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C50023F47116E"
+            "data": "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C50016A4FB56B"
           }
         ],
         "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceProfile": [
@@ -852,22 +572,34 @@
             "data": "ALBApplicationsAPISecurityGroup4C92AEE9"
           }
         ],
+        "/cdk-ec2-infinity-applications/ALB-Applications-API/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ALBApplicationsAPISecurityGroupfromcdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A438880EC416FFD"
+          }
+        ],
         "/cdk-ec2-infinity-applications/ALB-Applications-API/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA:5000": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ALBApplicationsAPISecurityGrouptocdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA5000CA9923C8"
           }
         ],
-        "/cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-5000/Resource": [
+        "/cdk-ec2-infinity-applications/ALB-Applications-API/Redirect80To5000/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ALBApplicationsAPIALBApplicationsAPI5000680EA92A"
+            "data": "ALBApplicationsAPIRedirect80To500009FC2969"
           }
         ],
-        "/cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-5000/TG-Applications-APIGroup/Resource": [
+        "/cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ALBApplicationsAPIALBApplicationsAPI5000TGApplicationsAPIGroup2D5A3B42"
+            "data": "ALBApplicationsAPIALBApplicationsAPI808CDCED01"
+          }
+        ],
+        "/cdk-ec2-infinity-applications/ALB-Applications-API/ALB-Applications-API-80/TG-Applications-APIGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ALBApplicationsAPIALBApplicationsAPI80TGApplicationsAPIGroupD10921C3"
           }
         ],
         "/cdk-ec2-infinity-applications/ASG-Applications-API/InstanceSecurityGroup/Resource": [
@@ -924,10 +656,10 @@
             "data": "CDKMetadataAvailable"
           }
         ],
-        "/cdk-ec2-infinity-applications/Exports/Output{\"Fn::GetAtt\":[\"ASGApplicationsWebInstanceSecurityGroup94520ECD\",\"GroupId\"]}": [
+        "/cdk-ec2-infinity-applications/Exports/Output{\"Fn::GetAtt\":[\"ASGApplicationsAPIInstanceSecurityGroup7E1B9C5F\",\"GroupId\"]}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputFnGetAttASGApplicationsWebInstanceSecurityGroup94520ECDGroupId56E0900A"
+            "data": "ExportsOutputFnGetAttASGApplicationsAPIInstanceSecurityGroup7E1B9C5FGroupId31267B26"
           }
         ],
         "/cdk-ec2-infinity-applications/BootstrapVersion": [
@@ -958,6 +690,7 @@
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
         "templateFile": "cdk-rds-infinity-applications.template.json",
+        "terminationProtection": false,
         "tags": {
           "Env": "Prod",
           "Module": "Applications"
@@ -965,7 +698,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c2f0e89e430f5344a1333f19d05fa8123e40754400467388802d6e7175d0fad9.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/03dbb499b177f934c7fa306329cbf7040e91d457278a036c07b6be328480ab32.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1010,10 +743,10 @@
             "data": "RDSAuroraPostgresApplicationsSecurityGroup10DE9A14"
           }
         ],
-        "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:{IndirectPort}": [
+        "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA:{IndirectPort}": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "RDSAuroraPostgresApplicationsSecurityGroupfromcdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388IndirectPort347A5853"
+            "data": "RDSAuroraPostgresApplicationsSecurityGroupfromcdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBAIndirectPortCAE81467"
           }
         ],
         "/cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/Secret/Resource": [
@@ -1066,375 +799,6 @@
         ]
       },
       "displayName": "cdk-rds-infinity-applications"
-    },
-    "cdk-ec2-infinity-admin.assets": {
-      "type": "cdk:asset-manifest",
-      "properties": {
-        "file": "cdk-ec2-infinity-admin.assets.json",
-        "requiresBootstrapStackVersion": 6,
-        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
-      }
-    },
-    "cdk-ec2-infinity-admin": {
-      "type": "aws:cloudformation:stack",
-      "environment": "aws://unknown-account/unknown-region",
-      "properties": {
-        "templateFile": "cdk-ec2-infinity-admin.template.json",
-        "tags": {
-          "Env": "Prod",
-          "Module": "Admin"
-        },
-        "validateOnSynth": false,
-        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
-        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe449b0f4178b2cd5a7fa19ef29f3fb2de330fbfcd617e908f81c91d77232e26.json",
-        "requiresBootstrapStackVersion": 6,
-        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
-        "additionalDependencies": [
-          "cdk-ec2-infinity-admin.assets"
-        ],
-        "lookupRole": {
-          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
-          "requiresBootstrapStackVersion": 8,
-          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
-        }
-      },
-      "dependencies": [
-        "cdk-vpc-infinity",
-        "cdk-ec2-infinity-admin.assets"
-      ],
-      "metadata": {
-        "/cdk-ec2-infinity-admin": [
-          {
-            "type": "aws:cdk:stack-tags",
-            "data": [
-              {
-                "Key": "Env",
-                "Value": "Prod"
-              },
-              {
-                "Key": "Module",
-                "Value": "Admin"
-              }
-            ]
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-Web/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminWebB29072B3"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-Web/SecurityGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminWebSecurityGroupC631A7CF"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-Web/SecurityGroup/to cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:80": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminWebSecurityGrouptocdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE809CCA8879"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-Web/ALB-Admin-Web-80/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminWebALBAdminWeb809E255735"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-Web/ALB-Admin-Web-80/TG-Admin-WebGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminWebALBAdminWeb80TGAdminWebGroupB12728AA"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminWebInstanceSecurityGroup5FCC15EA"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceSecurityGroup/from cdkec2infinityadminALBAdminWebSecurityGroup01F4A4BC:80": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminWebInstanceSecurityGroupfromcdkec2infinityadminALBAdminWebSecurityGroup01F4A4BC805025F7F5"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminWebInstanceRole4CC76898"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-Web/InstanceProfile": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminWebInstanceProfileEFF54680"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-Web/AmiMap": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminWebAmiMap7C3AF0D9"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-Web/LaunchConfig": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminWebLaunchConfigD088BFAE"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-Web/ASG": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminWebASG58B28B15"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-Web/ScalingPolicyCPUScaling-Admin-Web/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminWebScalingPolicyCPUScalingAdminWebB9C9B3D4"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/Output": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "Output"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-API/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminAPI4816B1AD"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-API/SecurityGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminAPISecurityGroupDC460F18"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-API/SecurityGroup/to cdkec2infinityadminASGAdminAPIInstanceSecurityGroup00F1F79D:80": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminAPISecurityGrouptocdkec2infinityadminASGAdminAPIInstanceSecurityGroup00F1F79D80ED73B2ED"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-API/ALB-Admin-API-80/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminAPIALBAdminAPI806413CBD1"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ALB-Admin-API/ALB-Admin-API-80/TG-Admin-APIGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ALBAdminAPIALBAdminAPI80TGAdminAPIGroup2760829A"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminAPIInstanceSecurityGroup3714849E"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-API/InstanceSecurityGroup/from cdkec2infinityadminALBAdminAPISecurityGroupA8B831C2:80": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminAPIInstanceSecurityGroupfromcdkec2infinityadminALBAdminAPISecurityGroupA8B831C280C9EBAC1F"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-API/InstanceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminAPIInstanceRole90903F3E"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-API/InstanceProfile": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminAPIInstanceProfileC7E2CA5D"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-API/AmiMap": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminAPIAmiMapDC594FC3"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-API/LaunchConfig": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminAPILaunchConfigA09124D1"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-API/ASG": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminAPIASG4CE7EF54"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/ASG-Admin-API/ScalingPolicyCPUScaling-Admin-Web/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ASGAdminAPIScalingPolicyCPUScalingAdminWeb06C9F762"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/CDKMetadata/Default": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CDKMetadata"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/CDKMetadata/Condition": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CDKMetadataAvailable"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/Exports/Output{\"Fn::GetAtt\":[\"ASGAdminWebInstanceSecurityGroup5FCC15EA\",\"GroupId\"]}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "ExportsOutputFnGetAttASGAdminWebInstanceSecurityGroup5FCC15EAGroupId1F9E83D7"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/BootstrapVersion": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BootstrapVersion"
-          }
-        ],
-        "/cdk-ec2-infinity-admin/CheckBootstrapVersion": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CheckBootstrapVersion"
-          }
-        ]
-      },
-      "displayName": "cdk-ec2-infinity-admin"
-    },
-    "cdk-rds-infinity-admin.assets": {
-      "type": "cdk:asset-manifest",
-      "properties": {
-        "file": "cdk-rds-infinity-admin.assets.json",
-        "requiresBootstrapStackVersion": 6,
-        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
-      }
-    },
-    "cdk-rds-infinity-admin": {
-      "type": "aws:cloudformation:stack",
-      "environment": "aws://unknown-account/unknown-region",
-      "properties": {
-        "templateFile": "cdk-rds-infinity-admin.template.json",
-        "tags": {
-          "Env": "Prod",
-          "Module": "Admin"
-        },
-        "validateOnSynth": false,
-        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
-        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/5a25abe58f4f1082b22c22829cc1718fe610e757fb65e56d53bc6b8b12d7e1b0.json",
-        "requiresBootstrapStackVersion": 6,
-        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
-        "additionalDependencies": [
-          "cdk-rds-infinity-admin.assets"
-        ],
-        "lookupRole": {
-          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
-          "requiresBootstrapStackVersion": 8,
-          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
-        }
-      },
-      "dependencies": [
-        "cdk-vpc-infinity",
-        "cdk-ec2-infinity-admin",
-        "cdk-rds-infinity-admin.assets"
-      ],
-      "metadata": {
-        "/cdk-rds-infinity-admin": [
-          {
-            "type": "aws:cdk:stack-tags",
-            "data": [
-              {
-                "Key": "Env",
-                "Value": "Prod"
-              },
-              {
-                "Key": "Module",
-                "Value": "Admin"
-              }
-            ]
-          }
-        ],
-        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/Subnets/Default": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "RDSAuroraPostgresAdminSubnets0A265DCE"
-          }
-        ],
-        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/SecurityGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "RDSAuroraPostgresAdminSecurityGroupCBD9E351"
-          }
-        ],
-        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/SecurityGroup/from cdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BE:{IndirectPort}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "RDSAuroraPostgresAdminSecurityGroupfromcdkec2infinityadminASGAdminWebInstanceSecurityGroup4AF707BEIndirectPort1C46C67A"
-          }
-        ],
-        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/Secret/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "RDSAuroraPostgresAdminSecretBBA26724"
-          }
-        ],
-        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/Secret/Attachment/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "RDSAuroraPostgresAdminSecretAttachmentF2F0B53D"
-          }
-        ],
-        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "RDSAuroraPostgresAdminBF9CE6A7"
-          }
-        ],
-        "/cdk-rds-infinity-admin/RDS-AuroraPostgres-Admin/writer/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "RDSAuroraPostgresAdminwriter2498D79E"
-          }
-        ],
-        "/cdk-rds-infinity-admin/CDKMetadata/Default": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CDKMetadata"
-          }
-        ],
-        "/cdk-rds-infinity-admin/CDKMetadata/Condition": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CDKMetadataAvailable"
-          }
-        ],
-        "/cdk-rds-infinity-admin/BootstrapVersion": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BootstrapVersion"
-          }
-        ],
-        "/cdk-rds-infinity-admin/CheckBootstrapVersion": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CheckBootstrapVersion"
-          }
-        ]
-      },
-      "displayName": "cdk-rds-infinity-admin"
     },
     "Tree": {
       "type": "cdk:tree",

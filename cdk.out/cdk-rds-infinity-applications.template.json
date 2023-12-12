@@ -56,10 +56,9 @@
     "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/SecurityGroup/Resource"
    }
   },
-  "RDSAuroraPostgresApplicationsSecurityGroupfromcdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388IndirectPort347A5853": {
+  "RDSAuroraPostgresApplicationsSecurityGroupfromcdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBAIndirectPortCAE81467": {
    "Type": "AWS::EC2::SecurityGroupIngress",
    "Properties": {
-    "IpProtocol": "tcp",
     "Description": "EC2 Autoscaling Group access to Aurora",
     "FromPort": {
      "Fn::GetAtt": [
@@ -73,8 +72,9 @@
       "GroupId"
      ]
     },
+    "IpProtocol": "tcp",
     "SourceSecurityGroupId": {
-     "Fn::ImportValue": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttASGApplicationsWebInstanceSecurityGroup94520ECDGroupId56E0900A"
+     "Fn::ImportValue": "cdk-ec2-infinity-applications:ExportsOutputFnGetAttASGApplicationsAPIInstanceSecurityGroup7E1B9C5FGroupId31267B26"
     },
     "ToPort": {
      "Fn::GetAtt": [
@@ -84,7 +84,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:{IndirectPort}"
+    "aws:cdk:path": "cdk-rds-infinity-applications/RDS-AuroraPostgres-Applications/SecurityGroup/from cdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA:{IndirectPort}"
    }
   },
   "RDSAuroraPostgresApplicationsSecret0FEC90CD": {
@@ -143,25 +143,13 @@
    "Type": "AWS::RDS::DBCluster",
    "Properties": {
     "CopyTagsToSnapshot": true,
-    "DatabaseName": "AuroraPostgresApplications",
     "DBClusterParameterGroupName": "default.aurora-postgresql13",
     "DBSubnetGroupName": {
      "Ref": "RDSAuroraPostgresApplicationsSubnets311AA031"
     },
+    "DatabaseName": "AuroraPostgresApplications",
     "Engine": "aurora-postgresql",
     "EngineVersion": "13.9",
-    "MasterUsername": {
-     "Fn::Join": [
-      "",
-      [
-       "{{resolve:secretsmanager:",
-       {
-        "Ref": "RDSAuroraPostgresApplicationsSecret0FEC90CD"
-       },
-       ":SecretString:username::}}"
-      ]
-     ]
-    },
     "MasterUserPassword": {
      "Fn::Join": [
       "",
@@ -171,6 +159,18 @@
         "Ref": "RDSAuroraPostgresApplicationsSecret0FEC90CD"
        },
        ":SecretString:password::}}"
+      ]
+     ]
+    },
+    "MasterUsername": {
+     "Fn::Join": [
+      "",
+      [
+       "{{resolve:secretsmanager:",
+       {
+        "Ref": "RDSAuroraPostgresApplicationsSecret0FEC90CD"
+       },
+       ":SecretString:username::}}"
       ]
      ]
     },
@@ -230,7 +230,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31QQQrCQAx8i/ftigriVSuIN7HeJd3GumqzkmQRKft3q0URD54mmUxmSMZ2NrGjAdwkc9U5u/jStoWCO5uO2rdciW2XoFCCYH6JosimiCWhrjjEq8kPtFx8E29xgY5R+/l78dWsSRTIYTLoxl0Yushe7x+7/8SaakaRZOTlLw0Q1Mi27YXPyB52wDXqXLtbjg2Smo/gd5KS2aKEyA6fou86D1R59YGS2dz1GGjYPWtkp4OTeJ9xJPUN2m2PD6d80tdLAQAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31QwarCQAz8Fu/blfrEu6+CeBPrXdJtrGtt9pFkESn771aLIu/gaZLJZIZkZvN8bvMJXCVzdZtdfGX7UsG1ZqAOPddi+xUoVCBYXKIosiljRahrDvHPFEda/X4SL3GJjlHH+Wvx2WxIFMhhMuhmQxi6yF5vb7vvxIYaRpFk5OkvHRA0yLYfhY/IEfbADepSh1tOHZKat+D/JCWzQwmRHT5En3URqPbqAyWzvekp0PRneJhdTM7ifcaR1HdodyPeAQvp4atMAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "cdk-rds-infinity-applications/CDKMetadata/Default"
@@ -288,14 +288,6 @@
         {
          "Ref": "AWS::Region"
         },
-        "ap-south-2"
-       ]
-      },
-      {
-       "Fn::Equals": [
-        {
-         "Ref": "AWS::Region"
-        },
         "ap-southeast-1"
        ]
       },
@@ -322,11 +314,7 @@
         },
         "cn-north-1"
        ]
-      }
-     ]
-    },
-    {
-     "Fn::Or": [
+      },
       {
        "Fn::Equals": [
         {
@@ -334,7 +322,11 @@
         },
         "cn-northwest-1"
        ]
-      },
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
       {
        "Fn::Equals": [
         {
@@ -364,14 +356,6 @@
         {
          "Ref": "AWS::Region"
         },
-        "eu-south-2"
-       ]
-      },
-      {
-       "Fn::Equals": [
-        {
-         "Ref": "AWS::Region"
-        },
         "eu-west-1"
        ]
       },
@@ -389,6 +373,22 @@
          "Ref": "AWS::Region"
         },
         "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
        ]
       },
       {

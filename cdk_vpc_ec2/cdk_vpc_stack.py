@@ -37,26 +37,27 @@ class CdkVpcStack(Stack):
                                name=f"Private-DB-{module1}",
                                cidr_mask=24
                                #Admin Module: configuration will create 5 groups in 2 AZs = 10 subnets.
-                           ), ec2.SubnetConfiguration(
-                               subnet_type=ec2.SubnetType.PUBLIC,
-                               name=f"Public-{module2}-Web-ALB",
-                               cidr_mask=24
-                           ), ec2.SubnetConfiguration(
-                               subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS,
-                               name=f"Private-{module2}-Web-ASG",
-                               cidr_mask=24
-                           ), ec2.SubnetConfiguration(
-                               subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS,
-                               name=f"Private-{module2}-API-ALB",
-                               cidr_mask=24    
-                           ), ec2.SubnetConfiguration(
-                               subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS,
-                               name=f"Private-{module2}-API-ASG",
-                               cidr_mask=24 
-                           ), ec2.SubnetConfiguration(
-                               subnet_type=ec2.SubnetType.PRIVATE_ISOLATED,
-                               name=f"Private-DB-{module2}",
-                               cidr_mask=24)
+                        #    ), ec2.SubnetConfiguration(
+                        #        subnet_type=ec2.SubnetType.PUBLIC,
+                        #        name=f"Public-{module2}-Web-ALB",
+                        #        cidr_mask=24
+                        #    ), ec2.SubnetConfiguration(
+                        #        subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS,
+                        #        name=f"Private-{module2}-Web-ASG",
+                        #        cidr_mask=24
+                        #    ), ec2.SubnetConfiguration(
+                        #        subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS,
+                        #        name=f"Private-{module2}-API-ALB",
+                        #        cidr_mask=24    
+                        #    ), ec2.SubnetConfiguration(
+                        #        subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS,
+                        #        name=f"Private-{module2}-API-ASG",
+                        #        cidr_mask=24 
+                        #    ), ec2.SubnetConfiguration(
+                        #        subnet_type=ec2.SubnetType.PRIVATE_ISOLATED,
+                        #        name=f"Private-DB-{module2}",
+                        #        cidr_mask=24
+                             )
                            ]
                            )
         CfnOutput(self, "Output",

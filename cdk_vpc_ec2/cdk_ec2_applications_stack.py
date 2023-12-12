@@ -6,8 +6,8 @@ from aws_cdk import aws_autoscaling as autoscaling
 import aws_cdk.aws_certificatemanager as acm
 from constructs import Construct
 from pathlib import Path
-from aws_cdk.aws_elasticloadbalancingv2 import Protocol
 import aws_cdk.aws_iam as iam
+import aws_cdk.aws_wafv2 as wafv2 
 
 
 module='Applications'
@@ -35,26 +35,35 @@ class CdkEc2ApplicationsStack(Stack):
                                           load_balancer_name=f"ALB-{module}-Web"
                                           )
         
-        
-        # Create Web ALB Listener - Port 80
-        #alb_web_listener = alb_web.add_listener(f"ALB-{module}-Web-80",
-        #                            port=80,
-        #                            open=True)
+        alb_web.add_redirect(
+            source_protocol=elb.ApplicationProtocol.HTTP,
+            source_port=80,
+            target_protocol=elb.ApplicationProtocol.HTTP,
+            target_port=5001
+        )
 
-        # Create Web ALB Listener - Port 5002
-        alb_web_listener = alb_web.add_listener(f"ALB-{module}-Web-5002",
-                                    port=5002,
+        # Create Web ALB Listener - Port 80, redirect to port 5001
+        alb_web_listener = alb_web.add_listener(f"ALB-{module}-Web-80",
+                                    port=80,
                                     open=True,
                                     protocol=elb.ApplicationProtocol.HTTP)
+                                #     default_actions=[
+                                #         elb.RedirectAction(
+                                #         status_code="HTTP_301",
+                                #         host="#{host}", 
+                                #         path="/#{path}",
+                                #         port="5001"
+                                #         )
+                                #     ]
+                                # )    
         
-        # Allow Web ALB connections on port 80 from the internet
-        #alb_web.connections.allow_from_any_ipv4(
-        #    ec2.Port.tcp(80), "Internet access ALB 80")
-        
-        # Allow Web ALB connections on port 5002 from the internet
+
+
+         #Allow Web ALB connections on port 80 from the internet
         alb_web.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(5002), "Internet access ALB 5002")
+            ec2.Port.tcp(80), "Internet access ALB 80")
         
+    
 
         """ #Create ACM HTTPS cert
         cert = acm.Certificate(self, "Certificate",
@@ -104,14 +113,14 @@ class CdkEc2ApplicationsStack(Stack):
         )
 
         #self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
-        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(5002), "ALB access 5002 port of EC2 in Autoscaling Group")
+        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(5001), "ALB access 5002 port of EC2 in Autoscaling Group")
 
         #alb_web_listener.add_targets(f"TG-{module}-Web-80",
         #                     port=80,
         #                     targets=[self.asg_web])
         
-        alb_web_listener.add_targets(f"TG-{module}-Web-5002",
-                             port=5002,
+        alb_web_listener.add_targets(f"TG-{module}-Web-5001",
+                             port=5001,
                              protocol=elb.ApplicationProtocol.HTTP,
                              targets=[self.asg_web])
 
@@ -126,15 +135,27 @@ class CdkEc2ApplicationsStack(Stack):
                                           load_balancer_name=f"ALB-{module}-API"
                                           )
         
-        #Allow port 80
-        alb_api.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(5000), "Internet access ALB 5000")
+        alb_api.add_redirect(
+            source_protocol=elb.ApplicationProtocol.HTTP,
+            source_port=80,
+            target_protocol=elb.ApplicationProtocol.HTTP,
+            target_port=5000
+        )
+
+        #Allow port 80 on ALB
+        #alb_api.connections.allow_from_any_ipv4(
+        #    ec2.Port.tcp(80), "Internet access ALB 80")
+
+        alb_api.connections.allow_from(self.asg_web, ec2.Port.tcp(80), "Allow Web ASG to connect to ALB API on port 80")
+
         
-        # Create API ALB Listener
-        alb_api_listener = alb_api.add_listener(f"ALB-{module}-API-5000",
-                                    port=5000,
+        # Create Internal API ALB Listener on port 80, redirect to port 5000
+        alb_api_listener = alb_api.add_listener(f"ALB-{module}-API-80",
+                                    port=80,
                                     open=True,
-                                    protocol=elb.ApplicationProtocol.HTTP)                    
+                                    protocol=elb.ApplicationProtocol.HTTP
+                                )    
+
 
         # Create Autoscaling Group
         self.asg_api = autoscaling.AutoScalingGroup(self, f"ASG-{module}-API",
@@ -153,15 +174,15 @@ class CdkEc2ApplicationsStack(Stack):
                                                 )
 
         self.asg_api.scale_on_cpu_utilization(
-            f"CPUScaling-{module}-Web",
-            target_utilization_percent=25,
-            cooldown=cdk.Duration.seconds(60),
-            disable_scale_in=False,
-            estimated_instance_warmup=cdk.Duration.seconds(60)
-        )
+                            f"CPUScaling-{module}-Web",
+                            target_utilization_percent=25,
+                            cooldown=cdk.Duration.seconds(60),
+                            disable_scale_in=False,
+                            estimated_instance_warmup=cdk.Duration.seconds(60)
+                        )
 
-        self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(5000), "ALB API access 80 port of EC2 in Autoscaling Group")
-        
+        self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(5000), "ALB API access to port 5000 of EC2 in Autoscaling Group")
+
         alb_api_listener.add_targets(f"TG-{module}-API",
                              port=5000,
                              protocol=elb.ApplicationProtocol.HTTP,
