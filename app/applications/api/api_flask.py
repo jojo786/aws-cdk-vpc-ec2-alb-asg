@@ -3,20 +3,18 @@ from flask import Flask, jsonify
 import psycopg2
 import boto3
 from botocore.exceptions import ClientError
+from botocore.config import Config
 import json
 
 
 def get_secret():
 
     secret_name = "RDSAuroraPostgresApplicatio-ZdX5r4dOewvx"
-    region_name = "af-south-1"
+    my_config = Config(
+        region_name = "af-south-1")
 
     # Create a Secrets Manager client
-    session = boto3.session.Session()
-    client = session.client(
-        service_name='secretsmanager',
-        region_name=region_name
-    )
+    client = boto3.client('secretsmanager', config=my_config)
 
     try:
         get_secret_value_response = client.get_secret_value(

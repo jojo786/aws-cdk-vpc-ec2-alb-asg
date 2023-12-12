@@ -74,7 +74,7 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/Resource"
    }
   },
-  "ALBApplicationsWebSecurityGrouptocdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A43885001B9D08DC8": {
+  "ALBApplicationsWebSecurityGrouptocdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A43885002771D6165": {
    "Type": "AWS::EC2::SecurityGroupEgress",
    "Properties": {
     "Description": "ALB access 5002 port of EC2 in Autoscaling Group",
@@ -84,7 +84,7 @@
       "GroupId"
      ]
     },
-    "FromPort": 5001,
+    "FromPort": 5002,
     "GroupId": {
      "Fn::GetAtt": [
       "ALBApplicationsWebSecurityGroupDEDFEC71",
@@ -92,33 +92,10 @@
      ]
     },
     "IpProtocol": "tcp",
-    "ToPort": 5001
+    "ToPort": 5002
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:5001"
-   }
-  },
-  "ALBApplicationsWebRedirect80To50015B47F593": {
-   "Type": "AWS::ElasticLoadBalancingV2::Listener",
-   "Properties": {
-    "DefaultActions": [
-     {
-      "RedirectConfig": {
-       "Port": "5001",
-       "Protocol": "HTTP",
-       "StatusCode": "HTTP_301"
-      },
-      "Type": "redirect"
-     }
-    ],
-    "LoadBalancerArn": {
-     "Ref": "ALBApplicationsWebCAB76CA9"
-    },
-    "Port": 80,
-    "Protocol": "HTTP"
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/Redirect80To5001/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:5002"
    }
   },
   "ALBApplicationsWebALBApplicationsWeb8053C95EDA": {
@@ -127,7 +104,7 @@
     "DefaultActions": [
      {
       "TargetGroupArn": {
-       "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5001Group8F3E07DC"
+       "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5002Group1A1F5927"
       },
       "Type": "forward"
      }
@@ -142,10 +119,10 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/Resource"
    }
   },
-  "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5001Group8F3E07DC": {
+  "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5002Group1A1F5927": {
    "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
    "Properties": {
-    "Port": 5001,
+    "Port": 5002,
     "Protocol": "HTTP",
     "Tags": [
      {
@@ -169,7 +146,7 @@
     }
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-Web-5001Group/Resource"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-Web-5002Group/Resource"
    }
   },
   "Role1ABCC5F0": {
@@ -261,11 +238,11 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/Resource"
    }
   },
-  "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C50016A4FB56B": {
+  "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C50023F47116E": {
    "Type": "AWS::EC2::SecurityGroupIngress",
    "Properties": {
     "Description": "ALB access 5002 port of EC2 in Autoscaling Group",
-    "FromPort": 5001,
+    "FromPort": 5002,
     "GroupId": {
      "Fn::GetAtt": [
       "ASGApplicationsWebInstanceSecurityGroup94520ECD",
@@ -279,10 +256,10 @@
       "GroupId"
      ]
     },
-    "ToPort": 5001
+    "ToPort": 5002
    },
    "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:5001"
+    "aws:cdk:path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:5002"
    }
   },
   "ASGApplicationsWebInstanceProfileFC17BFF1": {
@@ -324,7 +301,7 @@
      }
     ],
     "UserData": {
-     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ncd /home/ec2-user/\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\ncd aws-cdk-vpc-ec2-alb-asg/\ngit pull\npip install Flask psycopg2-binary requests boto3\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\nflask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\nflask --app web_flask run --debug --host=0.0.0.0"
+     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ncd /home/ec2-user/\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\ncd aws-cdk-vpc-ec2-alb-asg/\ngit pull\npip install Flask psycopg2-binary requests boto3 gunicorn\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\ngunicorn -w 1 -b 0.0.0.0:5000 'api_flask:app'\n#flask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\ngunicorn -w 1 -b 0.0.0.0:5001 'web_flask:app'\n#flask --app web_flask run --debug --host=0.0.0.0"
     }
    },
    "DependsOn": [
@@ -361,7 +338,7 @@
     ],
     "TargetGroupARNs": [
      {
-      "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5001Group8F3E07DC"
+      "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5002Group1A1F5927"
      }
     ],
     "VPCZoneIdentifier": [
@@ -525,29 +502,6 @@
     "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsAPIInstanceSecurityGroup1E6A1BBA:5000"
    }
   },
-  "ALBApplicationsAPIRedirect80To500009FC2969": {
-   "Type": "AWS::ElasticLoadBalancingV2::Listener",
-   "Properties": {
-    "DefaultActions": [
-     {
-      "RedirectConfig": {
-       "Port": "5000",
-       "Protocol": "HTTP",
-       "StatusCode": "HTTP_301"
-      },
-      "Type": "redirect"
-     }
-    ],
-    "LoadBalancerArn": {
-     "Ref": "ALBApplicationsAPI22783E44"
-    },
-    "Port": 80,
-    "Protocol": "HTTP"
-   },
-   "Metadata": {
-    "aws:cdk:path": "cdk-ec2-infinity-applications/ALB-Applications-API/Redirect80To5000/Resource"
-   }
-  },
   "ALBApplicationsAPIALBApplicationsAPI808CDCED01": {
    "Type": "AWS::ElasticLoadBalancingV2::Listener",
    "Properties": {
@@ -695,7 +649,7 @@
      }
     ],
     "UserData": {
-     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ncd /home/ec2-user/\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\ncd aws-cdk-vpc-ec2-alb-asg/\ngit pull\npip install Flask psycopg2-binary requests boto3\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\nflask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\nflask --app web_flask run --debug --host=0.0.0.0"
+     "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ncd /home/ec2-user/\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\ncd aws-cdk-vpc-ec2-alb-asg/\ngit pull\npip install Flask psycopg2-binary requests boto3 gunicorn\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\ngunicorn -w 1 -b 0.0.0.0:5000 'api_flask:app'\n#flask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\ngunicorn -w 1 -b 0.0.0.0:5001 'web_flask:app'\n#flask --app web_flask run --debug --host=0.0.0.0"
     }
    },
    "DependsOn": [
@@ -788,12 +742,12 @@
  "Mappings": {
   "ASGApplicationsWebAmiMap360FDF57": {
    "af-south-1": {
-    "ami": "ami-0fba74e3e73a2eb02"
+    "ami": "ami-0b5c950b6c292d998"
    }
   },
   "ASGApplicationsAPIAmiMap353AF052": {
    "af-south-1": {
-    "ami": "ami-0fba74e3e73a2eb02"
+    "ami": "ami-0b5c950b6c292d998"
    }
   }
  },

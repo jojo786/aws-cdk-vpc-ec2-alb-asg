@@ -13,8 +13,8 @@ import aws_cdk.aws_wafv2 as wafv2
 module='Applications'
 ec2_type = 't3.micro'
 key_name = 'id_rsa'  # Setup key_name for EC2 instance login
-web_ami='ami-0fba74e3e73a2eb02'
-api_ami='ami-0fba74e3e73a2eb02'
+web_ami='ami-0b5c950b6c292d998'
+api_ami='ami-0b5c950b6c292d998'
 
 data_folder = Path("user_data/")
 file_to_open = data_folder / "user_data.sh"
@@ -34,28 +34,19 @@ class CdkEc2ApplicationsStack(Stack):
                                           internet_facing=True,
                                           load_balancer_name=f"ALB-{module}-Web"
                                           )
-        
-        alb_web.add_redirect(
-            source_protocol=elb.ApplicationProtocol.HTTP,
-            source_port=80,
-            target_protocol=elb.ApplicationProtocol.HTTP,
-            target_port=5001
-        )
 
-        # Create Web ALB Listener - Port 80, redirect to port 5001
+        # Create Web ALB Listener - Port 80, redirect to port 5002
         alb_web_listener = alb_web.add_listener(f"ALB-{module}-Web-80",
                                     port=80,
                                     open=True,
-                                    protocol=elb.ApplicationProtocol.HTTP)
-                                #     default_actions=[
-                                #         elb.RedirectAction(
-                                #         status_code="HTTP_301",
-                                #         host="#{host}", 
-                                #         path="/#{path}",
-                                #         port="5001"
-                                #         )
-                                #     ]
-                                # )    
+                                    protocol=elb.ApplicationProtocol.HTTP,
+                                    default_action=elb.ListenerAction.redirect(host="#{host}", 
+                                                         path="/#{path}", 
+                                                         permanent=True, 
+                                                         port="5002", 
+                                                         protocol="HTTP", 
+                                                         query="#{query}")
+        )
         
 
 
@@ -113,14 +104,14 @@ class CdkEc2ApplicationsStack(Stack):
         )
 
         #self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
-        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(5001), "ALB access 5002 port of EC2 in Autoscaling Group")
+        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(5002), "ALB access 5002 port of EC2 in Autoscaling Group")
 
         #alb_web_listener.add_targets(f"TG-{module}-Web-80",
         #                     port=80,
         #                     targets=[self.asg_web])
         
-        alb_web_listener.add_targets(f"TG-{module}-Web-5001",
-                             port=5001,
+        alb_web_listener.add_targets(f"TG-{module}-Web-5002",
+                             port=5002,
                              protocol=elb.ApplicationProtocol.HTTP,
                              targets=[self.asg_web])
 
@@ -128,19 +119,13 @@ class CdkEc2ApplicationsStack(Stack):
                        value=alb_web.load_balancer_dns_name)
         
 
-        # Create API Internal ALB
+        ############## Create API Internal ALB
         alb_api = elb.ApplicationLoadBalancer(self, f"ALB-{module}-API",
                                           vpc=vpc,  vpc_subnets=ec2.SubnetSelection(subnet_group_name=f'Private-{module}-API-ALB'),
                                           internet_facing=False,
                                           load_balancer_name=f"ALB-{module}-API"
                                           )
         
-        alb_api.add_redirect(
-            source_protocol=elb.ApplicationProtocol.HTTP,
-            source_port=80,
-            target_protocol=elb.ApplicationProtocol.HTTP,
-            target_port=5000
-        )
 
         #Allow port 80 on ALB
         #alb_api.connections.allow_from_any_ipv4(
@@ -153,8 +138,14 @@ class CdkEc2ApplicationsStack(Stack):
         alb_api_listener = alb_api.add_listener(f"ALB-{module}-API-80",
                                     port=80,
                                     open=True,
-                                    protocol=elb.ApplicationProtocol.HTTP
-                                )    
+                                    protocol=elb.ApplicationProtocol.HTTP,
+                                    default_action=elb.ListenerAction.redirect(host="#{host}", 
+                                                         path="/#{path}", 
+                                                         permanent=True, 
+                                                         port="5000", 
+                                                         protocol="HTTP", 
+                                                         query="#{query}")
+                                    )    
 
 
         # Create Autoscaling Group
