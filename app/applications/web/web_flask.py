@@ -8,7 +8,7 @@ my_config = Config(
     region_name = "af-south-1")
 
 # Create a Secrets Manager client
-client = boto3.client('elbv2')
+client = boto3.client('elbv2', config=my_config)
 
 response = client.describe_load_balancers()
 for lb in response['LoadBalancers']:
