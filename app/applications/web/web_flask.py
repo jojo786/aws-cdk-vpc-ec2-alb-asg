@@ -20,7 +20,7 @@ app = Flask(__name__)
 @app.route('/applications')
 def applications():
     #get the data from the applictions API
-    response = requests.get(api_alb)
+    response = requests.get('http://'+api_alb)
     print(response)
     applications = response.json()
     print(applications)

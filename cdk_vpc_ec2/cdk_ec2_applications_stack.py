@@ -67,7 +67,7 @@ class CdkEc2ApplicationsStack(Stack):
                                     open=True,
                                     certificate_name='Certificate')
         
-        # Allow Web ALB connections on port 80 from the internet
+        # Allow Web ALB connections on port 443 from the internet
         alb_web.connections.allow_from_any_ipv4(
             ec2.Port.tcp(443), "Internet access ALB 443") """
 
@@ -78,6 +78,7 @@ class CdkEc2ApplicationsStack(Stack):
 
         role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("SecretsManagerReadWrite"))
         role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSSMManagedInstanceCore"))
+        role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("ElasticLoadBalancingReadOnly"))
 
         # Create Web Autoscaling Group 
         self.asg_web = autoscaling.AutoScalingGroup(self, f"ASG-{module}-Web",
