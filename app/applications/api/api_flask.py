@@ -9,7 +9,7 @@ import json
 
 def get_secret():
 
-    secret_name = "RDSAuroraPostgresApplicatio-ZdX5r4dOewvx"
+    secret_name = "RDSAuroraPostgresApplicatio-V0yAz1ZwObfA"
     my_config = Config(
         region_name = "af-south-1")
 
