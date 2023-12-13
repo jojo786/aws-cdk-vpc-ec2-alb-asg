@@ -13,8 +13,8 @@ import aws_cdk.aws_wafv2 as wafv2
 module='Applications'
 ec2_type = 't3.micro'
 key_name = 'id_rsa'  # Setup key_name for EC2 instance login
-web_ami='ami-0b5c950b6c292d998'
-api_ami='ami-0b5c950b6c292d998'
+web_ami='ami-0d26d710133765696'
+api_ami='ami-0d26d710133765696'
 
 data_folder = Path("user_data/")
 file_to_open = data_folder / "user_data.sh"

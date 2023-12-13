@@ -7,7 +7,7 @@ from faker import Faker
 
 def get_secret():
 
-    secret_name = "RDSAuroraPostgresApplicatio-ZdX5r4dOewvx"
+    secret_name = "RDSAuroraPostgresApplicatio-V0yAz1ZwObfA"
     region_name = "af-south-1"
 
     # Create a Secrets Manager client
