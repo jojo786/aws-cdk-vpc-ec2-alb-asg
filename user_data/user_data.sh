@@ -10,5 +10,5 @@ cd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api
 gunicorn -w 1 -b 0.0.0.0:5000 'api_flask:app'
 #flask --app api_flask run --debug --host=0.0.0.0
 cd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web
-gunicorn -w 1 -b 0.0.0.0:5001 'web_flask:app'
+gunicorn -w 1 -b 0.0.0.0:5002 'web_flask:app'
 #flask --app web_flask run --debug --host=0.0.0.0

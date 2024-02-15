@@ -7,7 +7,6 @@ import aws_cdk.aws_certificatemanager as acm
 from constructs import Construct
 from pathlib import Path
 import aws_cdk.aws_iam as iam
-import aws_cdk.aws_wafv2 as wafv2 
 
 
 module='Applications'
@@ -35,17 +34,11 @@ class CdkEc2ApplicationsStack(Stack):
                                           load_balancer_name=f"ALB-{module}-Web"
                                           )
 
-        # Create Web ALB Listener - Port 80, redirect to port 5002
-        alb_web_listener = alb_web.add_listener(f"ALB-{module}-Web-80",
+        # Create Web ALB Listener - Port 80,
+        alb_web_listener_80 = alb_web.add_listener(f"ALB-{module}-Web-80",
                                     port=80,
                                     open=True,
                                     protocol=elb.ApplicationProtocol.HTTP,
-                                    default_action=elb.ListenerAction.redirect(host="#{host}", 
-                                                         path="/#{path}", 
-                                                         permanent=True, 
-                                                         port="5002", 
-                                                         protocol="HTTP", 
-                                                         query="#{query}")
         )
         
 
@@ -53,23 +46,35 @@ class CdkEc2ApplicationsStack(Stack):
          #Allow Web ALB connections on port 80 from the internet
         alb_web.connections.allow_from_any_ipv4(
             ec2.Port.tcp(80), "Internet access ALB 80")
-        
-    
 
-        """ #Create ACM HTTPS cert
-        cert = acm.Certificate(self, "Certificate",
-            domain_name="hello.example.com",
-            validation=acm.CertificateValidation.from_dns()
+        # create ACM SSL cert
+        new_cert = acm.Certificate(self, "New Certificate",
+            domain_name="hello.hacksaw.co.za",
+            validation=acm.CertificateValidation.from_dns() 
+            )
+
+         # existing HTTPS cert
+        existing_cert = acm.Certificate.from_certificate_arn(self, "Existing Certificate",
+            certificate_arn='arn:aws:acm:af-south-1:718974227478:certificate/5a55a6e1-b1be-4113-bc7b-87c2f00132d6'
+            )
 
         # Create Web ALB Listener
-        alb_web_listener = alb_web.add_listener(f"ALB-{module}-Web-443",
+        alb_web_listener_443 = alb_web.add_listener(f"ALB-{module}-Web-443",
                                     port=443,
                                     open=True,
-                                    certificate_name='Certificate')
+                                    certificates=[existing_cert],
+                                    protocol=elb.ApplicationProtocol.HTTPS,
+                                    #default_action=elb.ListenerAction.redirect(host="#{host}", 
+                                    #                     path="/#{path}", 
+                                    #                     permanent=True, 
+                                    #                     port="80", 
+                                    #                     protocol="HTTP", 
+                                    #                     query="#{query}") 
+                                    )
         
         # Allow Web ALB connections on port 443 from the internet
         alb_web.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(443), "Internet access ALB 443") """
+            ec2.Port.tcp(443), "Internet access ALB 443")
 
         #IAM Instance Role to attached to EC2 instances in ASG
         role = iam.Role(self, "Role",
@@ -104,17 +109,18 @@ class CdkEc2ApplicationsStack(Stack):
             estimated_instance_warmup=cdk.Duration.seconds(60)
         )
 
-        #self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
-        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(5002), "ALB access 5002 port of EC2 in Autoscaling Group")
+        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
 
-        #alb_web_listener.add_targets(f"TG-{module}-Web-80",
-        #                     port=80,
-        #                     targets=[self.asg_web])
-        
-        alb_web_listener.add_targets(f"TG-{module}-Web-5002",
-                             port=5002,
+        alb_web_listener_80.add_targets(f"TG-{module}-Web-80",
+                             port=80,
                              protocol=elb.ApplicationProtocol.HTTP,
                              targets=[self.asg_web])
+        
+        alb_web_listener_443.add_targets(f"TG-{module}-Web-80",
+                             port=80,
+                             protocol=elb.ApplicationProtocol.HTTP,
+                             targets=[self.asg_web])
+        
 
         CfnOutput(self, "Output",
                        value=alb_web.load_balancer_dns_name)
@@ -174,7 +180,8 @@ class CdkEc2ApplicationsStack(Stack):
                         )
 
         self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(5000), "ALB API access to port 5000 of EC2 in Autoscaling Group")
-
+        
+        
         alb_api_listener.add_targets(f"TG-{module}-API",
                              port=5000,
                              protocol=elb.ApplicationProtocol.HTTP,

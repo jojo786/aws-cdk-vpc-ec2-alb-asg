@@ -230,7 +230,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31QwarCQAz8Fu/blfrEu6+CeBPrXdJtrGtt9pFkESn771aLIu/gaZLJZIZkZvN8bvMJXCVzdZtdfGX7UsG1ZqAOPddi+xUoVCBYXKIosiljRahrDvHPFEda/X4SL3GJjlHH+Wvx2WxIFMhhMuhmQxi6yF5vb7vvxIYaRpFk5OkvHRA0yLYfhY/IEfbADepSh1tOHZKat+D/JCWzQwmRHT5En3URqPbqAyWzvekp0PRneJhdTM7ifcaR1HdodyPeAQvp4atMAQAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/31QwarCQAz8Fu/blfoEz74K4k2sd0m3sa612UeSRaTsv1stiryDp0kmkxmSmc3zuc0ncJXM1W128ZXtSwXXmoE69FyL7VegUIFgcYmiyKaMFaGuOcQ/Uxxp9ftJvMQlOkYd56/FZ7MhUSCHyaCbDWHoInu9ve2+ExtqGEWSkae/dEDQINt+FD4iR9gDN6hLHW45dUhq3oL/k5TMDiVEdvgQfdZFoNqrD5TM9qanQNOf4WF2MTmL9xlHUt+h3Y14B8uNybxMAQAA"
    },
    "Metadata": {
     "aws:cdk:path": "cdk-rds-infinity-applications/CDKMetadata/Default"

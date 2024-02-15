@@ -21,7 +21,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/0d6d4ea6b3b4d8fdc006b8418c9da0ee66c50d0cbe7ba79daaca4681a850dc3c.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b6e080a9d6f9a9d1250b21fbb3a69f4c5dbd1b4b2e4385611256959dd12ac1e5.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -438,7 +438,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/42c0d1cd97c474e9b264438bed85e10a4bc1f7b4cf38ede9ef19bdbd89a78040.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/073598b3f9c3e0425a8069b445ab8606f8c47a511085459459d6ea21a733147d.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -482,31 +482,10 @@
             "data": "ALBApplicationsWebSecurityGroupDEDFEC71"
           }
         ],
-        "/cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:5002": [
+        "/cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:80": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ALBApplicationsWebSecurityGrouptocdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A43885002771D6165"
-          }
-        ],
-        "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80": [
-          {
-            "type": "aws:cdk:warning",
-            "data": "A default Action already existed on this Listener and was replaced. Configure exactly one default Action. [ack: @aws-cdk/aws-elbv2:listenerExistingDefaultActionReplaced]",
-            "trace": [
-              "Annotations.addMessage (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1526)",
-              "Annotations.addWarningV2 (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
-              "ApplicationListener._setDefaultAction (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/shared/base-listener.js:1:2249)",
-              "ApplicationListener.setDefaultAction (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/alb/application-listener.js:1:9144)",
-              "ApplicationListener.addTargetGroups (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/alb/application-listener.js:1:6032)",
-              "ApplicationListener.addTargets (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/alb/application-listener.js:1:6730)",
-              "/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:9855:172",
-              "Kernel._Kernel_ensureSync (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:10480:24)",
-              "Kernel.invoke (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:9855:102)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:11699:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:11659:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:11660:46)",
-              "process.processImmediate (node:internal/timers:478:21)"
-            ]
+            "data": "ALBApplicationsWebSecurityGrouptocdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388806673245B"
           }
         ],
         "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/Resource": [
@@ -515,10 +494,28 @@
             "data": "ALBApplicationsWebALBApplicationsWeb8053C95EDA"
           }
         ],
-        "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-Web-5002Group/Resource": [
+        "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-Web-80Group/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5002Group1A1F5927"
+            "data": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb80GroupCFAB0C51"
+          }
+        ],
+        "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-443/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ALBApplicationsWebALBApplicationsWeb44319D16CF3"
+          }
+        ],
+        "/cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-443/TG-Applications-Web-80Group/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ALBApplicationsWebALBApplicationsWeb443TGApplicationsWeb80Group89F96849"
+          }
+        ],
+        "/cdk-ec2-infinity-applications/New Certificate/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NewCertificate215F5A67"
           }
         ],
         "/cdk-ec2-infinity-applications/Role/Resource": [
@@ -533,10 +530,10 @@
             "data": "ASGApplicationsWebInstanceSecurityGroup94520ECD"
           }
         ],
-        "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:5002": [
+        "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:80": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C50023F47116E"
+            "data": "ASGApplicationsWebInstanceSecurityGroupfromcdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C80CBD623A1"
           }
         ],
         "/cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceProfile": [
@@ -604,18 +601,18 @@
             "type": "aws:cdk:warning",
             "data": "A default Action already existed on this Listener and was replaced. Configure exactly one default Action. [ack: @aws-cdk/aws-elbv2:listenerExistingDefaultActionReplaced]",
             "trace": [
-              "Annotations.addMessage (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1526)",
-              "Annotations.addWarningV2 (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
-              "ApplicationListener._setDefaultAction (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/shared/base-listener.js:1:2249)",
-              "ApplicationListener.setDefaultAction (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/alb/application-listener.js:1:9144)",
-              "ApplicationListener.addTargetGroups (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/alb/application-listener.js:1:6032)",
-              "ApplicationListener.addTargets (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-hlT52I/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/alb/application-listener.js:1:6730)",
-              "/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:9855:172",
-              "Kernel._Kernel_ensureSync (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:10480:24)",
-              "Kernel.invoke (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:9855:102)",
-              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:11699:36)",
-              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:11659:22)",
-              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpenvl8ka8/lib/program.js:11660:46)",
+              "Annotations.addMessage (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-YihYFX/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1526)",
+              "Annotations.addWarningV2 (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-YihYFX/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "ApplicationListener._setDefaultAction (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-YihYFX/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/shared/base-listener.js:1:2249)",
+              "ApplicationListener.setDefaultAction (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-YihYFX/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/alb/application-listener.js:1:9144)",
+              "ApplicationListener.addTargetGroups (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-YihYFX/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/alb/application-listener.js:1:6032)",
+              "ApplicationListener.addTargets (/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/jsii-kernel-YihYFX/node_modules/aws-cdk-lib/aws-elasticloadbalancingv2/lib/alb/application-listener.js:1:6730)",
+              "/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpv4ix12ki/lib/program.js:9855:172",
+              "Kernel._Kernel_ensureSync (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpv4ix12ki/lib/program.js:10480:24)",
+              "Kernel.invoke (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpv4ix12ki/lib/program.js:9855:102)",
+              "KernelHost.processRequest (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpv4ix12ki/lib/program.js:11699:36)",
+              "KernelHost.run (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpv4ix12ki/lib/program.js:11659:22)",
+              "Immediate._onImmediate (/private/var/folders/ms/m5shrzp94k37mvm1xt99bg98l6hq63/T/tmpv4ix12ki/lib/program.js:11660:46)",
               "process.processImmediate (node:internal/timers:478:21)"
             ]
           }
@@ -728,7 +725,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/03dbb499b177f934c7fa306329cbf7040e91d457278a036c07b6be328480ab32.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9df5d4e9530c5b1f32595d6d221f649a2d4d9d3209d7aea9542f5d24f22e8dad.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [

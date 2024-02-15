@@ -1,7 +1,5 @@
 CREATE DATABASE infinity_applications
 
-DROP TABLE IF EXISTS applications;
-
 CREATE TABLE applications ( 
 id SERIAL PRIMARY KEY, 
 student_name TEXT NOT NULL, 

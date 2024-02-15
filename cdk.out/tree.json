@@ -1657,6 +1657,13 @@
                             "fromPort": 80,
                             "toPort": 80,
                             "description": "Allow from anyone on port 80"
+                          },
+                          {
+                            "cidrIp": "0.0.0.0/0",
+                            "ipProtocol": "tcp",
+                            "fromPort": 443,
+                            "toPort": 443,
+                            "description": "Allow from anyone on port 443"
                           }
                         ],
                         "tags": [
@@ -1679,20 +1686,20 @@
                       "version": "2.114.1"
                     }
                   },
-                  "to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:5002": {
-                    "id": "to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:5002",
-                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:5002",
+                  "to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:80": {
+                    "id": "to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:80",
+                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/SecurityGroup/to cdkec2infinityapplicationsASGApplicationsWebInstanceSecurityGroup566A4388:80",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
                       "aws:cdk:cloudformation:props": {
-                        "description": "ALB access 5002 port of EC2 in Autoscaling Group",
+                        "description": "ALB access 80 port of EC2 in Autoscaling Group",
                         "destinationSecurityGroupId": {
                           "Fn::GetAtt": [
                             "ASGApplicationsWebInstanceSecurityGroup94520ECD",
                             "GroupId"
                           ]
                         },
-                        "fromPort": 5002,
+                        "fromPort": 80,
                         "groupId": {
                           "Fn::GetAtt": [
                             "ALBApplicationsWebSecurityGroupDEDFEC71",
@@ -1700,7 +1707,7 @@
                           ]
                         },
                         "ipProtocol": "tcp",
-                        "toPort": 5002
+                        "toPort": 80
                       }
                     },
                     "constructInfo": {
@@ -1728,7 +1735,7 @@
                           {
                             "type": "forward",
                             "targetGroupArn": {
-                              "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5002Group1A1F5927"
+                              "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb80GroupCFAB0C51"
                             }
                           }
                         ],
@@ -1744,17 +1751,103 @@
                       "version": "2.114.1"
                     }
                   },
-                  "TG-Applications-Web-5002Group": {
-                    "id": "TG-Applications-Web-5002Group",
-                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-Web-5002Group",
+                  "TG-Applications-Web-80Group": {
+                    "id": "TG-Applications-Web-80Group",
+                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-Web-80Group",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-Web-5002Group/Resource",
+                        "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-80/TG-Applications-Web-80Group/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
                           "aws:cdk:cloudformation:props": {
-                            "port": 5002,
+                            "port": 80,
+                            "protocol": "HTTP",
+                            "tags": [
+                              {
+                                "key": "Env",
+                                "value": "Prod"
+                              },
+                              {
+                                "key": "Module",
+                                "value": "Applications"
+                              }
+                            ],
+                            "targetGroupAttributes": [
+                              {
+                                "key": "stickiness.enabled",
+                                "value": "false"
+                              }
+                            ],
+                            "targetType": "instance",
+                            "vpcId": {
+                              "Fn::ImportValue": "cdk-vpc-infinity:ExportsOutputRefVPCInfinityD7CAF3E67B2297CD"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnTargetGroup",
+                          "version": "2.114.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationTargetGroup",
+                      "version": "2.114.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationListener",
+                  "version": "2.114.1"
+                }
+              },
+              "ALB-Applications-Web-443": {
+                "id": "ALB-Applications-Web-443",
+                "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-443",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-443/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                      "aws:cdk:cloudformation:props": {
+                        "certificates": [
+                          {
+                            "certificateArn": "arn:aws:acm:af-south-1:718974227478:certificate/5a55a6e1-b1be-4113-bc7b-87c2f00132d6"
+                          }
+                        ],
+                        "defaultActions": [
+                          {
+                            "type": "forward",
+                            "targetGroupArn": {
+                              "Ref": "ALBApplicationsWebALBApplicationsWeb443TGApplicationsWeb80Group89F96849"
+                            }
+                          }
+                        ],
+                        "loadBalancerArn": {
+                          "Ref": "ALBApplicationsWebCAB76CA9"
+                        },
+                        "port": 443,
+                        "protocol": "HTTPS"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnListener",
+                      "version": "2.114.1"
+                    }
+                  },
+                  "TG-Applications-Web-80Group": {
+                    "id": "TG-Applications-Web-80Group",
+                    "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-443/TG-Applications-Web-80Group",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "cdk-ec2-infinity-applications/ALB-Applications-Web/ALB-Applications-Web-443/TG-Applications-Web-80Group/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "port": 80,
                             "protocol": "HTTP",
                             "tags": [
                               {
@@ -1798,6 +1891,53 @@
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.ApplicationLoadBalancer",
+              "version": "2.114.1"
+            }
+          },
+          "New Certificate": {
+            "id": "New Certificate",
+            "path": "cdk-ec2-infinity-applications/New Certificate",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "cdk-ec2-infinity-applications/New Certificate/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CertificateManager::Certificate",
+                  "aws:cdk:cloudformation:props": {
+                    "domainName": "hello.hacksaw.co.za",
+                    "tags": [
+                      {
+                        "key": "Env",
+                        "value": "Prod"
+                      },
+                      {
+                        "key": "Module",
+                        "value": "Applications"
+                      },
+                      {
+                        "key": "Name",
+                        "value": "cdk-ec2-infinity-applications/New Certificate"
+                      }
+                    ],
+                    "validationMethod": "DNS"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_certificatemanager.CfnCertificate",
+                  "version": "2.114.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_certificatemanager.Certificate",
+              "version": "2.114.1"
+            }
+          },
+          "Existing Certificate": {
+            "id": "Existing Certificate",
+            "path": "cdk-ec2-infinity-applications/Existing Certificate",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
               "version": "2.114.1"
             }
           },
@@ -1853,6 +1993,18 @@
                               "Ref": "AWS::Partition"
                             },
                             ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+                          ]
+                        ]
+                      },
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/ElasticLoadBalancingReadOnly"
                           ]
                         ]
                       }
@@ -1926,14 +2078,14 @@
                       "version": "2.114.1"
                     }
                   },
-                  "from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:5002": {
-                    "id": "from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:5002",
-                    "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:5002",
+                  "from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:80": {
+                    "id": "from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:80",
+                    "path": "cdk-ec2-infinity-applications/ASG-Applications-Web/InstanceSecurityGroup/from cdkec2infinityapplicationsALBApplicationsWebSecurityGroup1A9A753C:80",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
                       "aws:cdk:cloudformation:props": {
-                        "description": "ALB access 5002 port of EC2 in Autoscaling Group",
-                        "fromPort": 5002,
+                        "description": "ALB access 80 port of EC2 in Autoscaling Group",
+                        "fromPort": 80,
                         "groupId": {
                           "Fn::GetAtt": [
                             "ASGApplicationsWebInstanceSecurityGroup94520ECD",
@@ -1947,7 +2099,7 @@
                             "GroupId"
                           ]
                         },
-                        "toPort": 5002
+                        "toPort": 80
                       }
                     },
                     "constructInfo": {
@@ -2016,7 +2168,7 @@
                       }
                     ],
                     "userData": {
-                      "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ncd /home/ec2-user/\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\ncd aws-cdk-vpc-ec2-alb-asg/\ngit pull\npip install Flask psycopg2-binary requests boto3 gunicorn\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\ngunicorn -w 1 -b 0.0.0.0:5000 'api_flask:app'\n#flask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\ngunicorn -w 1 -b 0.0.0.0:5001 'web_flask:app'\n#flask --app web_flask run --debug --host=0.0.0.0"
+                      "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ncd /home/ec2-user/\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\ncd aws-cdk-vpc-ec2-alb-asg/\ngit pull\npip install Flask psycopg2-binary requests boto3 gunicorn\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\ngunicorn -w 1 -b 0.0.0.0:5000 'api_flask:app'\n#flask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\ngunicorn -w 1 -b 0.0.0.0:5002 'web_flask:app'\n#flask --app web_flask run --debug --host=0.0.0.0"
                     }
                   }
                 },
@@ -2055,7 +2207,10 @@
                     ],
                     "targetGroupArns": [
                       {
-                        "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb5002Group1A1F5927"
+                        "Ref": "ALBApplicationsWebALBApplicationsWeb80TGApplicationsWeb80GroupCFAB0C51"
+                      },
+                      {
+                        "Ref": "ALBApplicationsWebALBApplicationsWeb443TGApplicationsWeb80Group89F96849"
                       }
                     ],
                     "vpcZoneIdentifier": [
@@ -2502,7 +2657,7 @@
                       }
                     ],
                     "userData": {
-                      "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ncd /home/ec2-user/\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\ncd aws-cdk-vpc-ec2-alb-asg/\ngit pull\npip install Flask psycopg2-binary requests boto3 gunicorn\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\ngunicorn -w 1 -b 0.0.0.0:5000 'api_flask:app'\n#flask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\ngunicorn -w 1 -b 0.0.0.0:5001 'web_flask:app'\n#flask --app web_flask run --debug --host=0.0.0.0"
+                      "Fn::Base64": "#!/bin/bash\nsudo yum update -y\nsudo yum -y install httpd php postgresql15.x86_64 git pip\ncd /home/ec2-user/\ngit clone https://github.com/jojo786/aws-cdk-vpc-ec2-alb-asg.git\ncd aws-cdk-vpc-ec2-alb-asg/\ngit pull\npip install Flask psycopg2-binary requests boto3 gunicorn\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/api\ngunicorn -w 1 -b 0.0.0.0:5000 'api_flask:app'\n#flask --app api_flask run --debug --host=0.0.0.0\ncd /home/ec2-user/aws-cdk-vpc-ec2-alb-asg/app/applications/web\ngunicorn -w 1 -b 0.0.0.0:5002 'web_flask:app'\n#flask --app web_flask run --debug --host=0.0.0.0"
                     }
                   }
                 },

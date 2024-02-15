@@ -6,6 +6,8 @@ import aws_cdk.aws_autoscaling as autoscaling
 import aws_cdk.aws_certificatemanager as acm
 from constructs import Construct
 from pathlib import Path
+import aws_cdk.aws_iam as iam
+
 
 module='Admin'
 ec2_type = 't3.micro'
@@ -58,6 +60,15 @@ class CdkEc2AdminStack(Stack):
         alb_web.connections.allow_from_any_ipv4(
             ec2.Port.tcp(443), "Internet access ALB 443") """
 
+        #IAM Instance Role to attached to EC2 instances in ASG
+        role = iam.Role(self, "Role",
+            assumed_by=iam.ServicePrincipal("ec2.amazonaws.com")  
+        )
+
+        role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("SecretsManagerReadWrite"))
+        role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSSMManagedInstanceCore"))
+        role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("ElasticLoadBalancingReadOnly"))
+
         # Create Web Autoscaling Group 
         self.asg_web = autoscaling.AutoScalingGroup(self, f"ASG-{module}-Web",
                                                 vpc=vpc,
@@ -72,6 +83,7 @@ class CdkEc2AdminStack(Stack):
                                                 #desired_capacity=2,
                                                 min_capacity=1,
                                                 max_capacity=3,
+                                                role=role,
                                                 )
         self.asg_web.scale_on_cpu_utilization(
             f"CPUScaling-{module}-Web",
