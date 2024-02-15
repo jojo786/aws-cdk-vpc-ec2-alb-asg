@@ -34,7 +34,7 @@ class CdkEc2ApplicationsStack(Stack):
                                           load_balancer_name=f"ALB-{module}-Web"
                                           )
 
-        # Create Web ALB Listener - Port 80,
+        # Create Web ALB Listener - HTTP Port 80
         alb_web_listener_80 = alb_web.add_listener(f"ALB-{module}-Web-80",
                                     port=80,
                                     open=True,
@@ -45,7 +45,7 @@ class CdkEc2ApplicationsStack(Stack):
 
          #Allow Web ALB connections on port 80 from the internet
         alb_web.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(80), "Internet access ALB 80")
+            ec2.Port.tcp(80), "Internet access on ALB port 80")
 
         # create ACM SSL cert
         new_cert = acm.Certificate(self, "New Certificate",
@@ -58,7 +58,7 @@ class CdkEc2ApplicationsStack(Stack):
             certificate_arn='arn:aws:acm:af-south-1:718974227478:certificate/5a55a6e1-b1be-4113-bc7b-87c2f00132d6'
             )
 
-        # Create Web ALB Listener
+        # Create Web ALB Listener - HTTPS Port 443, with cert
         alb_web_listener_443 = alb_web.add_listener(f"ALB-{module}-Web-443",
                                     port=443,
                                     open=True,
@@ -109,13 +109,16 @@ class CdkEc2ApplicationsStack(Stack):
             estimated_instance_warmup=cdk.Duration.seconds(60)
         )
 
+        #Allow port 80 on EC2 in Autoscaling Group from ALB (dont need port 443 to be allowed on ASG)
         self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
 
+        #Add the ASG to ALB port 80 listener on port 80
         alb_web_listener_80.add_targets(f"TG-{module}-Web-80",
                              port=80,
                              protocol=elb.ApplicationProtocol.HTTP,
                              targets=[self.asg_web])
         
+        #Add the ASG to ALB port 443 listener on port 80 - so HTTPS on ALB will be sent to HTTP on ASG
         alb_web_listener_443.add_targets(f"TG-{module}-Web-80",
                              port=80,
                              protocol=elb.ApplicationProtocol.HTTP,
