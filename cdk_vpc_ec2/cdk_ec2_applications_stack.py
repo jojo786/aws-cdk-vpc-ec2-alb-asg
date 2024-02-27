@@ -45,7 +45,7 @@ class CdkEc2ApplicationsStack(Stack):
 
          #Allow Web ALB connections on port 80 from the internet
         alb_web.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(80), "Internet access on ALB port 80")
+            ec2.Port.tcp(80), "ALLOW FROM Internet/All TO ALB-WEB port 80")
 
         # create ACM SSL cert
         new_cert = acm.Certificate(self, "New Certificate",
@@ -74,7 +74,7 @@ class CdkEc2ApplicationsStack(Stack):
         
         # Allow Web ALB connections on port 443 from the internet
         alb_web.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(443), "Internet access ALB 443")
+            ec2.Port.tcp(443), "Allow FROM All/Internet TO ALB-WEB on port 443")
 
         #IAM Instance Role to attached to EC2 instances in ASG
         role = iam.Role(self, "Role",
@@ -85,7 +85,7 @@ class CdkEc2ApplicationsStack(Stack):
         role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSSMManagedInstanceCore"))
         role.add_managed_policy(iam.ManagedPolicy.from_aws_managed_policy_name("ElasticLoadBalancingReadOnly"))
 
-        # Create Web Autoscaling Group 
+        # Create Web AutoScaling Group (ASG)
         self.asg_web = autoscaling.AutoScalingGroup(self, f"ASG-{module}-Web",
                                                 vpc=vpc,
                                                 vpc_subnets=ec2.SubnetSelection(subnet_group_name=f'Private-{module}-Web-ASG'),
@@ -109,8 +109,8 @@ class CdkEc2ApplicationsStack(Stack):
             estimated_instance_warmup=cdk.Duration.seconds(60)
         )
 
-        #Allow port 80 on EC2 in Autoscaling Group from ALB (dont need port 443 to be allowed on ASG)
-        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
+        #Allow port 80 on EC2 in ASG from ALB (dont need port 443 to be allowed on ASG)
+        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "Allow FROM ALB-WEB TO port 80 on ASG-WE")
 
         #Add the ASG to ALB port 80 listener on port 80
         alb_web_listener_80.add_targets(f"TG-{module}-Web-80",
@@ -141,7 +141,7 @@ class CdkEc2ApplicationsStack(Stack):
         #alb_api.connections.allow_from_any_ipv4(
         #    ec2.Port.tcp(80), "Internet access ALB 80")
 
-        alb_api.connections.allow_from(self.asg_web, ec2.Port.tcp(80), "Allow Web ASG to connect to ALB API on port 80")
+        alb_api.connections.allow_from(self.asg_web, ec2.Port.tcp(80), "Allow FROM ASG-WEB TO ALB-API on port 80")
 
         
         # Create Internal API ALB Listener on port 80, redirect to port 5000
@@ -182,7 +182,7 @@ class CdkEc2ApplicationsStack(Stack):
                             estimated_instance_warmup=cdk.Duration.seconds(60)
                         )
 
-        self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(5000), "ALB API access to port 5000 of EC2 in Autoscaling Group")
+        self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(5000), "Allow FROM ALB-API to port 5000 on ASG-API")
         
         
         alb_api_listener.add_targets(f"TG-{module}-API",

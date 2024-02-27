@@ -42,7 +42,7 @@ class CdkEc2AdminStack(Stack):
         
         # Allow Web ALB connections on port 80 from the internet
         alb_web.connections.allow_from_any_ipv4(
-            ec2.Port.tcp(80), "Internet access ALB 80")
+            ec2.Port.tcp(80), "ALLOW FROM Internet/All TO ALB-WEB port 80")
         
 
         """ #Create ACM HTTPS cert
@@ -93,7 +93,7 @@ class CdkEc2AdminStack(Stack):
             estimated_instance_warmup=cdk.Duration.seconds(60)
         )
 
-        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "ALB access 80 port of EC2 in Autoscaling Group")
+        self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "Allow FROM ALB-WEB TO port 80 on ASG-WEB")
 
         alb_web_listener.add_targets(f"TG-{module}-Web",
                              port=80,
@@ -141,7 +141,7 @@ class CdkEc2AdminStack(Stack):
             disable_scale_in=False,
             estimated_instance_warmup=cdk.Duration.seconds(60)
         )
-        self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(80), "ALB API access 80 port of EC2 in Autoscaling Group")
+        self.asg_api.connections.allow_from(alb_api, ec2.Port.tcp(80), "Allow FROM ALB-API to port 5000 on ASG-API")
         
         alb_api_listener.add_targets(f"TG-{module}-API",
                              port=80,
