@@ -1,7 +1,7 @@
 {
-  "version": "35.0.0",
+  "version": "36.0.0",
   "files": {
-    "9df5d4e9530c5b1f32595d6d221f649a2d4d9d3209d7aea9542f5d24f22e8dad": {
+    "4e189d3fc8efa5ab3430ffa6585e7f9ad63ba72757df9eb707b849d666522e49": {
       "source": {
         "path": "cdk-rds-infinity-applications.template.json",
         "packaging": "file"
@@ -9,7 +9,7 @@
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "9df5d4e9530c5b1f32595d6d221f649a2d4d9d3209d7aea9542f5d24f22e8dad.json",
+          "objectKey": "4e189d3fc8efa5ab3430ffa6585e7f9ad63ba72757df9eb707b849d666522e49.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }

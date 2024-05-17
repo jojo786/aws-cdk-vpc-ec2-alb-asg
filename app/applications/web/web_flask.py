@@ -7,7 +7,7 @@ from botocore.config import Config
 my_config = Config(
     region_name = "af-south-1")
 
-# Create a Secrets Manager client
+# Create a ELB client to get the DNS name of the API ALB
 client = boto3.client('elbv2', config=my_config)
 
 response = client.describe_load_balancers()

@@ -112,15 +112,15 @@ class CdkEc2ApplicationsStack(Stack):
         #Allow port 80 on EC2 in ASG from ALB (dont need port 443 to be allowed on ASG)
         self.asg_web.connections.allow_from(alb_web, ec2.Port.tcp(80), "Allow FROM ALB-WEB TO port 80 on ASG-WE")
 
-        #Add the ASG to ALB port 80 listener on port 80
+        #Add the ASG to ALB port 80 listener on port 5002, so redirect from ALB 80 to 5002 on the ASG
         alb_web_listener_80.add_targets(f"TG-{module}-Web-80",
-                             port=80,
+                             port=5002,
                              protocol=elb.ApplicationProtocol.HTTP,
                              targets=[self.asg_web])
         
         #Add the ASG to ALB port 443 listener on port 80 - so HTTPS on ALB will be sent to HTTP on ASG
         alb_web_listener_443.add_targets(f"TG-{module}-Web-80",
-                             port=80,
+                             port=5002,
                              protocol=elb.ApplicationProtocol.HTTP,
                              targets=[self.asg_web])
         

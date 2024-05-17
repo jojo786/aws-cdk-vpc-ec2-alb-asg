@@ -1,4 +1,4 @@
-CREATE DATABASE infinity_applications
+CREATE DATABASE infinity_applications;
 
 CREATE TABLE applications ( 
 id SERIAL PRIMARY KEY, 

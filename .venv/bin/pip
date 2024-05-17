@@ -1,4 +1,4 @@
-#!/Users/yusmayet/gitwork/aws-cdk-examples/python/new-vpc-alb-asg-mysql/.venv/bin/python3.11
+#!/Users/yusmayet/gitwork/aws-cdk-vpc-ec2-alb-asg/.venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys

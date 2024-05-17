@@ -7,7 +7,7 @@ from faker import Faker
 
 def get_secret():
 
-    secret_name = "RDSAuroraPostgresApplicatio-V0yAz1ZwObfA"
+    secret_name = "RDSAuroraPostgresApplicatio-Jb4dEohW0hfM"
     region_name = "af-south-1"
 
     # Create a Secrets Manager client
@@ -43,6 +43,11 @@ conn = psycopg2.connect(
   
 # create a cursor 
 cur = conn.cursor() 
+
+conn.autocommit = True
+with conn, conn.cursor() as cur:
+    cur.execute("CREATE DATABASE infinity_applications;")
+    cur.execute("CREATE TABLE applications (id SERIAL PRIMARY KEY, student_name TEXT NOT NULL, student_email TEXT NOT NULL);")
 
 #insert_statements = []
 fake = Faker()

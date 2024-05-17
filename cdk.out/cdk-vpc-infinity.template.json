@@ -1023,7 +1023,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02PwQrCMBBEv8V7GqkKnqWIeNHQildJ4opr26Q0G0sR/93EqvU0s49hmJ3xNF3wdCI7l+hzmVSo+KMgqUsW0An0jD+OjWbZxRxFxoRXFerCKwMU2ehy6wkOUlUw8pGtnLMaJaE1v3A0662IspO0kQSd7Jlo8R7sWLw1BG3w38Cw5HOtKEy91mDoyXJw1rf63bv31Phh1x/NrDlj3PBkoqerNdN5eJ8vJzeHmLTeENbA80Ff/yTWRRoBAAA="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02OQQ6CMBBFz+K+VAEvQIgxbrQB49a0dYwj2Bo6lRDD3S2i4mr+vPz8vITHy5gvZrJ1kT5VUY2KP0uSumIBHUEn/Hm4a5afzUHkTHhVoy69MkADm1JhPcFeqhomPrHMOatRElrzKw9htRHD2UpaS4JWdkw0+AhxGt4Ygibkb2E0+XwZBdXLDQz1rABnfaPfuztPdz96/dHcmhMODj0THV2smac8Tng6uzrEqPGG8Aa8GO8LkCI7yRoBAAA="
    },
    "Metadata": {
     "aws:cdk:path": "cdk-vpc-infinity/CDKMetadata/Default"
